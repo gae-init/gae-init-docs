@@ -39,6 +39,7 @@ SCRIPTS = {
       'lib/bootstrap/js/bootstrap-button.js',
       'lib/bootstrap/js/bootstrap-collapse.js',
       'lib/bootstrap/js/bootstrap-dropdown.js',
+      'lib/bootstrap/js/bootstrap-tooltip.js',
     ],
     'scripts': [
       'src/coffee/common/util.coffee',

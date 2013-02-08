@@ -1,9 +1,7 @@
-#JS enabled pages
 $ ->
-  LOG('app init')
 
 $ -> $('html.welcome').each ->
-  LOG('init welcome')
+  $('abbr').tooltip()
 
 $ -> $('html.profile').each ->
   init_profile()

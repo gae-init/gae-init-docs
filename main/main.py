@@ -107,7 +107,6 @@ def feedback():
 ################################################################################
 @app.route('/_s/user/', endpoint='user_list_service')
 @app.route('/user/', endpoint='user_list')
-@auth.admin_required
 def user_list():
   user_dbs, more_cursor = util.retrieve_dbs(
       model.User.query(),
