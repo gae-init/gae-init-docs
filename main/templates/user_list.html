@@ -70,6 +70,17 @@
                 <a href="{{url_for('user_list', order='name')}}">Name</a>
               #endif
             </th>
+            # if current_user.admin
+              <th class="span3">
+                # if request.args.get('order') == 'email'
+                  <a href="{{url_for('user_list', order='-email')}}">Email <i class="icon-chevron-up"></i></a>
+                # elif request.args.get('order') == '-email'
+                  <a href="{{url_for('user_list', order='email')}}">Email <i class="icon-chevron-down"></i></a>
+                #else
+                  <a href="{{url_for('user_list', order='email')}}">Email</a>
+                #endif
+              </th>
+            #endif
             <th class="span2">
               # if request.args.get('order') == 'created'
                 <a href="{{url_for('user_list', order='-created')}}">Created <i class="icon-chevron-up"></i></a>
@@ -103,6 +114,9 @@
                   <i class="icon-cog" title="Administrator"></i>
                 # endif
               </td>
+              # if current_user.admin
+                <td>{{user_db.email}}</td>
+              # endif
               <td>
                 <abbr title="{{user_db.created_utc}}">
                   {{user_db.created_ago}}
