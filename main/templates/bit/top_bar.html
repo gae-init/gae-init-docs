@@ -12,7 +12,7 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li class="{% if html_class == 'user' %} active {% endif %}">
-            <a href="{{url_for('user_list', order='-created')}}">User List</a>
+            <a href="{{url_for('user_list', order='-created')}}"> <i class="icon-group"></i> User List</a>
           </li>
           # if config.CONFIG_DB.feedback_email
             <li class="{% if html_class == 'feedback' %} active {% endif %}">
