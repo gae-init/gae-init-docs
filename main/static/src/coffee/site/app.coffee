@@ -2,6 +2,8 @@ $ ->
 
 $ -> $('html.welcome').each ->
   $('abbr').tooltip()
+  $('.tip').tooltip()
+
 
 $ -> $('html.profile').each ->
   init_profile()
