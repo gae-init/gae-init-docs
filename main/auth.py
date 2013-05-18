@@ -1,5 +1,6 @@
 from google.appengine.ext import ndb
 from google.appengine.api import users
+from google.appengine.api import mail
 
 import functools
 
@@ -174,6 +175,7 @@ def retrieve_user_from_google(google_user):
       admin=users.is_current_user_admin(),
     )
   user_db.put()
+  send_new_user_notification(user_db)
   return user_db
 
 
@@ -239,6 +241,7 @@ def retrieve_user_from_twitter(response):
       name=response['screen_name'],
       username=generate_unique_username(response['screen_name']),
     )
+  send_new_user_notification(user_db)
   user_db.put()
   return user_db
 
@@ -304,6 +307,7 @@ def retrieve_user_from_facebook(response):
       username=generate_unique_username(username),
     )
   user_db.put()
+  send_new_user_notification(user_db)
   return user_db
 
 
@@ -341,3 +345,26 @@ def generate_unique_username(username):
     new_username = '%s%d' % (username, n)
     n += 1
   return new_username
+
+
+def send_new_user_notification(user_db):
+  if not config.CONFIG_DB.feedback_email:
+    return
+  try:
+    mail.send_mail(
+        sender=config.CONFIG_DB.feedback_email,
+        to=config.CONFIG_DB.feedback_email,
+        subject='[%s] New user: %s' % (
+            config.CONFIG_DB.brand_name,
+            user_db.name,
+          ),
+        reply_to=config.CONFIG_DB.feedback_email,
+        body='email: %s\nfederated: %s\nfacebook: %s\ntwitter: %s' % (
+            user_db.email,
+            user_db.federated_id,
+            user_db.facebook_id,
+            user_db.twitter_id,
+          ),
+      )
+  except:
+    pass
