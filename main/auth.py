@@ -21,7 +21,7 @@ from main import app
 login_manager = flaskext.login.LoginManager()
 
 
-class AnonymousUser(flaskext.login.AnonymousUser):
+class AnonymousUser(flaskext.login.AnonymousUserMixin):
   id = 0
   admin = False
   name = 'Anonymous'
