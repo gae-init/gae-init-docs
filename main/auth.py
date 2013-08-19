@@ -5,8 +5,8 @@ from google.appengine.api import mail
 import functools
 
 import flask
-import flaskext.login
-import flaskext.oauth
+from flaskext import login
+from flaskext import oauth
 
 import util
 import model
@@ -18,10 +18,10 @@ from main import app
 ################################################################################
 # Flaskext Login
 ################################################################################
-login_manager = flaskext.login.LoginManager()
+login_manager = login.LoginManager()
 
 
-class AnonymousUser(flaskext.login.AnonymousUserMixin):
+class AnonymousUser(login.AnonymousUserMixin):
   id = 0
   admin = False
   name = 'Anonymous'
@@ -67,11 +67,11 @@ login_manager.init_app(app)
 
 
 def current_user_id():
-  return flaskext.login.current_user.id
+  return login.current_user.id
 
 
 def current_user_key():
-  return flaskext.login.current_user.user_db.key
+  return login.current_user.user_db.key
 
 
 def current_user_db():
@@ -133,7 +133,7 @@ def signin():
 
 @app.route('/signout/')
 def signout():
-  flaskext.login.logout_user()
+  login.logout_user()
   flask.flash(u'You have been signed out.')
   return flask.redirect(flask.url_for('welcome'))
 
@@ -182,7 +182,7 @@ def retrieve_user_from_google(google_user):
 ################################################################################
 # Twitter
 ################################################################################
-twitter_oauth = flaskext.oauth.OAuth()
+twitter_oauth = oauth.OAuth()
 
 
 twitter = twitter_oauth.remote_app(
@@ -249,7 +249,7 @@ def retrieve_user_from_twitter(response):
 ################################################################################
 # Facebook
 ################################################################################
-facebook_oauth = flaskext.oauth.OAuth()
+facebook_oauth = oauth.OAuth()
 
 facebook = facebook_oauth.remote_app(
     'facebook',
@@ -319,7 +319,7 @@ def signin_user_db(user_db):
     return flask.redirect(flask.url_for('signin'))
 
   flask_user_db = FlaskUser(user_db)
-  if flaskext.login.login_user(flask_user_db):
+  if login.login_user(flask_user_db):
     flask.flash('Hello %s, welcome to %s!!!' % (
         user_db.name, config.CONFIG_DB.brand_name,
       ), category='success')
