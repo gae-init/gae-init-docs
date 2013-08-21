@@ -26,3 +26,19 @@ footer {
   margin: auto;
   display: block;
 }
+
+.jumbotron {
+  .btn {
+    margin-bottom: 4px;
+  }
+
+  @media (max-width: @screen-xs-max) {
+    text-align: center;
+  }
+
+  @media (max-width: @screen-xs) {
+    .btn {
+      display: block;
+    }
+  }
+}

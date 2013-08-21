@@ -321,7 +321,7 @@ def signin_user_db(user_db):
     return flask.redirect(flask.url_for('signin'))
 
   flask_user_db = FlaskUser(user_db)
-  if login.login_user(flask_user_db):
+  if login.login_user(flask_user_db, remember=True):
     flask.flash('Hello %s, welcome to %s!!!' % (
         user_db.name, config.CONFIG_DB.brand_name,
       ), category='success')
