@@ -1,3 +1,15 @@
+Version 0.5.4 - 2013-08-30
+--------------------------
+- Introduced `util.jsonpify()`, which is like flask.jsonify but returns JSONP if callback is provided
+- All the services now support a `callback` argument to get JSONP
+- Updated `run.py` script so the `--clean` argument is obsolete when `--start` is used
+
+Version 0.5.3 - 2013-08-28
+--------------------------
+- Error checkings in the `auth` functions
+- Added 405 error
+- Minor reformats and few comments
+
 Version 0.5.2 - 2013-08-27
 --------------------------
 - Added a nanoscopic progress bar: NProgress

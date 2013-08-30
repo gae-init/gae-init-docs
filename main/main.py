@@ -18,10 +18,7 @@ import admin
 
 @app.route('/')
 def welcome():
-  return flask.render_template(
-      'welcome.html',
-      html_class='welcome',
-    )
+  return flask.render_template('welcome.html', html_class='welcome')
 
 
 ################################################################################
@@ -137,7 +134,8 @@ def user_list():
 @app.errorhandler(400)  # Bad Request
 @app.errorhandler(401)  # Unauthorized
 @app.errorhandler(403)  # Forbidden
-@app.errorhandler(404)  # Not Found
+@app.errorhandler(404)  # Not
+@app.errorhandler(405)  # Method Not Allowed
 @app.errorhandler(410)  # Gone
 @app.errorhandler(418)  # I'm a Teapot
 @app.errorhandler(500)  # Internal Server Error
@@ -150,7 +148,7 @@ def error_handler(e):
       name = 'Internal Server Error'
 
   if flask.request.path.startswith('/_s/'):
-    return flask.jsonify({
+    return util.jsonpify({
         'status': 'error',
         'error_code': e.code,
         'error_name': e.name.lower().replace(' ', '_'),
