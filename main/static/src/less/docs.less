@@ -1,0 +1,28 @@
+.jumbotron {
+  img {
+    max-width: 100%;
+  }
+  .btn {
+    margin-bottom: 4px;
+  }
+
+  .links {
+    margin: @line-height-computed / 2 0;
+  }
+
+  @media (min-width: @screen-xs) {
+    .btn {
+      width: 138px;
+    }
+
+    .btn-lg {
+      width: 282px;
+    }
+  }
+
+  @media (max-width: @screen-xs) {
+    .btn {
+      display: block;
+    }
+  }
+}

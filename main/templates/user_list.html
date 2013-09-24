@@ -3,7 +3,12 @@
 
 # block content
   <div class="page-header">
-    <h1>{{title}}</h1>
+    <h1>
+      {{title}}
+      <small>
+        Just an example for filters, orders, limits, JSON, more URL...
+      </small>
+    </h1>
   </div>
 
   <div class="row">
@@ -46,8 +51,9 @@
         <thead>
           <tr>
             <th class="col-xs-3">{{utils.order_link('Name', 'user_list', 'name')}}</th>
-            <th class="col-xs-2 hidden-xs">{{utils.order_link('Username', 'user_list', 'username')}}</th>
-            <th class="col-xs-3 hidden-xs">{{utils.order_link('Email', 'user_list', 'email')}}</th>
+            # if current_user.admin
+              <th class="col-xs-3 hidden-xs">{{utils.order_link('Email', 'user_list', 'email')}}</th>
+            # endif
             <th class="col-xs-2">{{utils.order_link('Created', 'user_list', 'created')}}</th>
             <th class="col-xs-2 hidden-xs">{{utils.order_link('Modified', 'user_list', 'modified')}}</th>
           </tr>
@@ -62,8 +68,9 @@
                   <i class="icon-cog" title="Administrator"></i>
                 # endif
               </td>
-              <td class="hidden-xs">{{user_db.username}}</td>
-              <td class="hidden-xs">{{user_db.email}}</td>
+              # if current_user.admin
+                <td class="hidden-xs">{{user_db.email}}</td>
+              # endif
               <td>
                 <time datetime="{{user_db.created.isoformat()}}">
                   {{user_db.created.strftime('%Y-%m-%d')}}

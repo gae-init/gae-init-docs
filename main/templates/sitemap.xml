@@ -19,4 +19,10 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>{{host_url}}{{url_for('user_list')}}</loc>
+    <lastmod>{{lastmod}}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

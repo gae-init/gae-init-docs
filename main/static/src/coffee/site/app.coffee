@@ -2,7 +2,9 @@ $ ->
   init_time()
 
 $ -> $('html.welcome').each ->
-  LOG('init welcome')
+  $('abbr').tooltip()
+  $('.tip').tooltip()
+  github_init()
 
 $ -> $('html.profile').each ->
   init_profile()
