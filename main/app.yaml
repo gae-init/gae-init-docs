@@ -1,5 +1,5 @@
 application: gae-init
-version: 0-6-0
+version: 0-7-0
 runtime: python27
 api_version: 1
 threadsafe: yes

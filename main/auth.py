@@ -409,11 +409,12 @@ def send_new_user_notification(user_db):
             user_db.name,
           ),
         reply_to=config.CONFIG_DB.feedback_email,
-        body='email: %s\nfederated: %s\nfacebook: %s\ntwitter: %s' % (
+        body='email: %s\nfederated: %s\nfacebook: %s\ntwitter: %s\ngithub: %s' % (
             user_db.email,
             user_db.federated_id,
             user_db.facebook_id,
             user_db.twitter_id,
+            user_db.github_id,
           ),
       )
   except:
