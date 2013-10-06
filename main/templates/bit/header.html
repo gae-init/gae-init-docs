@@ -11,8 +11,8 @@
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <li class="{% if html_class == 'user' %} active {% endif %}">
-          <a href="{{url_for('user_list', order='-created')}}"> <i class="icon-group"></i> User List</a>
+        <li class="{{'active' if html_class == 'user' else ''}}">
+          <a href="{{url_for('user_list', order='-modified')}}"> <i class="icon-group"></i> User List</a>
         </li>
         # include 'bit/contact_menu.html'
       </ul>

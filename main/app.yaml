@@ -1,5 +1,5 @@
 application: gae-init
-version: 0-7-0
+version: 0-8-1
 runtime: python27
 api_version: 1
 threadsafe: yes
@@ -43,5 +43,4 @@ skip_files:
 - ^(.*/)?Icon\r
 - ^lib/.*
 - ^static/src/.*
-- ^static/lib/.*
 - ^static/dst/.*
