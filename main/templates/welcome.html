@@ -1,5 +1,11 @@
 # extends 'base.html'
 
+# block scripts
+  <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+  </script>
+# endblock
+
 # block header
   <div class="jumbotron text-center">
     <div class="container">
@@ -43,7 +49,8 @@
         <iframe src="http://ghbtns.com/github-btn.html?user=lipis&type=follow"
           allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
         <iframe src="http://ghbtns.com/github-btn.html?user=gae-init&repo={{config.CONFIG_DB.brand_name}}&type=watch&count=true"
-          allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+          allowtransparency="true" frameborder="0" scrolling="0" width="80" height="20"></iframe>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://gae-init.appspot.com" data-text="gae-init is the easiest way to start developing new applications on Google App Engine" data-via="gaeinit" data-hashtags="gaeinit">Tweet</a>
       </div>
     </div>
   </div>
