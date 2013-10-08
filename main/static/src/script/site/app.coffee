@@ -1,5 +1,8 @@
 $ ->
   init_common()
+  setTimeout ->
+    ($ '.social').css('opacity', '1')
+  , 2000
 
 $ -> ($ 'html.welcome').each ->
   ($ 'abbr').tooltip()
