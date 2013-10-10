@@ -1,0 +1,43 @@
+# extends 'base.html'
+
+# block content
+
+  <div class="page-header">
+    <h1>
+      {{title}}
+      <small>Before you start you should have these!</small>
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="docs-sidebar">
+        <ul class="nav nav-list docs-sidenav">
+          # for section in config.REQUIREMENT
+            <li>
+              <a href="{{'#'}}{{section[0]}}">
+                {{section[1]}}
+              </a>
+            </li>
+          # endfor
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9">
+      # for section in config.REQUIREMENT
+        <section id="{{section[0]}}">
+          <div class="page-header">
+            <h2 class="self-link">
+              {{section[1]}}
+              <small>
+                {{section[2]}}
+                <a href="#{{section[0]}}"></a>
+              </small>
+            </h2>
+          </div>
+          # include 'requirement/%s.html' % section[0]
+        </section>
+      # endfor
+    </div>
+  </div>
+# endblock

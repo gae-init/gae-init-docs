@@ -39,6 +39,87 @@ def sitemap():
   return response
 
 
+@app.route('/example/')
+def example():
+  return flask.render_template(
+      'example/example.html',
+      html_class='example',
+      title='Examples',
+    )
+
+
+@app.route('/tree/')
+def tree():
+  return flask.render_template(
+      'tree/tree.html',
+      html_class='tree',
+      title='Source Tree',
+    )
+
+
+@app.route('/run/')
+def run():
+  return flask.render_template(
+      'run.html',
+      html_class='run',
+      title='Run script',
+    )
+
+
+@app.route('/requirement/')
+def requirement():
+  return flask.render_template(
+      'requirement/requirement.html',
+      html_class='requirement',
+      title='Requirements',
+    )
+
+
+@app.route('/doc/')
+def doc():
+  return flask.render_template(
+      'coming_soon.html',
+      html_class='doc',
+      title='Docs',
+    )
+
+
+@app.route('/features/')
+def features():
+  return flask.render_template(
+      'doc/features.html',
+      html_class='features',
+      title='Features',
+    )
+
+
+@app.route('/reference/')
+def reference():
+  return flask.render_template(
+      'reference/reference.html',
+      html_class='reference',
+      title='Reference',
+    )
+
+
+@app.route('/tutorial/')
+def tutorial():
+  return flask.render_template(
+      'coming_soon.html',
+      html_class='tutorial',
+      title='Tutorial',
+    )
+
+
+@app.route('/faq/')
+def faq():
+  return flask.render_template(
+      'faq/faq.html',
+      html_class='faq',
+      title='FAQ',
+    )
+
+
 ################################################################################
 # Profile stuff
 ################################################################################
@@ -127,7 +208,6 @@ def feedback():
 ################################################################################
 @app.route('/_s/user/', endpoint='user_list_service')
 @app.route('/user/')
-@auth.admin_required
 def user_list():
   user_dbs, more_cursor = util.retrieve_dbs(
       model.User.query(),

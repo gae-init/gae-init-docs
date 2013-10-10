@@ -1,0 +1,109 @@
+<p>
+  There are a few things that we need to do in order to start creating new
+  contacts. In short we're going to create a Form, a Handler and a Template.
+</p>
+
+<h3>Contact Create Form</h3>
+<p>
+  Create a new file <code>contact.py</code> in the <code>main</code> directory
+  and add the following code that will be responsible for validating the user's
+  input.
+</p>
+
+<pre class="prettyprint linenums">
+from flaskext import wtf
+
+class ContactUpdateForm(wtf.Form):
+  name = wtf.TextField('Name', [wtf.validators.required()])
+  email = wtf.TextField('Email', [
+      wtf.validators.optional(),
+      wtf.validators.email('That does not look like an email'),
+    ])
+  phone = wtf.TextField('Phone', [wtf.validators.optional()])
+  address = wtf.TextAreaField('Address', [wtf.validators.optional()])
+</pre>
+
+<p>
+  For more information regarding the form validation refert to
+  <a href="http://flask.pocoo.org/docs/patterns/wtforms/">Flask-WTForms</a>
+</p>
+
+<h3>Contact Create Handler</h3>
+
+<p>
+  After creating the form we have to create a handler for it. Add the
+  following code into the <code>contact.py</code> file.
+</p>
+
+
+<pre class="prettyprint linenums">
+import flask
+import auth
+import model
+from main import app
+
+@app.route('/contact/create/', methods=['GET', 'POST'])
+@auth.login_required
+def contact_create():
+  form = ContactUpdateForm()
+  if form.validate_on_submit():
+    contact_db = model.Contact(
+        user_key=auth.current_user_key(),
+        name=form.name.data,
+        email=form.email.data,
+        phone=form.phone.data,
+        address=form.address.data,
+      )
+    contact_db.put()
+    return flask.redirect(flask.url_for('welcome'))
+  return flask.render_template(
+      'contact_create.html',
+      html_class='contact-create',
+      title='Create Contact',
+      form=form,
+    )
+</pre>
+
+
+<h4>Let's take a closer look in this new snipped</h4>
+
+<pre class="prettyprint">
+import flask
+import auth
+import model
+from main import app
+</pre>
+
+
+<p>
+  The nessesary imports for creation handler, just put
+  them in the beginning of the <code>contact.py</code> file with the rest of the
+  imports.
+</p>
+
+
+<pre class="prettyprint">
+@app.route('/contact/create/', methods=['GET', 'POST'])
+</pre>
+
+<p>
+  The route and the methods that we are going to use.
+  <code>GET</code> is to serve the html form and <code>POST</code> is to
+  submit the data.
+</p>
+
+<p>
+  For more information refert to Flask documentation on
+  <a href="http://flask.pocoo.org/docs/quickstart/#routing">routing</a>.
+</p>
+
+<pre class="prettyprint">
+@auth.login_required
+</pre>
+
+<p>
+  This decorator is to make sure that who ever is entering
+  this URL will be already logged in so we could use the <code>user_key</code>
+  of the authentiacated user. If the user is not logged in, she will be
+  prompted redirected to the signin page and then back to this URL.
+</p>

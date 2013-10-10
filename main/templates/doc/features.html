@@ -1,0 +1,62 @@
+# extends 'base.html'
+
+# block content
+  <div class="page-header">
+    <h1>
+      {{title}}
+    </h1>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <h4>Tech Stack</h4>
+      <ul>
+        <li><a href="https://developers.google.com/appengine/">Google App Engine</a></li>
+        <li><a href="https://developers.google.com/appengine/docs/python/python27/using27">Python 2.7</a></li>
+        <li><a href="https://developers.google.com/appengine/docs/python/ndb/">NDB</a></li>
+        <li><a href="http://jinja.pocoo.org/docs/">Jinja2</a></li>
+        <li><a href="http://flask.pocoo.org/">Flask</a></li>
+        <li><a href="http://jquery.com/">jQuery</a></li>
+        <li><a href="http://coffeescript.org/">CoffeeScript</a></li>
+        <li><a href="http://lesscss.org/">LessCSS</a></li>
+        <li><a href="http://twitter.github.com/bootstrap/">Bootstrap</a></li>
+        <li><a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome <i class="icon-flag"></i></a></li>
+        <li><a href="http://ricostacruz.com/nprogress/">NProgress</a></li>
+        <li><a href="http://momentjs.com/">Moment.js</a></li>
+        <li> OpenID sign in (Google, Facebook, Twitter, GitHub)</li>
+      </ul>
+      <h4>Highlights</h4>
+      <ul>
+        <li>Easy pagination</li>
+        <li>JSON services with more URL, limits, filters, orders and more</li>
+        <li>Custom pages for error handlings</li>
+        <li>Redirect URLs</li>
+        <li>Feedback form</li>
+        <li>Multiple OAuth options</li>
+        <li>Secret keys are stored securely in Datastore</li>
+        <li>Mobile first through Bootstrap 3</li>
+        <li>Automatic redirect to where you were after sign-in</li>
+        <li>Showing relative time for &lt;time datetime='...'&gt;</li>
+        <li>Add <code>.btn-loading</code> and your buttons will have the loading functionality</li>
+        <li>Add easily any other OAuth provider</li>
+      </ul>
+    </div>
+    <div class="col-sm-6">
+      <h4>Development</h4>
+      <ul>
+        <li>Custom script to run, clean, watch and minify your app</li>
+        <li>Compile on save *.coffee via custom script</li>
+        <li>Compile on save *.less via custom script</li>
+        <li>Minify and concatenate scripts and styles</li>
+        <li>Live reload for your page through Grunt</li>
+        <li>Use vanila JavaScript insted of CoffeeScript</li>
+        <li>Use vanila CSS instead of LessCSS</li>
+      </ul>
+      <h4>Forks</h4>
+      <ul>
+        <li>Add i18n and L10n support through gae-init-babel</li>
+        <li>Start uploading files to Google Cloud Storage through gae-init-upload</li>
+        <li>Start monitoring your requests and more thgough gae-init-debug</li>
+      </ul>
+    </div>
+  </div>
+# endblock

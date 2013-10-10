@@ -1,0 +1,60 @@
+# extends 'base.html'
+
+# block content
+  <div class="page-header">
+    <h1>
+      {{title}}
+    </h1>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="docs-sidebar">
+        <ul class="nav nav-list docs-sidenav">
+          # for section in config.REFERENCE
+            <li>
+              <a href="{{'#'}}{{section[0]}}">
+                {{section[1]}}
+              </a>
+            </li>
+          # endfor
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9">
+
+      # for file in config.REFERENCE
+        <section id="{{file[0]}}">
+          <div class="page-header">
+            <h2 class="self-link">
+              {{file[1]}}
+              <small>{{file[2]}}</small>
+              <a href="#{{file[0]}}"></a>
+            </h2>
+          </div>
+          # include 'reference/%s/intro.html' % file[0]
+          <dl class="reference">
+            # for def in config.REFERENCE_DEF[file[0]]
+              # if file[0] == 'decorator'
+                # set name = '@auth.%s' % (def[0])
+                # set params = ''
+              # elif file[0] == 'config'
+                # set name = '%s.%s' % (file[0], def[0].upper())
+                # set params = ''
+              # else
+                # set name = '%s.%s' % (file[0], def[0])
+                # set params = '(%s)' % (def[1])
+              # endif
+              <dt id="{{name}}" class="self-link">
+                {{name}}{{params}}
+                <a href="#{{name}}"></a>
+              </dt>
+              <dd>
+                # include 'reference/%s/%s.html' % (file[0], def[0])
+              </dd>
+            # endfor
+          </dl>
+        </section>
+      # endfor
+    </div>
+  </div>
+# endblock

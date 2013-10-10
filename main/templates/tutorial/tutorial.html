@@ -1,0 +1,48 @@
+# extends 'base.html'
+
+# block content
+  <div class="page-header">
+    <h1>Tutorial <small>Building a phonebook app using gae-init</small></h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="docs-sidebar">
+        <ul class="nav nav-list docs-sidenav">
+          # for section in config.TUTORIAL
+            <li>
+              <a href="{{'#'}}{{section[0]}}">
+                {{loop.index}}. {{section[1]}}
+              </a>
+            </li>
+          # endfor
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <p>
+        This tutorial describes how to develop a simple application using
+        <a href="http://gae-init.appspot.com">gae-init</a>
+        as a starting point. By building a personal phonebook, you will learn
+        how could you build, run, develop and finally deploy your applications.
+      </p>
+
+      # for section in config.TUTORIAL
+        <section id="{{section[0]}}">
+          <div class="page-header">
+            <h2 class="self-link">
+              <small>{{loop.index}}.</small>
+              {{section[1]}}
+              <small>
+                {{section[2]}}
+              </small>
+              <a href="#{{section[0]}}"></a>
+            </h2>
+          </div>
+          # include 'tutorial/%s.html' % section[0]
+        </section>
+      # endfor
+    </div>
+  </div>
+# endblock

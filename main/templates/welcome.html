@@ -1,31 +1,114 @@
 # extends 'base.html'
 
 # block header
-  <div class="jumbotron">
+  <div class="jumbotron text-center">
     <div class="container">
-      <h1>{{config.CONFIG_DB.brand_name}}</h1>
-      <p>Hello, world!</p>
+      <h1>
+        <img src="/p/img/{{slugify(config.CONFIG_DB.brand_name)}}.svg" alt="{{config.CONFIG_DB.brand_name}}">
+      </h1>
+      <p class="lead">
+        The docs are still in progress. Feel free to
+        <a href="{{url_for('feedback')}}">send feedback</a>
+        with your questions or suggestions.
+      </p>
+      <p class="lead">
+        If you think that you don't need the manual go grab the code:
+      </p>
+
+      <div class="clones links">
+        <a class="btn btn-default tip" href="http://gae-init.appspot.com" data-repo="gae-init" data-placement="bottom" title="">
+          <i class="icon-briefcase"></i> gae-init
+        </a>
+        <a class="btn btn-default tip" href="http://babel.gae-init.appspot.com" data-repo="gae-init-babel" data-placement="bottom" title="">
+          <i class="icon-globe"></i> gae-init-babel
+        </a>
+        <a class="btn btn-default tip" href="http://upload.gae-init.appspot.com" data-repo="gae-init-upload" data-placement="bottom" title="">
+          <i class="icon-cloud"></i> gae-init-upload
+        </a>
+        <a class="btn btn-default tip" href="http://debug.gae-init.appspot.com" data-repo="gae-init-debug" data-placement="bottom" title="">
+          <i class="icon-bug"></i> gae-init-debug
+        </a>
+      </div>
     </div>
   </div>
 # endblock
 
 # block content
   <div class="row">
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <h2>Heading</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="col-sm-4">
+      <h3>Tech Stack</h3>
+      <ul>
+        <li><a href="https://developers.google.com/appengine/">Google App Engine</a></li>
+        <li><a href="https://developers.google.com/appengine/docs/python/python27/using27">Python 2.7</a></li>
+        <li><a href="https://developers.google.com/appengine/docs/python/ndb/">NDB</a></li>
+        <li><a href="http://jinja.pocoo.org/docs/">Jinja2</a></li>
+        <li><a href="http://flask.pocoo.org/">Flask</a></li>
+        <li><a href="http://coffeescript.org/">CoffeeScript</a></li>
+        <li><a href="http://lesscss.org/">LessCSS</a></li>
+        <li><a href="http://twitter.github.com/bootstrap/">Bootstrap</a></li>
+        <li><a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome <i class="icon-flag"></i></a></li>
+        <li> OpenID sign in (Google, Facebook, Twitter)</li>
+      </ul>
     </div>
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <h2>Heading</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-   </div>
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <h2>Heading</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="col-sm-4">
+      <h3>Features</h3>
+      <ul>
+        <li>Responsive Design</li>
+        <li>Open ID sign in</li>
+        <li>
+          Secret keys are stored in the Datastore.
+        </li>
+        <li>
+          Automatic redirect back to where you were after sign in.
+        </li>
+        <li>
+          Force redirect by providing <strong>&amp;next</strong> argument to the sign in URL.
+        </li>
+        <li>
+          JSON services with more URL, limits, filter & orders.
+        </li>
+        <li>Feedback form</li>
+        <li>Much more..</li>
+      </ul>
     </div>
-    <div class="col-sm-6 col-md-12 col-lg-3">
-      <h2>Heading</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="col-sm-4">
+      <h3>Examples</h3>
+      <ul>
+        <li>
+          <a href="http://www.thesmallestcreature.com" target="_blank">The smallest Creature</a>
+          (<a href="https://bitbucket.org/lipis/less-bands" target="_blank">source</a>)
+        </li>
+        <li>
+          <a href="http://www.lessfolio.com" target="_blank">Lessfolio</a>
+          <ul>
+            <li>
+              <a href="http://www.kiebdoj.com" target="_blank">Aleksandra Kiebdoj</a>
+            </li>
+            <li>
+              <a href="http://mwdao.ksymeon.com/" target="_blank">My Wandering Days Are Over</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.dodonegone.com" target="_blank">DoDoneGone</a>
+        </li>
+        <li>
+          <a href="http://eyetribe-dev.appspot.com" target="_blank">The Eye Tribe</a>
+        </li>
+        <li>
+          <a href="http://www.3dhero.ru" target="_blank">3DHero</a>
+          (<a href="https://github.com/gmist/3dhero.ru" target="_blank">source</a>)
+        </li>
+        <li>
+          <a href="http://pawili.com" target="_blank">Pawili</a>
+        </li>
+        <li>
+          <a href="http://www.rehabvalet.se/" target="_blank">Rehabvalet</a>
+        </li>
+        <li>
+          <a href="http://less-tabit.appspot.com/" target="_blank">Tabit</a>
+        </li>
+      </ul>
     </div>
   </div>
 # endblock

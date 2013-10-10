@@ -1,0 +1,80 @@
+<h3>Finalise Contact Listing</h3>
+
+<p>
+  As a final touch we're going two things: adding the link in the top bar and
+  changing the redirect after creating the contact to take us to the this list
+  instead of going back to the welcome page.
+</p>
+
+
+<h4>Adding a link on the top bar</h4>
+
+<p>
+  Add the lines <code>3 - 5</code> inside the
+  <code>&lt;ul class="nav"&gt;...&lt;/ul&gt;</code> element that you will find in the
+  <code>top_bar.html</code> file that is located in the
+  <code>templates/bit</code> directory.
+</p>
+
+
+<pre class="prettyprint linenums lang-html">
+&lt;ul class="nav"&gt;
+  ...
+  &lt;li class="&#123;% if html_class == 'contact-list' %&#125; active &#123;% endif %&#125;"&gt;
+    &lt;a href="&#123;&#123;url_for('contact_list')&#125;&#125;"&gt;&lt;i class="icon-list"&gt;&lt;/i&gt; Contact List&lt;/a&gt;
+  &lt;/li&gt;
+  ...
+&lt;/ul&gt;
+</pre>
+
+<p>
+  After refreshing the page
+  (<a href="http://localhost:8080/">http://localhost:8080/</a>),
+  you should be able to see the link on the top
+  and if you're in watching the contact list it should also be <code>active</code>.
+</p>
+
+<h4>Changing the redirect</h4>
+
+<p>
+  After creating a new contact we will now redirect the user to the contact
+  list instead of the welcome page and also going show a message the the new
+  contact was successfully created.
+</p>
+
+<p>
+  Find the following line in the contat_create handler:
+</p>
+
+<pre class="prettyprint">
+return flask.redirect(flask.url_for('welcome'))
+</pre>
+
+and replace it with the following:
+
+<pre class="prettyprint linenums">
+flask.flash('New contact was successfully created!', category='success')
+return flask.redirect(flask.url_for('contact_list', order='-created'))
+</pre>
+
+<p>
+  The first line is to flash the message that the creation was successful.
+  The argument <code>category</code> is optional and can be one of the
+  following: <code>error</code>, <code>success</code> or <code>info</code>.
+</p>
+
+<p>
+  In the second line if you noticed the we are using the <code>order='-created'</code>
+   in the <code>url_for</code> function, which will be translated to:
+  <a href="http://localhost:8080/contact/?order=-created">http://localhost:8080/contact/?order=-created</a>.
+  You can choose whatever order you like and you can also play with the url
+  by providing different orders for the fields that you have in the
+  <code>Contact</code> model. Use the <code>-</code> if you want the inverse
+  order and <code>,</code> to combine more than one field for order.
+</p>
+
+<p class="alert">
+  Extarnal reading: <a href="http://flask.pocoo.org/docs/patterns/flashing/">flask.flash</a>,
+  <a href="http://flask.pocoo.org/docs/api/#flask.redirect">flask.redirect</a>,
+  <a href="http://flask.pocoo.org/docs/api/#flask.url_for">flask.url_for</a>.
+</p>

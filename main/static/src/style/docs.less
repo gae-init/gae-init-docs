@@ -1,0 +1,113 @@
+
+.jumbotron {
+  img {
+    max-width: 100%;
+  }
+  .btn {
+    margin-bottom: 4px;
+  }
+
+  .links {
+    margin: @line-height-computed / 2 0;
+  }
+
+  @media (min-width: @screen-xs) {
+    .btn {
+      width: 138px;
+    }
+
+    .btn-lg {
+      width: 282px;
+    }
+  }
+
+  @media (max-width: @screen-xs) {
+    .btn {
+      display: block;
+    }
+  }
+}
+
+
+.social {
+  opacity: 0;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+}
+
+
+section  {
+  padding-top: 30px;
+  > .page-header {
+    color: #5a5a5a;
+  }
+}
+
+.reference > dt {
+  padding-top: 32px;
+}
+
+.reference {
+  h5 {
+    margin: 0;
+  }
+  dt {
+    padding-left: 16px;
+    font-family: @font-family-monospace;
+    font-size: @font-size-base * 1.1;
+    line-height: @line-height-base * 2;
+    .args {
+      font-weight: normal;
+      font-size: @font-size-base;
+    }
+  }
+  dd {
+    padding-left: 32px;
+    dl {
+      margin: 0;
+    }
+  }
+}
+
+.self-link {
+  &.active {
+    background-color: @brand-warning;
+  }
+  a {
+
+    display: none;
+    text-decoration: none;
+    color: @gray-light;
+    padding: 0 4px;
+    &:hover {
+      color: @text-color;
+      background-color: @gray-lighter;
+    }
+    &:before {
+      content: "¶";
+    }
+  }
+  &:hover a {
+    display: inline;
+  }
+}
+
+
+.tree-structure {
+  .popover {
+    font-family: @font-family-sans-serif;
+    word-wrap: normal;
+    word-break: normal;
+  }
+  .empty {
+    color: darken(@link-color, 20%);
+    &:hover {
+      color: darken(@link-color, 30%);
+    }
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+}

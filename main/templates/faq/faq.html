@@ -1,0 +1,39 @@
+# extends 'base.html'
+
+# block content
+  <div class="page-header">
+    <h1>
+      {{title}}
+      <small>The most common questions answered</small>
+    </h1>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <section id="faq">
+        <h4>Why CoffeeScript?</h4>
+        <p>
+          Because it rocks!
+        </p>
+        <h4>Can I use JavaScript instead of CoffeeScript?</h4>
+        <p>
+          Yes, but you will not rock.
+        </p>
+        <h4>Why LESS?</h4>
+        <p>
+          Because it rocks as well!
+        </p>
+        <h4>Can I use the traditional CSS instead of LESS?</h4>
+        <p>
+          Yes, but you will not rock.
+        </p>
+        <h4>It rocks, but I still don't get it. Can you help me?</h4>
+        <p>
+          Yes, you can ask questions using the <a href="{{url_for('feedback')}}">feedback form</a>
+          or by sending an email to: <strong>gaeinit</strong> at <strong>gmail</strong> dot <strong>com</strong>
+        </p>
+      </section>
+    </div>
+  </div>
+# endblock

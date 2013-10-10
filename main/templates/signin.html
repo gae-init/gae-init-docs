@@ -13,17 +13,17 @@
       </a>
 
       # if config.CONFIG_DB.facebook_app_id and config.CONFIG_DB.facebook_app_secret
-        <a class="btn btn-block btn-lg btn-facebook" href="{{facebook_signin_url}}">
+        <a class="btn btn-block btn-lg btn-facebook disabled">
           <i class="icon icon-facebook"></i>
           Sign in with Facebook
-        </a>
+        </btn>
       # endif
 
       # if config.CONFIG_DB.twitter_consumer_key and config.CONFIG_DB.twitter_consumer_secret
-        <a class="btn btn-block btn-lg btn-twitter" href="{{twitter_signin_url}}">
+        <a class="btn btn-block btn-lg btn-twitter disabled">
           <i class="icon icon-twitter"></i>
           Sign in with Twitter
-        </a>
+        </btn>
       # endif
 
       # if config.CONFIG_DB.github_client_id and config.CONFIG_DB.github_client_secret

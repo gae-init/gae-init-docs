@@ -1,0 +1,81 @@
+<p>
+  Since gae-init uses Bootstrap there are plenty sites that are offering
+  free and paid templates for it. Our personal favorite place to start is
+  the <a href="http://bootswatch.com">Bootswatch.com</a>.
+  For this example we are going to use the
+  <a href="http://bootswatch.com/cerulean/">Cerulean</a>
+  but feel free to choose whatever you want.
+</p>
+
+<p>
+  Bootswatch is offering two options for downloading the themes: in pure CSS
+  format or in LESS format. Since we are supporting LESS files is preferable
+  to download the two LESS files that you can find for each of the themes.
+</p>
+
+<p>
+  In order to experiment with more themes we will create a new directory
+  called <code>theme</code> under the directory
+  <code>main/static/src/less</code>. Inside this new directory for every
+  theme that we would like to test, we will create another directory with it's own
+  name.
+</p>
+
+<p>
+  Follow the steps below for any theme that you would like to test from the
+  Bootswatch's collection:
+</p>
+
+<ol>
+  <li>Create a new directory called <code>cerulean</code></li>
+  <li>Visit the <a href="http://bootswatch.com/cerulean/">Cerulean</a></li>
+  <li>Download the <code>variables.less</code> and <code>bootswatch.less</code></li>
+  <li>Put them in the new dicrectory <code>cerulean</code> under <code>main/static/src/less/theme</code></li>
+</ol>
+
+<p>
+  After following these steps your directory structure should look like this:
+</p>
+
+<pre class="prettyprint linenums">
+<i class="icon-folder-open"></i> static/
+    <i class="icon-folder-open"></i> src/
+        <i class="icon-folder-open"></i> less/
+            <i class="icon-file"></i> base.less
+            <i class="icon-folder-open"></i> theme/
+                <i class="icon-folder-open"></i> cerulean/
+                    <i class="icon-file"></i> bootswatch.less
+                    <i class="icon-file"></i> variables.less
+</pre>
+
+<p>
+  Open the <code>style.less</code> that is located in the
+  <code>main/static/src/less</code> and add the following lines before the
+  <code>@import base</code>
+</p>
+
+<pre class="prettyprint linenums">
+...
+// Theme
+@import "theme/cerulean/bootswatch";
+@import "theme/cerulean/variables";
+...
+</pre>
+
+
+<p>
+  To test it locally you will have to compile the LESS files into CSS and this
+  is achieved by using the <code>build.py</code> script. Run the script from the
+  <code>main</code> directory like this (or you could provide the <code>-w</code>
+  to monitor the LESS files for changes and compile them on save):
+</p>
+
+<pre class="prettyprint linenums">
+$ ./build.py -c
+</pre>
+
+<p>
+  If the script compiled without any error then you should see the new
+  theme by refreshing your browser or by visiting:
+  <a href="http://localhost:8080/">http://localhost:8080</a>
+</p>
