@@ -379,7 +379,6 @@ def create_user_db(name, username, email='', **params):
       **params
     )
   user_db.put()
-  send_new_user_notification(user_db)
   return user_db
 
 
@@ -397,27 +396,3 @@ def signin_user_db(user_db):
   else:
     flask.flash('Sorry, but you could not sign in.', category='danger')
     return flask.redirect(flask.url_for('signin'))
-
-
-def send_new_user_notification(user_db):
-  if not config.CONFIG_DB.feedback_email:
-    return
-  try:
-    mail.send_mail(
-        sender=config.CONFIG_DB.feedback_email,
-        to=config.CONFIG_DB.feedback_email,
-        subject='[%s] New user: %s' % (
-            config.CONFIG_DB.brand_name,
-            user_db.name,
-          ),
-        reply_to=config.CONFIG_DB.feedback_email,
-        body='email: %s\nfederated: %s\nfacebook: %s\ntwitter: %s\ngithub: %s' % (
-            user_db.email,
-            user_db.federated_id,
-            user_db.facebook_id,
-            user_db.twitter_id,
-            user_db.github_id,
-          ),
-      )
-  except:
-    pass
