@@ -49,7 +49,7 @@ section  {
 }
 
 .reference > dt {
-  padding-top: 32px;
+  padding-top: @navbar-height;
 }
 
 .reference {
@@ -79,7 +79,6 @@ section  {
     background-color: @brand-warning;
   }
   a {
-
     display: none;
     text-decoration: none;
     color: @gray-light;
@@ -94,25 +93,5 @@ section  {
   }
   &:hover a {
     display: inline;
-  }
-}
-
-
-.tree-structure {
-  .popover {
-    font-family: @font-family-sans-serif;
-    word-wrap: normal;
-    word-break: normal;
-  }
-  .empty {
-    color: darken(@link-color, 20%);
-    &:hover {
-      color: darken(@link-color, 30%);
-    }
-  }
-
-  a {
-    cursor: pointer;
-    text-decoration: none;
   }
 }

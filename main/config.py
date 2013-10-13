@@ -49,8 +49,7 @@ REFERENCE_DEF = {
         ('json_value', 'value'),
         ('generate_more_url', 'more_cursor, base_url=None'),
         ('uuid', ''),
-        ('format_datetime_utc', 'timestamp'),
-        ('format_datetime_ago', 'timestamp'),
+        ('slugify', ''),
       ],
     'auth': [
         ('current_user_id', ''),

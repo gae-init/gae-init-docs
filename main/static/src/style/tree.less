@@ -1,0 +1,38 @@
+.tree-structure {
+  .popover {
+    font-family: @font-family-sans-serif;
+    word-wrap: normal;
+    word-break: normal;
+  }
+  .file {
+    &:before {
+      content: @file-text;
+      margin-right: .4em;
+      .icon-FontAwesome();
+    }
+    &.directory {
+      &:before {
+        content: @folder-open;
+      }
+      &:after {
+        content: '/';
+      }
+    }
+    &.directory-close {
+      &:before {
+        content: @folder-close;
+      }
+    }
+    &.directory-empty {
+      color: darken(@link-color, 10%);
+      &:hover {
+        color: darken(@link-color, 20%);
+      }
+    }
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+}

@@ -7,6 +7,10 @@
         <img src="/p/img/{{slugify(config.CONFIG_DB.brand_name)}}.svg" alt="{{config.CONFIG_DB.brand_name}}">
       </h1>
       <p class="lead">
+        <a href="http://gae-init.appspot.com"><strong>gae-init</strong></a>
+        is the easiest way to start new applications on Google App Engine.
+      </p>
+      <p class="lead">
         The docs are still in progress. Feel free to
         <a href="{{url_for('feedback')}}">send feedback</a>
         with your questions or just <a href="https://github.com/gae-init/gae-init-docs">contribute</a>.
@@ -53,7 +57,6 @@
     <div class="col-sm-4">
       <h3>Features</h3>
       <ul>
-        <li>Responsive Design</li>
         <li>Open ID sign in</li>
         <li>
           Secret keys are stored in the Datastore.
@@ -68,7 +71,7 @@
           JSON services with more URL, limits, filter & orders.
         </li>
         <li>Feedback form</li>
-        <li>Much more..</li>
+        <li><a href="{{url_for('features')}}">Much more...</a></li>
       </ul>
     </div>
     <div class="col-sm-4">
