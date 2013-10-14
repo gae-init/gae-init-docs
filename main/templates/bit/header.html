@@ -1,4 +1,4 @@
-<header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+<header class="navbar navbar-inverse" role="banner">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -12,7 +12,7 @@
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
         <li class="{{'active' if html_class.find('what') >= 0 else ''}}">
-          <a href="{{url_for('what')}}"><i class="icon-book"></i>What is gae-init?</a>
+          <a href="{{url_for('what')}}">What is gae-init?</a>
         </li>
         <li class="{{'active' if html_class.find('features') >= 0 else ''}}">
           <a href="{{url_for('features')}}">Features</a>

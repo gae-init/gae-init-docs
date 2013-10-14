@@ -27,11 +27,12 @@
 
   <body>
     <div id="wrap">
-      # include 'bit/header.html'
       # include 'bit/announcement.html'
-      # block header
-      # endblock
       <div class="container">
+        # include 'bit/header.html'
+        # block header
+        # endblock
+
         # include 'bit/notifications.html'
         # block content
         # endblock
