@@ -1,15 +1,8 @@
-# extends 'base.html'
+# extends 'base_doc.html'
 
-# block content
-  <div class="page-header">
-    <h1>
-      {{title}}
-    </h1>
-  </div>
+# block content_doc
   <div class="row">
-    <div class="col-md-3">
-    </div>
-    <div class="col-md-9">
+    <div class="col-md-12">
       <p class="lead">
         From the root directory you can excecute the <code>run.py</code> script
         which has the following arguments:
@@ -17,75 +10,73 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Flag</th>
-            <th>Name</th>
-            <th>Description</th>
+            <th class="col-xs-1">Flag</th>
+            <th class="col-xs-3 hidden-xs">Name</th>
+            <th class="col-xs-8">Description</th>
           </tr>
         </thead>
-
         <tbody>
           <tr>
             <td><code>-w</code></td>
-            <td><code>--watch</code></td>
+            <td class="hidden-xs"><code>--watch</code></td>
             <td>Watch files for changes when running the development web server</td>
           </tr>
           <tr>
             <td><code>-c</code></td>
-            <td><code>--clean</code></td>
+            <td class="hidden-xs"><code>--clean</code></td>
             <td>Recompiles files when running the development web server</td>
           </tr>
           <tr>
             <td><code>-m</code></td>
-            <td><code>--minify</code></td>
+            <td class="hidden-xs"><code>--minify</code></td>
             <td>Compiles files into minified version before deploying</td>
           </tr>
           <tr>
             <td><code>-s</code></td>
-            <td><code>--start</code></td>
+            <td class="hidden-xs"><code>--start</code></td>
             <td>Starts the <code>dev_appserver.py</code> with datastore and blobstore paths</td>
           </tr>
           <tr>
             <td><code>-o</code></td>
-            <td><code>--host</code></td>
+            <td class="hidden-xs"><code>--host</code></td>
             <td>The host to start the <code>dev_appserver.py</code></td>
           </tr>
           <tr>
             <td><code>-p</code></td>
-            <td><code>--port</code></td>
+            <td class="hidden-xs"><code>--port</code></td>
             <td>The port to start the <code>dev_appserver.py</code></td>
           </tr>
           <tr>
             <td><code>-f</code></td>
-            <td><code>--flush</code></td>
+            <td class="hidden-xs"><code>--flush</code></td>
             <td>Clears the datastore, blobstore, etc</td>
           </tr>
           <tr>
-            <th colspan="3">gae-init-babel specific only</th>
+            <th colspan="3">gae-init-babel only</th>
           </tr>
-
           <tr>
             <td><code>-e</code></td>
-            <td><code>--pybabel-extract</code></td>
+            <td class="hidden-xs"><code>--pybabel-extract</code></td>
             <td>Extract messages from source files and generate messages.pot (<code>pybabel extract..</code>)</td>
           </tr>
           <tr>
             <td><code>-u</code></td>
-            <td><code>--pybabel-update</code></td>
+            <td class="hidden-xs"><code>--pybabel-update</code></td>
             <td>Update existing message catalogs from messages.pot (<code>pybabel update..</code>)</td>
           </tr>
           <tr>
             <td><code>-l</code></td>
-            <td><code>--pybabel-init</code></td>
+            <td class="hidden-xs"><code>--pybabel-init</code></td>
             <td>Create new message catalogs from messages.pot (<code>pybabel init..</code>)</td>
           </tr>
           <tr>
             <td><code>-i</code></td>
-            <td><code>--pybabel-init-missing</code></td>
+            <td class="hidden-xs"><code>--pybabel-init-missing</code></td>
             <td>Create new message catalogs from messages.pot that are defined in config.py and still not present (<code>pybabel init..</code>)</td>
           </tr>
           <tr>
             <td><code>-b</code></td>
-            <td><code>--pybabel-compile</code></td>
+            <td class="hidden-xs"><code>--pybabel-compile</code></td>
             <td>Compile message catalogs to MO files (<code>pybabel compile..</code>)</td>
           </tr>
         </tbody>

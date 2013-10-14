@@ -11,49 +11,33 @@
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <li class="{% if html_class == 'welcome' %} active {% endif %}">
-          <a href="{{url_for('welcome')}}"><i class="icon-home"></i> Home</a>
+        <li class="{{'active' if html_class.find('what') >= 0 else ''}}">
+          <a href="{{url_for('what')}}"><i class="icon-book"></i>What is gae-init?</a>
         </li>
-        <li class="{% if html_class == 'tutorial' %} active {% endif %}">
-          <a href="{{url_for('tutorial')}}"><i class="icon-search"></i> Tutorial</a>
+        <li class="{{'active' if html_class.find('features') >= 0 else ''}}">
+          <a href="{{url_for('features')}}">Features</a>
         </li>
-        <li class="{% if html_class == 'tree' %} active {% endif %}">
-          <a href="{{url_for('tree')}}"><i class="icon-sitemap"></i> Source Tree</a>
-        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="icon-book"></i>
-            Documentation
+            <i class="icon-trophy"></i>
+            Live Demos
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li>
-              <a href="{{url_for('features')}}">Features</a>
-            </li>
-            <li>
-              <a href="{{url_for('requirement')}}">Requirements</a>
-            </li>
-            <li>
-              <a href="{{url_for('run')}}">Run script</a>
-            </li>
-            <li>
-              <a href="{{url_for('doc')}}">Developer's Guide</a>
-            </li>
-            <li>
-              <a href="{{url_for('reference')}}">API Reference</a>
-            </li>
-            <li>
-              <a href="{{url_for('faq')}}">FAQ</a>
-            </li>
+            <li><a href="http://gae-init.appspot.com" target="_blank"><i class="icon-briefcase"></i> gae-init</a></li>
+            <li><a href="http://babel.gae-init.appspot.com" target="_blank"><i class="icon-globe"></i> gae-init-babel</a></li>
+            <li><a href="http://upload.gae-init.appspot.com" target="_blank"><i class="icon-cloud"></i> gae-init-upload</a></li>
+            <li><a href="http://debug.gae-init.appspot.com" target="_blank"><i class="icon-bug"></i> gae-init-debug</a></li>
+            <li class="divider"></li>
+            <li><a href="https://github.com/gae-init" target="_blank"><i class="icon-github"></i> View on GitHub</a></li>
           </ul>
         </li>
-        # include 'bit/contact_menu.html'
-      </ul>
-      # if current_user.admin
-        <ul class="nav navbar-nav navbar-right">
+        # if current_user.admin
           # include 'bit/user_menu.html'
-        </ul>
-      # endif
+        # endif
+      </ul>
     </nav>
   </div>
 </header>

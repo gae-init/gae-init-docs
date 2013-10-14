@@ -1,0 +1,52 @@
+# extends 'base.html'
+
+# block content
+  <div class="row">
+    <div class="col-sm-4 col-md-3 col-lg-2">
+      <div class="page-header text-center hidden-xs">
+        <h1>
+          <a href="{{url_for('welcome')}}"><span class="icon-home"></span></a>
+        </h1>
+      </div>
+      <ul class="nav nav-pills nav-stacked sidebar">
+        <li class="{{'active' if html_class.find('what') >= 0 else ''}}">
+          <a href="{{url_for('what')}}">What is <strong>gae-init</strong>?</a>
+        </li>
+        <li class="{{'active' if html_class.find('features') >= 0 else ''}}">
+          <a href="{{url_for('features')}}">Features</a>
+        </li>
+        <li class="{{'active' if html_class.find('requirement') >= 0 else ''}}">
+          <a href="{{url_for('requirement')}}">Requirements</a>
+        </li>
+        <li class="{{'active' if html_class.find('tutorial') >= 0 else ''}}">
+          <a href="{{url_for('tutorial')}}">Tutorial</a>
+        </li>
+        <li class="{{'active' if html_class.find('tree') >= 0 else ''}}">
+          <a href="{{url_for('tree')}}">Source Tree</a>
+        </li>
+        <li class="{{'active' if html_class.find('run') >= 0 else ''}}">
+          <a href="{{url_for('run')}}">Run script</a>
+        </li>
+        <li class="{{'active' if html_class.find('guide') >= 0 else ''}}">
+          <a href="{{url_for('guide')}}">Developer's Guide</a>
+        </li>
+        <li class="{{'active' if html_class.find('reference') >= 0 else ''}}">
+          <a href="{{url_for('reference')}}">API Reference</a>
+        </li>
+        <li class="{{'active' if html_class.find('faq') >= 0 else ''}}">
+          <a href="{{url_for('faq')}}">FAQ</a>
+        </li>
+        <li class="{{'active' if html_class.find('feedback') >= 0 else ''}}">
+          <a href="{{url_for('feedback')}}">Feedback</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-8 col-md-9 col-lg-10">
+      <div class="page-header">
+        <h1>{{title}}</h1>
+      </div>
+      # block content_doc
+      # endblock
+    </div>
+  </div>
+# endblock

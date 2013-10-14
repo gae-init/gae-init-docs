@@ -1,13 +1,9 @@
-# extends 'base.html'
+# extends 'base_doc.html'
 # import 'macro/forms.html' as forms
 
-# block content
-  <div class="page-header">
-    <h1>{{title}} <small>Any questions or suggestions are welcome</small></h1>
-  </div>
-
+# block content_doc
   <div class="row">
-    <div class="col-md-4 col-sm-6">
+    <div class="col-md-6">
       <form method="POST" action="." novalidate>
         <fieldset>
           {{form.csrf_token}}

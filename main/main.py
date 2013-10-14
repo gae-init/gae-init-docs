@@ -39,6 +39,15 @@ def sitemap():
   return response
 
 
+@app.route('/what/')
+def what():
+  return flask.render_template(
+      'coming_soon.html',
+      html_class='what',
+      title='What is gae-init?',
+    )
+
+
 @app.route('/example/')
 def example():
   return flask.render_template(
@@ -54,6 +63,15 @@ def tree():
       'tree/tree.html',
       html_class='tree',
       title='Source Tree',
+    )
+
+
+@app.route('/source/')
+def source():
+  return flask.render_template(
+      'coming_soon.html',
+      html_class='source',
+      title='Source Code',
     )
 
 
@@ -75,11 +93,11 @@ def requirement():
     )
 
 
-@app.route('/doc/')
-def doc():
+@app.route('/guide/')
+def guide():
   return flask.render_template(
       'coming_soon.html',
-      html_class='doc',
+      html_class='guide',
       title="Developer's Guide",
     )
 
@@ -117,6 +135,15 @@ def faq():
       'faq/faq.html',
       html_class='faq',
       title='FAQ',
+    )
+
+
+@app.route('/contact/')
+def contact():
+  return flask.render_template(
+      'coming_soon.html',
+      html_class='contact',
+      title='Contact',
     )
 
 

@@ -1,29 +1,9 @@
-# extends 'base.html'
+# extends 'base_doc.html'
 
-# block content
-  <div class="page-header">
-    <h1>
-      {{title}}
-    </h1>
-  </div>
+# block content_doc
   <div class="row">
-    <div class="col-sm-6">
-      <h4>Tech Stack</h4>
-      <ul>
-        <li><a href="https://developers.google.com/appengine/">Google App Engine</a></li>
-        <li><a href="https://developers.google.com/appengine/docs/python/python27/using27">Python 2.7</a></li>
-        <li><a href="https://developers.google.com/appengine/docs/python/ndb/">NDB</a></li>
-        <li><a href="http://jinja.pocoo.org/docs/">Jinja2</a></li>
-        <li><a href="http://flask.pocoo.org/">Flask</a></li>
-        <li><a href="http://jquery.com/">jQuery</a></li>
-        <li><a href="http://coffeescript.org/">CoffeeScript</a></li>
-        <li><a href="http://lesscss.org/">LessCSS</a></li>
-        <li><a href="http://twitter.github.com/bootstrap/">Bootstrap</a></li>
-        <li><a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome <i class="icon-flag"></i></a></li>
-        <li><a href="http://ricostacruz.com/nprogress/">NProgress</a></li>
-        <li><a href="http://momentjs.com/">Moment.js</a></li>
-        <li> OpenID sign in (Google, Facebook, Twitter, GitHub)</li>
-      </ul>
+    <div class="col-md-5">
+      # include 'doc/tech_stack.html'
       <h5>gae-init-babel only</h5>
       <ul>
         <li><a href="http://babel.edgewall.org/wiki/Download">Babel</a></li>
@@ -37,42 +17,57 @@
         <li><a href="https://github.com/mgood/flask-debugtoolbar">Flask DebugToolbar</a></li>
         <li><a href="https://github.com/kamens/gae_mini_profiler">gae_mini_profiler</a></li>
       </ul>
-      <h4>Forks</h4>
+      <h3>Forks</h3>
       <ul>
         <li>Add i18n and L10n support through <a href="http://babel.gae-init.appspot.com">gae-init-babel</a></li>
         <li>Start uploading files to Google Cloud Storage through <a href="http://upload.gae-init.appspot.com">gae-init-upload</a></li>
         <li>Start monitoring your requests and more through <a href="http://debug.gae-init.appspot.com">gae-init-debug</a></li>
       </ul>
     </div>
-    <div class="col-sm-6">
-      <h4>Highlights</h4>
+    <div class="col-md-7">
+      <h3>Highlights</h3>
       <ul>
-        <li>JSON services with more URL, limits, filters, orders and more</li>
-        <li>JSONP support by providing a <code>&callback</code> argument</li>
+        <li>
+          JSON services with
+          <a href="{{url_for('user_list_service')}}">more URL</a>,
+          <a href="{{url_for('user_list_service', limit=8)}}">limits</a>,
+          <a href="{{url_for('user_list_service', admin='true')}}">filters</a>,
+          <a href="{{url_for('user_list_service', order='name')}}">orders</a> and
+          <a href="{{url_for('user_list_service', limit=4, order='name', admin='true')}}">more..</a>
+        </li>
+        <li>JSONP support by providing a <a href="{{url_for('user_list_service', limit=2, order='name', callback='hello')}}"><code>&amp;callback</code></a> argument to JSON services</li>
         <li>Custom pages for error handlings</li>
-        <li>Feedback form</li>
+        <li>
+            Jinja2 template macros for
+            <a href="{{url_for('feedback')}}">form inputs</a>,
+            <a href="{{url_for('user_list', order='name')}}">sort ordering links</a> and
+            <a href="{{url_for('user_list', limit=4)}}">easy pagination</a>
+          </li>
         <li>Secret keys and other settings are stored securely in Datastore</li>
-        <li>Admin console to manage secrete keys and other settings</li>
+        <li>Admin console to manage secret keys and other settings</li>
         <li>Mobile first through Bootstrap 3</li>
         <li>Automatic redirect to where you were after sign-in</li>
         <li>Showing relative time for <code>&lt;time datetime='...'&gt;</code></li>
         <li>Add <code>.btn-loading</code> and your buttons will have the loading functionality</li>
-        <li>Multiple OAuth options</li>
+        <li>Working <a href="{{url_for('feedback')}}">feedback form</a></li>
+        <li>Multiple OAuth options to <a href="{{url_for('signin')}}">sign-in</a></li>
         <li>Add easily any other OAuth provider</li>
+        <li>Easy pagination with custom wrappers using NDB cursors</li>
+        <li>Gravatar support for <a href="{{url_for('profile')}}">user profile</a></li>
+        <li>Secure cookies through Flask's sessions</li>
         <li>HTML5 Rocks</li>
         <li><a href="http://validator.w3.org/check?verbose=1&amp;uri={{request.host_url[:-1]}}{{request.path}}">This document was successfully checked as HTML5!</a></li>
-        <li>Easy pagination</li>
-        <li>Gravatar support for user profiles</li>
-        <li>Much more</li>
+        <li>For SEO you will find <a href="{{url_for('sitemap')}}">sitemaps.xml</a>, <a href="/robots.txt">robots.txt</a> and <a href="/favicon.ico">favicon.ico</a></li>
+        <li>Many more small details and optimizations</li>
       </ul>
-      <h4>Development</h4>
+      <h3>Development</h3>
       <ul>
-        <li>Custom script to run, clean, watch and minify your app</li>
+        <li>Custom <a href="{{url_for('run')}}">run script</a> to clean, watch, minify and run your app locally</li>
         <li>Compile on save <code>*.coffee</code> via custom script</li>
         <li>Compile on save <code>*.less</code> via custom script</li>
         <li>Minify and concatenate scripts and styles</li>
-        <li>Live reload for your page through Grunt</li>
         <li>Zip libraries for faster uploads</li>
+        <li>Live reload for your page through Grunt</li>
         <li>Use vanila JavaScript insted of CoffeeScript</li>
         <li>Use vanila CSS instead of LessCSS</li>
       </ul>

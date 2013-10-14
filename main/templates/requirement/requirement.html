@@ -1,16 +1,8 @@
-# extends 'base.html'
+# extends 'base_doc.html'
 
-# block content
-
-  <div class="page-header">
-    <h1>
-      {{title}}
-      <small>Before you start you should have these!</small>
-    </h1>
-  </div>
-
+# block content_doc
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3 hide">
       <div class="docs-sidebar">
         <ul class="nav nav-list docs-sidenav">
           # for section in config.REQUIREMENT
@@ -23,7 +15,7 @@
         </ul>
       </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-12">
       # for section in config.REQUIREMENT
         <section id="{{section[0]}}">
           <div class="page-header">
