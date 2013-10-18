@@ -42,7 +42,7 @@ def sitemap():
 @app.route('/what/')
 def what():
   return flask.render_template(
-      'coming_soon.html',
+      'doc/what.html',
       html_class='what',
       title='What is gae-init?',
     )
@@ -116,7 +116,7 @@ def reference():
   return flask.render_template(
       'reference/reference.html',
       html_class='reference',
-      title='API Reference',
+      title='Reference',
     )
 
 

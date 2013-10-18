@@ -14,8 +14,14 @@
         <li class="{{'active' if html_class.find('what') >= 0 else ''}}">
           <a href="{{url_for('what')}}">What is gae-init?</a>
         </li>
+        <li class="{{'active' if html_class.find('reference') >= 0 else ''}}">
+          <a href="{{url_for('reference')}}">Reference</a>
+        </li>
         <li class="{{'active' if html_class.find('features') >= 0 else ''}}">
           <a href="{{url_for('features')}}">Features</a>
+        </li>
+        <li class="{{'active' if html_class.find('faq') >= 0 else ''}}">
+          <a href="{{url_for('faq')}}">FAQ</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
