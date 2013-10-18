@@ -28,7 +28,6 @@ DEFAULT_DB_LIMIT = 64
 REQUIREMENT = [
   ('gae', 'Google App Engine', 'Required'),
   ('nodejs', 'node.js', 'Required'),
-  ('sublime', 'Sublime', 'Optional'),
 ]
 
 REFERENCE = [
