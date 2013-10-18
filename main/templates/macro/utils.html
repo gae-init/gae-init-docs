@@ -7,3 +7,19 @@
     <a href="{{url_for(endpoint, order=property)}}">{{title}}</a>
   #endif
 # endmacro
+
+
+# macro next_link(more_url, caption='Next Page')
+  # if more_url
+    <ul class="pager">
+      <li><a href="{{more_url}}" rel="nofollow">{{caption}}</a></li>
+    </ul>
+  # endif
+# endmacro
+
+# macro prefetch_link(url)
+  # if url
+    <link rel="prerender" href="{{url}}" />
+    <link rel="prefetch" href="{{url}}" />
+  # endif
+# endmacro
