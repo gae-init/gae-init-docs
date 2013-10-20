@@ -25,11 +25,14 @@ window.init_tree = () ->
 
 tooltips =
   'gae-init': 'The project parent directory.'
+  'Gruntfile.coffee': 'Our configuration for the grunt tasks. <hr> <a href="http://gruntjs.com/" target="_blank">Read More <i class=" icon-external-link"></i></a>'
+  'package.json': 'The dependencies that needs to be installed via npm: CoffeeScript, LESS, UglifyJS, Grunt.'
+  'run.py': 'The run script that among other things also comiples and minifies *.less and *.coffee files. <hr>Run <code>./run.py -h</code> for more.'
+  
   'README.md': 'The small introduction and the description of the project.'
   'main': 'This is where the main Google App Engine lives. Whatever has to do with it, should go in this directory.'
   'admin.py': 'The handler for the administrative configuration of the application.'
   'auth.py': 'Authenticated user related handlers, functions and decorators. <a href="/reference#auth">Read more</a>'
-  'run.py': 'The run script that among other things also comiples and minifies *.less and *.coffee files. <hr>Run <code>./run.py -h</code> for more.'
   'config.py': 'Global configuration contstants. <hr> <a href="/reference#config">Read more</a>'
   'main.py': 'The main entry point and where the majority of the handlers are defined. For bigger projects the handlers should be splitted in different files.'
   'model.py': 'The models for the application.'
@@ -37,7 +40,6 @@ tooltips =
   'util.py': 'Extra utilities to help you with the stuff <hr> <a href="/reference#util">Read more</a>'
 
   'app.yaml': 'The Python Application Configuration file. <hr> <a href="https://developers.google.com/appengine/docs/python/config/appconfig" target="_blank">Read More <i class=" icon-external-link"></i></a>'
-  'package.json': 'The dependencies that needs to be installed via npm: CoffeeScript, LESS, UglifyJS, Grunt.'
 
   'static': 'All the static files, including images, scripts, stylesheets, front end libraries and more. If it is not Python related then most likely it goes into this directory.'
   'favicon.ico': 'Update this file with your own favicon.ico.'
