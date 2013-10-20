@@ -25,10 +25,10 @@ window.init_tree = () ->
 
 tooltips =
   'gae-init': 'The project parent directory.'
-  'Gruntfile.coffee': 'Our configuration for the grunt tasks. <hr> <a href="http://gruntjs.com/" target="_blank">Read More <i class=" icon-external-link"></i></a>'
+  'Gruntfile.coffee': 'The configuration for the Grunt tasks. <hr> <a href="http://gruntjs.com/" target="_blank">Read More <i class=" icon-external-link"></i></a>'
   'package.json': 'The dependencies that needs to be installed via npm: CoffeeScript, LESS, UglifyJS, Grunt.'
   'run.py': 'The run script that among other things also comiples and minifies *.less and *.coffee files. <hr>Run <code>./run.py -h</code> for more.'
-  
+
   'README.md': 'The small introduction and the description of the project.'
   'main': 'This is where the main Google App Engine lives. Whatever has to do with it, should go in this directory.'
   'admin.py': 'The handler for the administrative configuration of the application.'
