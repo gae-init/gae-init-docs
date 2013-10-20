@@ -31,6 +31,8 @@ tooltips =
   'auth.py': 'Authenticated user related handlers, functions and decorators. <a href="/reference#auth">Read more</a>'
   'run.py': 'The run script that among other things also comiples and minifies *.less and *.coffee files. <hr>Run <code>./run.py -h</code> for more.'
   'config.py': 'Global configuration contstants. <hr> <a href="/reference#config">Read more</a>'
+
+  'temp': 'All files used for local App Engine Database are in this folder. You can dump all your data by deleting this folder. It will be created automatically.'
   'main.py': 'The main entry point and where the majority of the handlers are defined. For bigger projects the handlers should be splitted in different files.'
   'model.py': 'The models for the application.'
   'modelx.py': 'The extended properties for the models.'
