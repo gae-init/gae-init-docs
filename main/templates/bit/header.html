@@ -3,9 +3,9 @@
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span class="fa fa-bar"></span>
+        <span class="fa fa-bar"></span>
+        <span class="fa fa-bar"></span>
       </button>
       <a class="navbar-brand" href="{{url_for('welcome')}}">{{config.CONFIG_DB.brand_name}}</a>
     </div>
@@ -27,20 +27,20 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="icon-trophy"></i>
+            <i class="fa fa-trophy"></i>
             Source & Demos
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
             <li class="dropdown-header">Live Demos</li>
-            <li><a href="http://gae-init.appspot.com" target="_blank"><i class="icon-briefcase"></i> gae-init</a></li>
-            <li><a href="http://babel.gae-init.appspot.com" target="_blank"><i class="icon-globe"></i> gae-init-babel</a></li>
-            <li><a href="http://upload.gae-init.appspot.com" target="_blank"><i class="icon-cloud"></i> gae-init-upload</a></li>
-            <li><a href="http://debug.gae-init.appspot.com" target="_blank"><i class="icon-bug"></i> gae-init-debug</a></li>
+            <li><a href="http://gae-init.appspot.com" target="_blank"><i class="fa fa-briefcase fa-fw"></i> gae-init</a></li>
+            <li><a href="http://babel.gae-init.appspot.com" target="_blank"><i class="fa fa-globe fa-fw"></i> gae-init-babel</a></li>
+            <li><a href="http://upload.gae-init.appspot.com" target="_blank"><i class="fa fa-cloud fa-fw"></i> gae-init-upload</a></li>
+            <li><a href="http://debug.gae-init.appspot.com" target="_blank"><i class="fa fa-bug fa-fw"></i> gae-init-debug</a></li>
             <li class="divider"></li>
             <li class="dropdown-header">Source Code</li>
-            <li><a href="https://github.com/gae-init" target="_blank"><i class="icon-github"></i> View on GitHub</a></li>
-            <li><a href="https://bitbucket.org/lipis" target="_blank"><i class="icon-bitbucket"></i> View on Bitbucket</a></li>
+            <li><a href="https://github.com/gae-init" target="_blank"><i class="fa fa-github fa-fw"></i> View on GitHub</a></li>
+            <li><a href="https://bitbucket.org/lipis" target="_blank"><i class="fa fa-bitbucket fa-fw"></i> View on Bitbucket</a></li>
           </ul>
         </li>
         # if current_user.admin

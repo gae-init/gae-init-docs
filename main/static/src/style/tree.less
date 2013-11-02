@@ -6,13 +6,19 @@
   }
   .file {
     &:before {
-      content: @file-text;
+      content: @fa-var-file-text-o;
       margin-right: .4em;
-      .icon-FontAwesome();
+      display: inline-block;
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     &.directory {
       &:before {
-        content: @folder-open;
+        content: @fa-var-folder-open-o;
       }
       &:after {
         content: '/';
@@ -20,7 +26,7 @@
     }
     &.directory-close {
       &:before {
-        content: @folder-close;
+        content: @fa-var-folder-o;
       }
     }
     &.directory-empty {
