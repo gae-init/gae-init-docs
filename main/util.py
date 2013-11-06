@@ -178,7 +178,7 @@ def generate_more_url(more_cursor, base_url=None, cursor_name='cursor'):
 def uuid():
   ''' Generates universal unique identifier
   '''
-  return str(uuid4()).replace('-', '')
+  return uuid4().hex
 
 
 _slugify_strip_re = re.compile(r'[^\w\s-]')
@@ -197,3 +197,4 @@ def slugify(value):
 # Lambdas
 ################################################################################
 strip_filter = lambda x: x.strip() if x else ''
+email_filter = lambda x: x.lower().strip() if x else ''

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from google.appengine.ext import ndb
-from uuid import uuid4
+import util
 import os
 import modelx
 
@@ -33,9 +33,7 @@ class Config(Base, modelx.ConfigX):
   facebook_app_id = ndb.StringProperty(default='')
   facebook_app_secret = ndb.StringProperty(default='')
   feedback_email = ndb.StringProperty(default='')
-  flask_secret_key = ndb.StringProperty(default=str(uuid4()).replace('-', ''))
-  github_client_id = ndb.StringProperty(default='')
-  github_client_secret = ndb.StringProperty(default='')
+  flask_secret_key = ndb.StringProperty(default=util.uuid())
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
 
@@ -48,8 +46,6 @@ class Config(Base, modelx.ConfigX):
       'facebook_app_secret',
       'feedback_email',
       'flask_secret_key',
-      'github_client_id',
-      'github_client_secret',
       'twitter_consumer_key',
       'twitter_consumer_secret',
     })
