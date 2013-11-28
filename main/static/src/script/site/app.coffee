@@ -1,8 +1,8 @@
 $ ->
   init_common()
   setTimeout ->
-    ($ '.social').css('opacity', '1')
-  , 2000
+      ($ '.social').css('opacity', '1')
+    , 2000
 
 $ -> ($ 'html.welcome').each ->
   ($ 'abbr').tooltip()
@@ -12,6 +12,9 @@ $ -> ($ 'html.profile').each ->
   init_profile()
 
 $ -> ($ 'html.feedback').each ->
+
+$ -> ($ 'html.user').each ->
+  init_user()
 
 $ -> ($ 'html.admin-config').each ->
   init_admin_config()
