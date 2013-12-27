@@ -1,6 +1,6 @@
 {
   "name": "gae-init",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
   "licenses": [
     {
@@ -8,10 +8,14 @@
       "url": "http://opensource.org/licenses/MIT"
     }
   ],
+  "repository" : {
+    "type": "git",
+    "url": "http://github.com/gae-init"
+  },
   "dependencies": {
     "coffee-script": "~1",
     "less": "~1",
-    "uglify-js": "~1"
+    "uglify-js": "~2"
   },
   "devDependencies": {
     "grunt": "0.4.x",

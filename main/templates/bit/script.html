@@ -1,6 +1,5 @@
 # for module in config.SCRIPTS_MODULES
   # if config.DEVELOPMENT
-    <script src="http://localhost:35729/livereload.js"></script>
     # for script in config.SCRIPTS[module]
       <script src="/p/{{script.replace('.coffee', '.js').replace('src/script/', 'dst/script/')}}?{{config.CURRENT_VERSION_ID}}"></script>
     # endfor
@@ -13,3 +12,7 @@
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
   </script>
 # endfor
+
+# if config.DEVELOPMENT
+  <script src="http://localhost:35729/livereload.js"></script>
+# endif

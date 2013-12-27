@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
+import logging
+
+from flask.ext import wtf
 from google.appengine.api import mail
-from flaskext import wtf
 import flask
+
 import config
-import model
 import util
 
 app = flask.Flask(__name__)
@@ -13,9 +15,14 @@ app.jinja_env.line_statement_prefix = '#'
 app.jinja_env.line_comment_prefix = '##'
 app.jinja_env.globals.update(slugify=util.slugify)
 
+import admin
 import auth
 import user
-import admin
+
+
+if config.DEVELOPMENT:
+  from werkzeug import debug
+  app.wsgi_app = debug.DebuggedApplication(app.wsgi_app, evalex=True)
 
 
 ###############################################################################
@@ -198,7 +205,7 @@ class FeedbackForm(wtf.Form):
     )
   email = wtf.StringField('Email (optional)',
       [wtf.validators.optional(), wtf.validators.email()],
-      filters=[util.strip_filter],
+      filters=[util.email_filter],
     )
 
 
@@ -207,7 +214,7 @@ def feedback():
   if not config.CONFIG_DB.feedback_email:
     return flask.abort(418)
 
-  form = FeedbackForm()
+  form = FeedbackForm(obj=auth.current_user_db())
   if form.validate_on_submit():
     mail.send_mail(
         sender=config.CONFIG_DB.feedback_email,
@@ -221,8 +228,6 @@ def feedback():
       )
     flask.flash('Thank you for your feedback!', category='success')
     return flask.redirect(flask.url_for('welcome'))
-  if not form.errors and auth.current_user_id() > 0:
-    form.email.data = auth.current_user_db().email
 
   return flask.render_template(
       'feedback.html',
@@ -244,9 +249,10 @@ def feedback():
 @app.errorhandler(418)  # I'm a Teapot
 @app.errorhandler(500)  # Internal Server Error
 def error_handler(e):
+  logging.exception(e)
   try:
     e.code
-  except AttributeError as e:
+  except AttributeError:
     e.code = 500
     e.name = 'Internal Server Error'
 
@@ -254,8 +260,9 @@ def error_handler(e):
     return util.jsonpify({
         'status': 'error',
         'error_code': e.code,
-        'error_name': e.name.lower().replace(' ', '_'),
+        'error_name': util.slugify(e.name),
         'error_message': e.name,
+        'error_class': e.__class__.__name__,
       }), e.code
 
   return flask.render_template(
@@ -264,3 +271,9 @@ def error_handler(e):
       html_class='error-page',
       error=e,
     ), e.code
+
+
+if config.PRODUCTION:
+  @app.errorhandler(Exception)
+  def production_error_handler(e):
+    return error_handler(e)
