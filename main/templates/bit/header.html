@@ -1,52 +1,50 @@
 <header class="navbar navbar-inverse" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{url_for('welcome')}}">{{config.CONFIG_DB.brand_name}}</a>
-    </div>
-    <nav class="collapse navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-        <li class="{{'active' if html_class.find('what') >= 0 else ''}}">
-          <a href="{{url_for('what')}}">What is gae-init?</a>
-        </li>
-        <li class="{{'active' if html_class.find('reference') >= 0 else ''}}">
-          <a href="{{url_for('reference')}}">Reference</a>
-        </li>
-        <li class="{{'active' if html_class.find('features') >= 0 else ''}}">
-          <a href="{{url_for('features')}}">Features</a>
-        </li>
-        <li class="{{'active' if html_class.find('faq') >= 0 else ''}}">
-          <a href="{{url_for('faq')}}">FAQ</a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="fa fa-trophy"></i>
-            Source & Demos
-            <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">
-            <li class="dropdown-header">Live Demos</li>
-            <li><a href="http://gae-init.appspot.com" target="_blank"><i class="fa fa-briefcase fa-fw"></i> gae-init</a></li>
-            <li><a href="http://babel.gae-init.appspot.com" target="_blank"><i class="fa fa-globe fa-fw"></i> gae-init-babel</a></li>
-            <li><a href="http://upload.gae-init.appspot.com" target="_blank"><i class="fa fa-cloud fa-fw"></i> gae-init-upload</a></li>
-            <li><a href="http://debug.gae-init.appspot.com" target="_blank"><i class="fa fa-bug fa-fw"></i> gae-init-debug</a></li>
-            <li class="divider"></li>
-            <li class="dropdown-header">Source Code</li>
-            <li><a href="https://github.com/gae-init" target="_blank"><i class="fa fa-github fa-fw"></i> View on GitHub</a></li>
-            <li><a href="https://bitbucket.org/lipis" target="_blank"><i class="fa fa-bitbucket fa-fw"></i> View on Bitbucket</a></li>
-          </ul>
-        </li>
-        # if current_user.admin
-          # include 'bit/user_menu.html'
-        # endif
-      </ul>
-    </nav>
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="{{url_for('welcome')}}">{{config.CONFIG_DB.brand_name}}</a>
   </div>
+  <nav class="collapse navbar-collapse" role="navigation">
+    <ul class="nav navbar-nav">
+      <li class="{{'active' if html_class.find('what') >= 0 else ''}}">
+        <a href="{{url_for('what')}}">What is gae-init?</a>
+      </li>
+      <li class="{{'active' if html_class.find('reference') >= 0 else ''}}">
+        <a href="{{url_for('reference')}}">Reference</a>
+      </li>
+      <li class="{{'active' if html_class.find('features') >= 0 else ''}}">
+        <a href="{{url_for('features')}}">Features</a>
+      </li>
+      <li class="{{'active' if html_class.find('faq') >= 0 else ''}}">
+        <a href="{{url_for('faq')}}">FAQ</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <i class="fa fa-trophy"></i>
+          Source & Demos
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-header">Live Demos</li>
+          <li><a href="http://gae-init.appspot.com" target="_blank"><i class="fa fa-briefcase fa-fw"></i> gae-init</a></li>
+          <li><a href="http://babel.gae-init.appspot.com" target="_blank"><i class="fa fa-globe fa-fw"></i> gae-init-babel</a></li>
+          <li><a href="http://upload.gae-init.appspot.com" target="_blank"><i class="fa fa-cloud fa-fw"></i> gae-init-upload</a></li>
+          <li><a href="http://debug.gae-init.appspot.com" target="_blank"><i class="fa fa-bug fa-fw"></i> gae-init-debug</a></li>
+          <li class="divider"></li>
+          <li class="dropdown-header">Source Code</li>
+          <li><a href="https://github.com/gae-init" target="_blank"><i class="fa fa-github fa-fw"></i> View on GitHub</a></li>
+          <li><a href="https://bitbucket.org/lipis" target="_blank"><i class="fa fa-bitbucket fa-fw"></i> View on Bitbucket</a></li>
+        </ul>
+      </li>
+      # if current_user.admin
+        # include 'bit/user_menu.html'
+      # endif
+    </ul>
+  </nav>
 </header>
