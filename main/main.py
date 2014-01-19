@@ -137,6 +137,15 @@ def tutorial():
     )
 
 
+@app.route('/convention/')
+def convention():
+  return flask.render_template(
+      'coming_soon.html',
+      html_class='convention',
+      title='Code Conventions',
+    )
+
+
 @app.route('/faq/')
 def faq():
   return flask.render_template(
