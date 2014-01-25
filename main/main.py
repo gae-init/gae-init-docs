@@ -131,7 +131,7 @@ def reference():
 @app.route('/tutorial/')
 def tutorial():
   return flask.render_template(
-      'coming_soon.html',
+      'tutorial/tutorial.html',
       html_class='tutorial',
       title='Tutorial',
     )

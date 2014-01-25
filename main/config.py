@@ -78,7 +78,6 @@ REFERENCE_DEF = {
 TUTORIAL = [
   ('introduction', 'Introduction'),
   ('code', 'Getting the code'),
-  ('compile', 'Compile the files'),
   ('run', 'Run the application'),
   ('model', 'Modifying the model'),
   ('create', 'Adding contacts'),

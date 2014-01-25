@@ -14,12 +14,12 @@
 from flaskext import wtf
 
 class ContactUpdateForm(wtf.Form):
-  name = wtf.TextField('Name', [wtf.validators.required()])
-  email = wtf.TextField('Email', [
+  name = wtf.StringField('Name', [wtf.validators.required()])
+  email = wtf.StringField('Email', [
       wtf.validators.optional(),
-      wtf.validators.email('That does not look like an email'),
+      wtf.validators.email(),
     ])
-  phone = wtf.TextField('Phone', [wtf.validators.optional()])
+  phone = wtf.StringField('Phone', [wtf.validators.optional()])
   address = wtf.TextAreaField('Address', [wtf.validators.optional()])
 </pre>
 
