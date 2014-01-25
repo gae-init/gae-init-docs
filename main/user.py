@@ -145,19 +145,23 @@ def user_merge():
   if flask.request.path.startswith('/_s/'):
     return util.jsonify_model_dbs(user_dbs)
 
+  user_dbs.sort(key=lambda user_db: user_db.created)
   merged_user_db = user_dbs[0]
   auth_ids = []
   is_admin = False
+  is_active = False
   for user_db in user_dbs:
     auth_ids.extend(user_db.auth_ids)
     auth_ids.extend(user_db.auth_ids)
     auth_ids.extend(user_db.auth_ids)
     is_admin = is_admin or user_db.admin
+    is_active = is_active or user_db.active
     if user_db.key.urlsafe() == util.param('user_key'):
       merged_user_db = user_db
 
   auth_ids = sorted(list(set(auth_ids)))
   merged_user_db.admin = is_admin
+  merged_user_db.active = is_active
 
   form_obj = copy.deepcopy(merged_user_db)
   form_obj.user_key = merged_user_db.key.urlsafe()
@@ -188,8 +192,14 @@ def user_merge():
 
 @ndb.transactional(xg=True)
 def merge_user_dbs(user_db, depricated_keys):
-  # TODO: Merge possible user data before deleting the merged users
-  delete_user_dbs(depricated_keys)
+  # TODO: Merge possible user data before handlining deprecated users
+  depricated_dbs = ndb.get_multi(depricated_keys)
+  for depricated_db in depricated_dbs:
+    depricated_db.auth_ids = []
+    depricated_db.active = False
+    if not depricated_db.username.startswith('_'):
+      depricated_db.username = '_%s' % depricated_db.username
+  ndb.put_multi(depricated_dbs)
 
 
 ########################################################
