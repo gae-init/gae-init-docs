@@ -3,7 +3,7 @@
   free and paid templates for it. Our personal favorite place to start is
   the <a href="http://bootswatch.com">Bootswatch.com</a>.
   For this example we are going to use the
-  <a href="http://bootswatch.com/cerulean/">Cerulean</a>
+  <a href="http://bootswatch.com/flatly/">Flatly</a>
   but feel free to choose whatever you want.
 </p>
 
@@ -16,9 +16,9 @@
 <p>
   In order to experiment with more themes we will create a new directory
   called <code>theme</code> under the directory
-  <code>main/static/src/less</code>. Inside this new directory for every
-  theme that we would like to test, we will create another directory with it's own
-  name.
+  <code>main/static/src/style</code>. Inside this new directory for every
+  theme that we would like to test, we will create another directory with
+  it's own name.
 </p>
 
 <p>
@@ -27,10 +27,10 @@
 </p>
 
 <ol>
-  <li>Create a new directory called <code>cerulean</code></li>
-  <li>Visit the <a href="http://bootswatch.com/cerulean/">Cerulean</a></li>
+  <li>Create a new directory called <code>flatly</code></li>
+  <li>Visit the <a href="http://bootswatch.com/flatly/">Flatly</a></li>
   <li>Download the <code>variables.less</code> and <code>bootswatch.less</code></li>
-  <li>Put them in the new dicrectory <code>cerulean</code> under <code>main/static/src/less/theme</code></li>
+  <li>Put them in the new dicrectory <code>flatly</code> under <code>main/static/src/style/theme</code></li>
 </ol>
 
 <p>
@@ -39,13 +39,13 @@
 
 <pre class="prettyprint linenums">
 <i class="icon-folder-open"></i> static/
-    <i class="icon-folder-open"></i> src/
-        <i class="icon-folder-open"></i> less/
-            <i class="icon-file"></i> base.less
-            <i class="icon-folder-open"></i> theme/
-                <i class="icon-folder-open"></i> cerulean/
-                    <i class="icon-file"></i> bootswatch.less
-                    <i class="icon-file"></i> variables.less
+  <i class="icon-folder-open"></i> src/
+    <i class="icon-folder-open"></i> style/
+      <i class="icon-file"></i> base.less
+      <i class="icon-folder-open"></i> theme/
+        <i class="icon-folder-open"></i> flatly/
+          <i class="icon-file"></i> bootswatch.less
+          <i class="icon-file"></i> variables.less
 </pre>
 
 <p>
@@ -57,21 +57,21 @@
 <pre class="prettyprint linenums">
 ...
 // Theme
-@import "theme/cerulean/bootswatch";
-@import "theme/cerulean/variables";
+@import "theme/flatly/bootswatch";
+@import "theme/flatly/variables";
 ...
 </pre>
 
 
 <p>
   To test it locally you will have to compile the LESS files into CSS and this
-  is achieved by using the <code>build.py</code> script. Run the script from the
-  <code>main</code> directory like this (or you could provide the <code>-w</code>
-  to monitor the LESS files for changes and compile them on save):
+  is achieved by using the <code>run.py</code> script. Execute the script from the
+  root directory like this (or you could provide the <code>-w</code>
+  to monitor the LESS files for changes and will be compiled on save):
 </p>
 
 <pre class="prettyprint linenums">
-$ ./build.py -c
+$ ./run.py -c
 </pre>
 
 <p>

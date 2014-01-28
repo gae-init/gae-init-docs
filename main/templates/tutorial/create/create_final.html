@@ -36,9 +36,9 @@ import contact
 
 
 <pre class="prettyprint linenums lang-html">
-&lt;ul class="nav"&gt;
-  &lt;li class="&#123;% if html_class == 'contact-create' %&#125; active &#123;% endif %&#125;"&gt;
-    &lt;a href="&#123;&#123;url_for('contact_create')&#125;&#125;"&gt;&lt;i class="icon-file"&gt;&lt;/i&gt; Create Contact&lt;/a&gt;
+&lt;ul class="nav navbar-nav"&gt;
+  &lt;li class="&#123;&#123;'active' if html_class == 'contact-create'&#125;&#125;"&gt;
+    &lt;a href="&#123;&#123;url_for('contact_create')&#125;&#125;"&gt;&lt;i class="fa fa-file"&gt;&lt;/i&gt; Create Contact&lt;/a&gt;
   &lt;/li&gt;
   ...
 &lt;/ul&gt;

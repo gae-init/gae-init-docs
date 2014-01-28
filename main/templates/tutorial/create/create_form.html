@@ -1,5 +1,5 @@
 <p>
-  There are a few things that we need to do in order to start creating new
+  There are a few things that we need to do in order to start adding new
   contacts. In short we're going to create a Form, a Handler and a Template.
 </p>
 
@@ -11,14 +11,11 @@
 </p>
 
 <pre class="prettyprint linenums">
-from flaskext import wtf
+from flask.ext import wtf
 
 class ContactUpdateForm(wtf.Form):
   name = wtf.StringField('Name', [wtf.validators.required()])
-  email = wtf.StringField('Email', [
-      wtf.validators.optional(),
-      wtf.validators.email(),
-    ])
+  email = wtf.StringField('Email', [wtf.validators.optional(), wtf.validators.email()])
   phone = wtf.StringField('Phone', [wtf.validators.optional()])
   address = wtf.TextAreaField('Address', [wtf.validators.optional()])
 </pre>
@@ -65,7 +62,7 @@ def contact_create():
 </pre>
 
 
-<h4>Let's take a closer look in this new snipped</h4>
+<h4>Let's take a closer look in this new snippet</h4>
 
 <pre class="prettyprint">
 import flask
@@ -105,5 +102,5 @@ from main import app
   This decorator is to make sure that who ever is entering
   this URL will be already logged in so we could use the <code>user_key</code>
   of the authentiacated user. If the user is not logged in, she will be
-  prompted redirected to the signin page and then back to this URL.
+   redirected to the signin page and then back to this URL.
 </p>

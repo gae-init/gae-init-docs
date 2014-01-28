@@ -15,32 +15,28 @@
     &lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;/h1&gt;
   &lt;/div&gt;
 
-  &lt;div class="row"&gt;
-    &lt;div class="span12"&gt;
-      &lt;table class="table table-bordered"&gt;
-        &lt;thead&gt;
-          &lt;tr&gt;
-            &lt;th class="span1"&gt;ID&lt;/th&gt;
-            &lt;th class="span2"&gt;Name&lt;/th&gt;
-            &lt;th class="span2"&gt;Email&lt;/th&gt;
-            &lt;th class="span2"&gt;Phone&lt;/th&gt;
-            &lt;th class="span5"&gt;Address&lt;/th&gt;
-          &lt;/tr&gt;
-        &lt;/thead&gt;
-        &lt;tbody&gt;
-          &#35; for contact_db in contact_dbs
-            &lt;tr&gt;
-              &lt;td&gt;&#123;&#123;contact_db.key.id()&#125;&#125;&lt;/td&gt;
-              &lt;td&gt;&#123;&#123;contact_db.name&#125;&#125;&lt;/td&gt;
-              &lt;td&gt;&#123;&#123;contact_db.email&#125;&#125;&lt;/td&gt;
-              &lt;td&gt;&#123;&#123;contact_db.phone&#125;&#125;&lt;/td&gt;
-              &lt;td&gt;&#123;&#123;contact_db.address&#125;&#125;&lt;/td&gt;
-            &lt;/tr&gt;
-          &#35; endfor
-        &lt;/tbody&gt;
-      &lt;/table&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
+  &lt;table class="table table-bordered"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;ID&lt;/th&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Email&lt;/th&gt;
+        &lt;th&gt;Phone&lt;/th&gt;
+        &lt;th&gt;Address&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &#35; for contact_db in contact_dbs
+        &lt;tr&gt;
+          &lt;td&gt;&#123;&#123;contact_db.key.id()&#125;&#125;&lt;/td&gt;
+          &lt;td&gt;&#123;&#123;contact_db.name&#125;&#125;&lt;/td&gt;
+          &lt;td&gt;&#123;&#123;contact_db.email&#125;&#125;&lt;/td&gt;
+          &lt;td&gt;&#123;&#123;contact_db.phone&#125;&#125;&lt;/td&gt;
+          &lt;td&gt;&#123;&#123;contact_db.address&#125;&#125;&lt;/td&gt;
+        &lt;/tr&gt;
+      &#35; endfor
+    &lt;/tbody&gt;
+  &lt;/table&gt;
 &#35; endblock
 </pre>
 

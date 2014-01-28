@@ -9,28 +9,22 @@
 
 <pre class="prettyprint linenums lang-html">
 &#35; extends 'base.html'
+&#35; import 'macro/forms.html' as forms
 
 &#35; block content
   &lt;div class="page-header"&gt;
     &lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;/h1&gt;
   &lt;/div&gt;
   &lt;div class="row"&gt;
-    &lt;div class="span4"&gt;
-      &lt;form class="form" method="POST" action="."&gt;
+    &lt;div class="col-md-4"&gt;
+      &lt;form method="POST" action="."&gt;
         &lt;fieldset&gt;
           &#123;&#123;form.csrf_token&#125;&#125;
 
-          &#35; set form_field = form.name
-          &#35; include 'bit/form_text_field.html'
-
-          &#35; set form_field = form.email
-          &#35; include 'bit/form_text_field.html'
-
-          &#35; set form_field = form.phone
-          &#35; include 'bit/form_text_field.html'
-
-          &#35; set form_field = form.address
-          &#35; include 'bit/form_textarea_field.html'
+          &#123;&#123;forms.text_field(form.name, autofocus=True)&#125;&#125;
+          &#123;&#123;forms.email_field(form.email)&#125;&#125;
+          &#123;&#123;forms.text_field(form.phone)&#125;&#125;
+          &#123;&#123;forms.textarea_field(form.address)&#125;&#125;
 
           &lt;button type="submit" class="btn btn-primary btn-block"&gt;
             Create Contact

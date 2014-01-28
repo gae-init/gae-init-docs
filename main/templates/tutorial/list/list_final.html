@@ -20,8 +20,8 @@
 <pre class="prettyprint linenums lang-html">
 &lt;ul class="nav"&gt;
   ...
-  &lt;li class="&#123;% if html_class == 'contact-list' %&#125; active &#123;% endif %&#125;"&gt;
-    &lt;a href="&#123;&#123;url_for('contact_list')&#125;&#125;"&gt;&lt;i class="icon-list"&gt;&lt;/i&gt; Contact List&lt;/a&gt;
+  &lt;li class="&#123;&#123;'active' if html_class == 'contact-list'&#125;&#125;"&gt;
+    &lt;a href="&#123;&#123;url_for('contact_list')&#125;&#125;"&gt;&lt;i class="fa fa-list"&gt;&lt;/i&gt; Contact List&lt;/a&gt;
   &lt;/li&gt;
   ...
 &lt;/ul&gt;
