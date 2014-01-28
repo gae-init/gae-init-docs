@@ -1,0 +1,15 @@
+# extends 'base_doc.html'
+
+# block content_doc
+  # for section in config.CONVENTION
+    <section id="{{section[0]}}">
+      <div class="page-header">
+        <h2 class="self-link">
+          {{section[1]}}
+          <a href="#{{section[0]}}"></a>
+        </h2>
+      </div>
+      # include 'convention/%s.html' % section[0]
+    </section>
+  # endfor
+# endblock

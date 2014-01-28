@@ -83,18 +83,26 @@ REFERENCE_DEF = {
   }
 
 TUTORIAL = [
-  ('introduction', 'Introduction'),
-  ('code', 'Getting the code'),
-  ('run', 'Run the application'),
-  ('model', 'Modifying the model'),
-  ('create', 'Adding contacts'),
-  ('list', 'Listing contacts'),
-  ('view', 'Viewing contacts'),
-  ('update', 'Updating contacts'),
-  ('delete', 'Deleting contacts'),
-  ('theme', 'Changing theme'),
-  ('deploy', 'Deploy!!!'),
-]
+    ('introduction', 'Introduction'),
+    ('code', 'Getting the code'),
+    ('run', 'Run the application'),
+    ('model', 'Modifying the model'),
+    ('create', 'Adding contacts'),
+    ('list', 'Listing contacts'),
+    ('view', 'Viewing contacts'),
+    ('update', 'Updating contacts'),
+    ('delete', 'Deleting contacts'),
+    ('theme', 'Changing theme'),
+    ('deploy', 'Deploy!!!'),
+  ]
+
+CONVENTION = [
+    ('global', 'Global'),
+    ('python', 'Python'),
+    ('html', 'HTML'),
+    ('less', 'LessCSS'),
+    ('coffee', 'CoffeeScript'),
+  ]
 
 ###############################################################################
 # Client modules, also used by the run.py script.

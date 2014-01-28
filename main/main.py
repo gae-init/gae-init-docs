@@ -140,7 +140,7 @@ def tutorial():
 @app.route('/convention/')
 def convention():
   return flask.render_template(
-      'coming_soon.html',
+      'convention/convention.html',
       html_class='convention',
       title='Code Conventions',
     )
