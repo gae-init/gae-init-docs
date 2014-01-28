@@ -10,16 +10,16 @@ brand_name = ndb.StringProperty(default='Phone Book')
 </pre>
 
 <p>
-  You might not see the changes right away, if you refresh your browser,
-  but if you want to see it
-  stop the web server and run it using the <code>-f</code> argument to reset the
-  datastore.
+  If you refresh your browser, you might not see the changes right away. That's
+  because you'll have to clear the datastore to be able to read the default
+  properties. In order to achieve that stop the web server and execute the
+  <code>run.py</code> script it using the additional <code>-f</code> argument
+  to reset the datastore.
 </p>
 
 <pre class="prettyprint">
 $ ./run.py -fs
 </pre>
-
 
 <h3>Adding new Entity</h3>
 
@@ -39,6 +39,6 @@ class Contact(Base):
 
 <p>
   The <code>user_key</code> property will store the <code>User</code>'s key to
-  make the contact list different for every user. The rest of the properties are
+  make the contact list personal for every user. The rest of the properties are
   self explanatory.
 </p>
