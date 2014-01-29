@@ -16,7 +16,6 @@ def contact_list():
       cursor=util.param('cursor'),
       order=util.param('order'),
     )
-
   return flask.render_template(
       'contact_list.html',
       html_class='contact-list',

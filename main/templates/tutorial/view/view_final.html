@@ -1,0 +1,29 @@
+<h3>Finalise Contact View</h3>
+
+<p>
+  As a final touch in order to view the contact we'll modify the contact list
+  so when you click on the name you should be redirected to that view.
+</p>
+
+
+<p>
+  Find the line that renders the name of the contact and replaced it with the
+  following:
+</p>
+
+<pre class="prettyprint linenums lang-html">
+...
+&lt;td&gt;
+  &lt;a href="&#123;&#123;url_for('contact_view', contact_id=contact_db.key.id())&#125;&#125;"&gt;
+    &#123;&#123;contact_db.name&#125;&#125;
+  &lt;/a&gt;
+&lt;/td&gt;
+...
+</pre>
+
+<p>
+  Now visit the contact list
+  (<a href="http://localhost:8080/contact/">http://localhost:8080/contact/</a>),
+  and you should be able to click on the name of each contact and view their
+  details.
+</p>
