@@ -5,7 +5,7 @@
 </p>
 
 <pre class="prettyprint linenums lang-python">
-@app.route('/contact/<int:contact_id>/')
+@app.route('/contact/&lt;int:contact_id>&gt;/')
 @auth.login_required
 def contact_view(contact_id):
   contact_db = model.Contact.get_by_id(contact_id)

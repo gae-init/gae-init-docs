@@ -1,0 +1,59 @@
+<h3>Finalise Contact Update</h3>
+
+<p>
+  As a final touch we're going to do two things:
+  update the contact list so we'll be able to easily update them and also
+  since the template for create is almost the same as to this one we'll get rid
+  of it.
+</p>
+
+<h4>Adding a link on the contact list</h4>
+
+<p>
+  Find the line that renders the ID of the contact and replaced it with the
+  following:
+</p>
+
+<pre class="prettyprint linenums lang-html">
+...
+&lt;td&gt;
+  &lt;a href="&#123;&#123;url_for('contact_update', contact_id=contact_db.key.id())&#125;&#125;"&gt;
+    &#123;&#123;contact_db.key.id()&#125;&#125;
+  &lt;/a&gt;
+&lt;/td&gt;
+...
+</pre>
+
+<p>
+  Now visit the contact list
+  (<a href="http://localhost:8080/contact/">http://localhost:8080/contact/</a>),
+  and you should be able to click on the ID of each contact and update their
+  properties.
+</p>
+
+<h4>Getting rid of contact_create.html</h4>
+
+<p>
+  At the moment the only difference between the <code>contact_create.html</code>
+  and the <code>contact_update.html</code> files is the caption of the submit
+  form. Just delete the <code>contact_create.html</code> form and change the
+  button in <code>contact_update.html</code> to the following:
+</p>
+
+<pre class="prettyprint linenums lang-html">
+...
+&lt;button type="submit" class="btn btn-primary btn-block"&gt;
+  &#35; if contact_db
+    Update Contact
+  &#35; else
+    Create Contact
+  &#35; endif
+&lt;/button&gt;
+...
+</pre>
+
+<p>
+  Finally since we deleted the <code>contact_create.html</code> we'll have to
+  simply update the create handler to render the correct template and by now you
+  should be able to find that yourself.
+</p>

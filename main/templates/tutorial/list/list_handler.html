@@ -14,7 +14,7 @@ def contact_list():
       model.Contact.query(),
       limit=util.param('limit', int),
       cursor=util.param('cursor'),
-      order=util.param('order'),
+      order=util.param('order') or 'name',
     )
   return flask.render_template(
       'contact_list.html',
