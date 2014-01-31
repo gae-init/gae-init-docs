@@ -1,0 +1,34 @@
+.gi-callout {
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 3px solid #eee;
+  h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.gi-callout-success {
+  .callout-variant(@brand-success);
+}
+.gi-callout-info {
+  .callout-variant(@brand-info);
+}
+.gi-callout-warning {
+  .callout-variant(@brand-warning);
+}
+.gi-callout-danger {
+  .callout-variant(@brand-danger);
+}
+
+.callout-variant(@color;) {
+  background-color: lighten(@color, 35%);
+  border-color: @color;
+  h4 {
+    color: darken(@color, 20%);
+  }
+}

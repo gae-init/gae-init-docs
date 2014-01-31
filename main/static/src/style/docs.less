@@ -90,8 +90,25 @@ section  {
     &:before {
       content: "¶";
     }
+    &.top {
+      .pull-right;
+    }
+    &.top:before {
+      content: "";
+    }
   }
   &:hover a {
     display: inline;
   }
+}
+
+.sticky    {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -o-sticky;
+  position: -ms-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: white;
 }

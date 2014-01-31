@@ -2,15 +2,15 @@
 
 # block content
   <div class="row">
-    <div class="col-sm-4 col-md-3 col-lg-2">
+    <div class="col-sm-3 col-md-2">
       <div class="page-header text-center hidden-xs">
         <h1>
           <a href="{{url_for('welcome')}}"><span class="fa fa-home"></span></a>
         </h1>
       </div>
-      <ul class="nav nav-pills nav-stacked sidebar">
+      <ul class="nav nav-stacked docs-sidebar">
         <li class="{{'active' if html_class.find('what') >= 0 else ''}}">
-          <a href="{{url_for('what')}}">What is <strong>gae-init</strong>?</a>
+          <a href="{{url_for('what')}}">What is gae-init?</a>
         </li>
         <li class="{{'active' if html_class.find('features') >= 0 else ''}}">
           <a href="{{url_for('features')}}">Features</a>
@@ -20,6 +20,17 @@
         </li>
         <li class="{{'active' if html_class.find('tutorial') >= 0 else ''}}">
           <a href="{{url_for('tutorial')}}">Tutorial</a>
+          # if html_class.find('tutorial') >= 0
+            <ul class="nav">
+              # for section in config.TUTORIAL
+                <li>
+                  <a href="{{'#'}}{{section[0]}}">
+                    {{section[1]}}
+                  </a>
+                </li>
+              # endfor
+            </ul>
+          # endif
         </li>
         <li class="{{'active' if html_class.find('tree') >= 0 else ''}}">
           <a href="{{url_for('tree')}}">Source Tree</a>
@@ -32,6 +43,17 @@
         </li>
         <li class="{{'active' if html_class.find('reference') >= 0 else ''}}">
           <a href="{{url_for('reference')}}">Reference</a>
+          # if html_class.find('reference') >= 0
+            <ul class="nav">
+              # for section in config.REFERENCE
+                <li>
+                  <a href="{{'#'}}{{section[0]}}">
+                    {{section[1]}}
+                  </a>
+                </li>
+              # endfor
+            </ul>
+          # endif
         </li>
         <li class="{{'active' if html_class.find('convention') >= 0 else ''}}">
           <a href="{{url_for('convention')}}">Code Conventions</a>
@@ -44,7 +66,7 @@
         </li>
       </ul>
     </div>
-    <div class="col-sm-8 col-md-9 col-lg-10">
+    <div class="col-sm-9 col-md-10">
       <div class="page-header">
         <h1>{{title}}</h1>
       </div>

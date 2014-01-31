@@ -24,6 +24,7 @@
               {{file[1]}}
               <small>{{file[2]}}</small>
               <a href="#{{file[0]}}"></a>
+              <a href="#" class="top">s</a>
             </h2>
           </div>
           # include 'reference/%s/intro.html' % file[0]
@@ -31,16 +32,13 @@
             # for def in config.REFERENCE_DEF[file[0]]
               # if file[0] == 'decorator'
                 # set name = '@auth.%s' % (def[0])
-                # set params = ''
               # elif file[0] == 'config'
                 # set name = '%s.%s' % (file[0], def[0].upper())
-                # set params = ''
               # else
-                # set name = '%s.%s' % (file[0], def[0])
-                # set params = '(%s)' % (def[1])
+                # set name = '%s.%s' % (file[2].split('.')[0], def[0])
               # endif
               <dt id="{{name}}" class="self-link">
-                {{name}}{{params}}
+                {{name}}{{def[1]}}
                 <a href="#{{name}}"></a>
               </dt>
               <dd>

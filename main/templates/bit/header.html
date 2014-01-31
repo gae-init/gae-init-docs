@@ -1,4 +1,4 @@
-<header class="navbar navbar-inverse" role="banner">
+<header class="navbar navbar-default" role="banner">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
       <span class="sr-only">Toggle navigation</span>
@@ -19,11 +19,21 @@
       <li class="{{'active' if html_class.find('tutorial') >= 0 else ''}}">
         <a href="{{url_for('tutorial')}}">Tutorial</a>
       </li>
-      <li class="{{'active' if html_class.find('features') >= 0 else ''}}">
-        <a href="{{url_for('features')}}">Features</a>
-      </li>
-      <li class="{{'active' if html_class.find('faq') >= 0 else ''}}">
-        <a href="{{url_for('faq')}}">FAQ</a>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          More
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="{{url_for('features')}}">Features</a></li>
+          <li><a href="{{url_for('requirement')}}">Requirements</a></li>
+          <li><a href="{{url_for('tree')}}">Source Tree</a></li>
+          <li><a href="{{url_for('run')}}">Run Script</a></li>
+          <li><a href="{{url_for('guide')}}">Developer's Guide</a></li>
+          <li><a href="{{url_for('convention')}}">Code Conventions</a></li>
+          <li><a href="{{url_for('faq')}}">FAQ</a></li>
+          <li><a href="{{url_for('feedback')}}">Feedback</a></li>
+        </ul>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">

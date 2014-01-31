@@ -31,7 +31,7 @@ class Config(Base, modelx.ConfigX):
   announcement_type = ndb.StringProperty(default='info', choices=[
       'info', 'warning', 'success', 'danger',
     ])
-  brand_name = 'gae-init-docs'
+  brand_name = 'gae-init docs'
   facebook_app_id = ndb.StringProperty(default='')
   facebook_app_secret = ndb.StringProperty(default='')
   feedback_email = ndb.StringProperty(default='')

@@ -18,9 +18,6 @@ import config
 # Request Parameters
 ###############################################################################
 def param(name, cast=None):
-  '''Returns query parameter by its name and optionally casts it to given type.
-  Always returns None if the parameter is missing
-  '''
   value = None
   if flask.request.json:
     return flask.request.json.get(name, None)
@@ -55,9 +52,6 @@ def get_next_url():
 def retrieve_dbs(
     query, order=None, limit=None, cursor=None, keys_only=None, **filters
   ):
-  '''Retrieves entities from datastore, by applying cursor pagination
-  and equality filters. Returns dbs or keys and more cursor value
-  '''
   limit = limit or config.DEFAULT_DB_LIMIT
   cursor = Cursor.from_websafe_string(cursor) if cursor else None
   model_class = ndb.Model._kind_map[query.kind]
@@ -155,8 +149,6 @@ def json_value(value):
 
 
 def jsonpify(*args, **kwargs):
-  '''Same as flask.jsonify() but returns JSONP if callback is provided
-  '''
   if param('callback'):
     content = '%s(%s)' % (
         param('callback'), flask.jsonify(*args, **kwargs).data,
@@ -170,9 +162,6 @@ def jsonpify(*args, **kwargs):
 # Helpers
 ###############################################################################
 def generate_more_url(more_cursor, base_url=None, cursor_name='cursor'):
-  '''Substitutes or alters the current request URL with a new cursor parameter
-  for next page of results
-  '''
   if not more_cursor:
     return None
   base_url = base_url or flask.request.base_url
@@ -182,8 +171,6 @@ def generate_more_url(more_cursor, base_url=None, cursor_name='cursor'):
 
 
 def uuid():
-  ''' Generates universal unique identifier
-  '''
   return uuid4().hex
 
 

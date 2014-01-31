@@ -19,12 +19,10 @@
       &lt;form method="POST" action="."&gt;
         &lt;fieldset&gt;
           &#123;&#123;form.csrf_token&#125;&#125;
-
           &#123;&#123;forms.text_field(form.name, autofocus=True)&#125;&#125;
           &#123;&#123;forms.email_field(form.email)&#125;&#125;
           &#123;&#123;forms.text_field(form.phone)&#125;&#125;
           &#123;&#123;forms.textarea_field(form.address)&#125;&#125;
-
           &lt;button type="submit" class="btn btn-primary btn-block"&gt;
             Update Contact
           &lt;/button&gt;
