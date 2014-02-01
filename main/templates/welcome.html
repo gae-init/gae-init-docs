@@ -6,16 +6,11 @@
       <h1>
         <img src="/p/img/{{slugify(config.CONFIG_DB.brand_name)}}.svg" alt="{{config.CONFIG_DB.brand_name}}">
       </h1>
-      <p class="lead">
+      <p>
         <a href="http://gae-init.appspot.com"><strong>gae-init</strong></a>
         is the easiest way to kick start new web applications on Google App Engine.
       </p>
-      <p class="lead">
-        The docs are still in progress, so feel free to
-        <a href="{{url_for('feedback')}}">send feedback</a>
-        with your questions or just <a href="https://github.com/gae-init/gae-init-docs">contribute</a>.
-      </p>
-      <p class="lead">
+      <p>
         Check it in action with live demos and get started:
       </p>
 
@@ -33,6 +28,11 @@
           <i class="fa fa-bug"></i> gae-init-debug
         </a>
       </div>
+      <p class="small">
+        The documentation is not complete! But you are welcome to
+        <a href="https://github.com/gae-init/gae-init-docs">contribute</a> or
+        <a href="{{url_for('feedback')}}">send feedback</a> with your questions.
+      </p>
     </div>
   </div>
 # endblock
@@ -45,17 +45,13 @@
     <div class="col-sm-4">
       <h3>Features</h3>
       <ul>
-        <li>Open ID sign in</li>
-        <li>
-          Secret keys are stored in the Datastore.
-        </li>
-        <li>
-          Automatic redirect back to where you were after sign in.
-        </li>
-        <li>
-          JSON services with more URL, limits, filter &amp; orders.
-        </li>
-        <li>Feedback form</li>
+        <li>Multiple OAuth options to <a href="{{url_for('signin')}}">sign-in</a></li>
+        <li>Manage, delete or merge signed in users</li>
+        <li>Secret keys and other settings are stored securely in Datastore</li>
+        <li>Working <a href="{{url_for('feedback')}}">feedback form</a></li>
+        <li>Custom pages for error handlings, like <a href="/404">404</a></li>
+        <li>Automatic redirect to where you were after sign-in</li>
+        <li>SEO friendly with stuff like <a href="{{url_for('sitemap')}}">sitemaps.xml</a>, <a href="/robots.txt">robots.txt</a> and even <a href="/favicon.ico">favicon.ico</a></li>
         <li><a href="{{url_for('features')}}">Much more...</a></li>
       </ul>
     </div>

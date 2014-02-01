@@ -7,20 +7,26 @@
       <ul>
         <li>
           JSON services with
-          <a href="{{url_for('user_list_service')}}">more URL</a>,
-          <a href="{{url_for('user_list_service', limit=8)}}">limits</a>,
-          <a href="{{url_for('user_list_service', admin='true')}}">filters</a>,
-          <a href="{{url_for('user_list_service', order='name')}}">orders</a> and
-          <a href="{{url_for('user_list_service', limit=4, order='name', admin='true')}}">more..</a>
+          <a href="http://gae-init.appspot.com{{url_for('user_list_service')}}" target="_blank">more URL</a>,
+          <a href="http://gae-init.appspot.com{{url_for('user_list_service', limit=8)}}" target="_blank">limits</a>,
+          <a href="http://gae-init.appspot.com{{url_for('user_list_service', admin='true')}}" target="_blank">filters</a>,
+          <a href="http://gae-init.appspot.com{{url_for('user_list_service', order='name')}}" target="_blank">orders</a> and
+          <a href="http://gae-init.appspot.com{{url_for('user_list_service', limit=4, order='name', admin='true')}}" target="_blank">more..</a>
         </li>
-        <li>JSONP support by providing a <a href="{{url_for('user_list_service', limit=2, order='name', callback='hello')}}"><code>&amp;callback</code></a> argument to JSON services</li>
-        <li>Custom pages for error handlings</li>
         <li>
-            Jinja2 template macros for
-            <a href="{{url_for('feedback')}}">form inputs</a>,
-            <a href="{{url_for('user_list', order='name')}}">sort ordering links</a> and
-            <a href="{{url_for('user_list', limit=4)}}">easy pagination</a>
-          </li>
+          JSONP support by providing a
+          <a href="http://gae-init.appspot.com{{url_for('user_list_service', limit=2, order='name', callback='hello')}}" target="_blank"><code>&amp;callback</code></a>
+          argument to JSON services
+        </li>
+        <li>Custom pages for error handlings, like <a href="/404">404</a></li>
+        <li>
+          Jinja2 template macros for
+          <a href="{{url_for('feedback')}}">form inputs</a>,
+          <a href="http://gae-init.appspot.com{{url_for('user_list', order='name')}}" target="_blank">order by links</a>,
+          <a href="http://gae-init.appspot.com{{url_for('user_list', admin=True, active=True, limit=16)}}" target="_blank">filter by links</a>,
+          <a href="http://gae-init.appspot.com{{url_for('user_list', limit=4, active=True, order='-modified')}}" target="_blank">easy pagination</a>
+          and more..
+        </li>
         <li>Secret keys and other settings are stored securely in Datastore</li>
         <li>Admin console to manage secret keys and other settings</li>
         <li>Mobile first through Bootstrap 3</li>
@@ -45,13 +51,14 @@
       </ul>
       <h3>Development</h3>
       <ul>
-        <li>Custom <a href="{{url_for('run')}}">run script</a> to clean, watch, minify and run your app locally</li>
+        <li>Custom <a href="{{url_for('run')}}">run script</a> to watch, minify and run your app locally</li>
+        <li>Out of the box support for CoffeeScript and LessCSS</li>
         <li>Compile on save <code>*.coffee</code> via custom script</li>
         <li>Compile on save <code>*.less</code> via custom script</li>
         <li>Custom template macros and utilities for Jinja2</li>
         <li>Form creations and HTML5 inputs are done easy through template macros</li>
         <li>Minify and concatenate scripts and styles</li>
-        <li>Zip libraries for faster uploads</li>
+        <li>3rd party libraries are zipped for faster uploads</li>
         <li>Live reload for your page through Grunt</li>
         <li>Use vanila JavaScript insted of CoffeeScript</li>
         <li>Use vanila CSS instead of LessCSS</li>
