@@ -105,7 +105,7 @@ TUTORIAL = [
     ('view', 'View contacts'),
     ('update', 'Update contacts'),
 #    ('delete', 'Deleting contacts'),
-    ('theme', 'Change theme'),
+#    ('theme', 'Change theme'),
     ('deploy', 'Deploy'),
   ]
 
