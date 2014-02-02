@@ -106,7 +106,7 @@ def guide():
   return flask.render_template(
       'coming_soon.html',
       html_class='guide',
-      title="Developer's Guide",
+      title="Developer Guide",
     )
 
 
@@ -124,7 +124,7 @@ def reference():
   return flask.render_template(
       'reference/reference.html',
       html_class='reference',
-      title='Reference',
+      title='API Reference',
     )
 
 
