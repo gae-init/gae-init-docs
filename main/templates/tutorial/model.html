@@ -1,8 +1,8 @@
 <h3>Making it more personal</h3>
 
 <p>
-  In the <code>model.py</code> you should change the dafault
-  <code>brand_name</code> of the <code>Config</code> model to <code>Phone Book</code>
+  In the <code>model.py</code> you should change the default
+  <code>brand_name</code> of the <code>Config</code> model to <code>Phonebook</code>
 </p>
 
 <pre class="prettyprint">
@@ -10,11 +10,10 @@ brand_name = ndb.StringProperty(default='Phonebook')
 </pre>
 
 <p>
-  If you refresh your browser, you might not see the changes right away. That's
-  because you'll have to clear the datastore to be able to read the default
-  properties. In order to achieve that stop the web server and execute the
-  <code>run.py</code> script it using the additional <code>-f</code> argument
-  to reset the datastore.
+  If you refresh your browser, you might not see the changes right away. You'll
+  have to clear the datastore to be able to (re-)read the default properties.
+  Stop the web server and execute the <code>run.py</code> script using the
+  additional <code>-f</code> argument to clear/reset the datastore.
 </p>
 
 <pre class="prettyprint">
@@ -24,8 +23,8 @@ $ ./run.py -fs
 <h3>Adding new Entity</h3>
 
 <p>
-  We are building a phone book so all we need is the contact list. In the end of
-  the <code>model.py</code> file add the following:
+  As we are building a personal phone book, we'll need to add the contact list.
+  Add the following at the end of <code>model.py</code>:
 </p>
 
 <pre class="prettyprint linenums">
