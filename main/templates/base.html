@@ -13,9 +13,7 @@
     <meta property="og:image" content="http://gae-init.appspot.com/p/img/gae-init-favicon-512.png" />
     <title>
       # block title
-        # if title
-          {{title}} |
-        # endif
+        {{'%s |' % title if title}}
       # endblock
       {{config.CONFIG_DB.brand_name}}
     </title>
