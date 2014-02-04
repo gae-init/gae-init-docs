@@ -13,7 +13,14 @@
   <dd>The name of the argument to be updated.</dd>
   <dt>value</dt>
   <dd>
-    Optional new value for the given argument of none the argument will be
-    removed if already exists.
+    Optional new value for the given argument. When ommited then the argument
+    will be removed if already exists.
+  </dd>
+  <dt>ignore</dt>
+  <dd>
+    Optional list of arguments that will be ignored and removed from the
+    generated request. Sometimes it is needed when in the original request the
+    <code>cursor</code> is present and it will be invalid if some of the other
+    arguments will have a different value.
   </dd>
 </dl>

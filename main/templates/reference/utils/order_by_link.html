@@ -12,6 +12,13 @@
   <dd>
     The title that will be appeared to the end user.
   </dd>
+  <dt>ignore</dt>
+  <dd>
+    Optional list of arguments that will be ignored and removed from the
+    generated request. Sometimes it is needed when in the original request the
+    <code>cursor</code> is present and it will be invalid if some of the other
+    arguments will have a different value.
+  </dd>
 </dl>
 
 <div class="gi-callout gi-callout-info">
