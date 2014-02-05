@@ -38,8 +38,8 @@
 
 <p>
   After creating a new contact we will now redirect the user to the contact
-  list instead of the welcome page and also going show a message the the new
-  contact was successfully created.
+  list instead of the welcome page and also and also show her a message that
+  the new contact was successfully created.
 </p>
 
 <p>
@@ -64,8 +64,8 @@ return flask.redirect(flask.url_for('contact_list', order='-created'))
 </p>
 
 <p>
-  In the second line if you noticed the we are using the <code>order='-created'</code>
-   in the <code>url_for</code> function, which will be translated to:
+  In the second line notice that we are using the <code>order='-created'</code>
+  in the <code>url_for</code> function, which will be translated to:
   <a href="http://localhost:8080/contact/?order=-created">http://localhost:8080/contact/?order=-created</a>.
   You can choose whatever order you like and you can also play with the url
   by providing different orders for the fields that you have in the
