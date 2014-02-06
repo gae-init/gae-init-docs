@@ -60,7 +60,8 @@ return flask.redirect(flask.url_for('contact_list', order='-created'))
 <p>
   The first line is to flash the message that the creation was successful.
   The argument <code>category</code> is optional and can be one of the
-  following: <code>error</code>, <code>success</code> or <code>info</code>.
+  following: <code>warning</code> (default), <code>danger</code>,
+  <code>success</code> or <code>info</code>.
 </p>
 
 <p>
