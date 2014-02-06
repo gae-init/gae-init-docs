@@ -1,5 +1,8 @@
 body {
-  overflow-y: scroll;
+  > .container {
+    padding-top: (@line-height-computed / 2);
+    padding-bottom: (@line-height-computed * 2);
+  }
 }
 
 .alert-announcement {
@@ -14,4 +17,3 @@ body {
   margin: auto;
   display: block;
 }
-
