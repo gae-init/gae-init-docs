@@ -93,6 +93,20 @@ REFERENCE_DEF = {
         ('html_element', '(name, content)'),
       ],
     'forms': [
+        ('field_errors', '(field)'),
+        ('field_description', '(field)'),
+        ('input_field', "(field, type='text')"),
+        ('text_field', '(field)'),
+        ('password_field', '(field)'),
+        ('number_field', '(field)'),
+        ('date_field', '(field)'),
+        ('email_field', '(field)'),
+        ('select_field', '(field)'),
+        ('hidden_field', '(field)'),
+        ('textarea_field', '(field, rows=4)'),
+        ('checkbox_field', '(field)'),
+        ('multiple_checkbox_field', '(field)'),
+        ('oauth_fields', '(name, fields, checkmark, help)'),
       ],
   }
 
