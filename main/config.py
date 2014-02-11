@@ -90,6 +90,7 @@ REFERENCE_DEF = {
         ('prefetch_link', '(url)'),
         ('auth_icon', '(auth_id)'),
         ('auth_icons', '(auth_ids)'),
+        ('html_element', '(name, content)'),
       ],
     'forms': [
       ],
