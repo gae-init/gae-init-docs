@@ -1,26 +1,26 @@
 window.init_tree = () ->
-
-  $('.file').each () ->
+  ($ '.file').each () ->
     $link = $(this)
-    if tooltips[$link.attr('id')]
-      $link.attr('data-toggle', 'popover')
-      $link.attr('data-html', 'true')
-      $link.attr('data-content', tooltips[$link.attr('id')])
-      $link.attr('data-placement', 'right')
-      $link.attr('data-title', $link.text())
+    if tooltips[$link.attr 'id']
+      $link.attr 'data-conainer', 'body'
+      $link.attr 'data-toggle', 'popover'
+      $link.attr 'data-html', 'true'
+      $link.attr 'data-content', tooltips[$link.attr 'id']
+      $link.attr 'data-placement', 'right'
+      $link.attr 'data-title', $link.text()
       $link.popover()
     else
-      $link.addClass('text-muted')
+      $link.addClass 'no-help'
 
 
   ($ 'body').on 'click', '.file', (e) ->
-    $('.file').popover('hide')
-    $(this).popover('show')
     e.stopPropagation()
+    ($ '.file').not(this).popover 'hide'
+    ($ this).popover 'show'
 
 
-  $('body').click () ->
-    $('.file').popover('hide')
+  ($ 'body').click () ->
+    ($ '.file').popover 'hide'
 
 
 tooltips =
@@ -59,7 +59,7 @@ tooltips =
   'lib': 'The server side (Python) libraries. If you want to add more Python libraries that are not included in the default installation, just put them here.'
   'bootstrap': 'The Bootstrap sources that includes all the *.less and *.js files.'
   'moment.js': 'A javascript date library for parsing, validating, manipulating, and formatting dates. <hr> <a href="http://momentjs.com/" target="_blank">Read More <i class=" icon-external-link"></i></a>'
-  'nprogress.js': 'A nanoscopic progress bar. Featuring realistic trickle animations to convince your users that something is happening. <hr> <a href="http://ricostacruz.com/nprogress/" target="_blank">Read More <i class=" icon-external-link"></i></a>'
+  'nprogress': 'A nanoscopic progress bar. Featuring realistic trickle animations to convince your users that something is happening. <hr> <a href="http://ricostacruz.com/nprogress/" target="_blank">Read More <i class=" icon-external-link"></i></a>'
 
   'templates': 'The Jinja2 templates.'
   'base.html': 'The base template that most of the pages are inheriting from.'
@@ -75,12 +75,14 @@ tooltips =
   'config_update.html': 'The update form for the configuration of the application.'
 
   'bit': 'Small snippets of HTML templates.'
+  'admin_bit': 'Small snippets of HTML admin templates.'
   'form_select_field.html': 'The <code>&lt;select&gt;</code> element for the <code>&lt;form&gt;</code>. Takes as parameter Flask-WTF form field.'
   'form_text_field.html': 'The <code>&lt;input&gt;</code> element for the <code>&lt;form&gt;</code>. Takes as parameter Flask-WTF form field.'
   'form_textarea_field.html': 'The <code>&lt;textarea&gt;</code> element for the <code>&lt;form&gt;</code>. Takes as parameter Flask-WTF form field.'
-  'user_list.html': 'The list of users of the application.'
   'welcome.html': 'The front page of the application.'
   'script.html': 'The the JavaScript includes of the application.  Takes advantage of the build script to deliver different styles depending on where the application runs.'
   'style.html': 'The stylesheets of the application. Takes advantage of the build script to deliver different styles depending on where the application runs.'
   'notifications.html': 'The flash notifications that appearing as alerts on top of the pages.'
   'user_menu.html': 'The top navigations drop down menu for the authenticated user.'
+
+  'user_list.html': 'The list of users of the application.'
