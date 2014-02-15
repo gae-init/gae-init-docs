@@ -75,6 +75,7 @@ REFERENCE_DEF = {
         ('current_version_name', ''),
         ('current_version_timestamp', ''),
         ('current_version_date', ''),
+        ('application_id', ''),
         ('development', ''),
         ('production', ''),
         ('debug', ''),
