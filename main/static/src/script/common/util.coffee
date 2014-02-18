@@ -5,6 +5,7 @@ window.LOG = ->
 window.init_common = ->
   init_loading_button()
   init_time()
+  init_hash_header_highlight()
 
 
 window.init_loading_button = ->
@@ -43,15 +44,17 @@ window.show_notification = (message, category='warning') ->
     """
 
 
-window.init_smooth_scrolling = () ->
-  $('body').on 'click', '.smooth-scroll', ->
-    $('html, body').animate({
-        scrollTop: $($(this).attr('href')).offset().top
-     }, 256);
+window.init_hash_header_highlight = ->
+  update_hash_header()
+  ($ window).on 'hashchange', ->
+    update_hash_header()
 
 
-window.init_affix = () ->
-  $(".docs-sidenav").affix offset:
-    top: ->
-      if $(window).width() <= 980 then 180 else 170
-    bottom: 270
+window.update_hash_header = ->
+    id = location.hash.substr(1)
+    id = id.replace('.', '\\.').replace('@', '\\@')
+    ($ '.hash').removeClass 'hash'
+    if id.length > 0
+      if ($ "##{id}").hasClass 'self-link'
+        ($ "##{id}").addClass 'hash'
+

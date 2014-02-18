@@ -8,4 +8,3 @@ window.init_global = () ->
 
 window.init_doc = () ->
   prettyPrint()
-  init_affix()
