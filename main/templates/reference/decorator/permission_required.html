@@ -17,5 +17,6 @@ def moderate():
   permission which an admin can assign to individual users via the user list.
   For convenience you can leave the <code>permission</code> string empty, which
   will cause the permission to be named as the decorated function (so
-  <code>'moderate'</code> in the example above).
+  <code>@auth.permission_required()</code> would introduce and check for the
+  permission <code>'moderate'</code> in the example above).
 </p>
