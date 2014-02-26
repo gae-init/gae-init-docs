@@ -1,1 +1,22 @@
-...
+<p>
+  If you need more fine-grained control over who can access what, you can use
+  the <code>@auth.permission_required(permission)</code> decorator. It will only
+  allow accesses to the decorated function by registered users who were given
+  that permission (or admins). It works like this:
+</p>
+
+<pre class="prettyprint linenums">
+@app.route('/moderate')
+@auth.permission_required('moderator')
+def moderate():
+  return flask.render_template(...)
+</pre>
+
+<p>
+  This will automagically register <code>'moderator'</code> as an available
+  permission which an admin can assign to individual users via the user list.
+  For convenience you can leave the <code>permission</code> string empty, which
+  will cause the permission to be named as the decorated function (so
+  <code>@auth.permission_required()</code> would introduce and check for the
+  permission <code>'moderate'</code> in the example above).
+</p>
