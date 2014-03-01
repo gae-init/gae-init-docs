@@ -1,29 +1,5 @@
-<h3>Making it more personal</h3>
-
 <p>
-  In the <code>model.py</code> you should change the default
-  <code>brand_name</code> of the <code>Config</code> model to <code>Phonebook</code>
-</p>
-
-<pre class="prettyprint">
-brand_name = ndb.StringProperty(default='Phonebook')
-</pre>
-
-<p>
-  If you refresh your browser, you might not see the changes right away. You'll
-  have to clear the datastore to be able to (re-)read the default properties.
-  Stop the web server and execute the <code>run.py</code> script using the
-  additional <code>-f</code> argument to clear/reset the datastore.
-</p>
-
-<pre class="prettyprint">
-$ ./run.py -fs
-</pre>
-
-<h3>Adding new Entity</h3>
-
-<p>
-  As we are building a personal phone book, we'll need to add the contact list.
+  As we are building a personal phonebook, we'll need to add the contact list.
   Add the following at the end of <code>model.py</code>:
 </p>
 
