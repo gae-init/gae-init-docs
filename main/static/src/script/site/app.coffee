@@ -1,6 +1,6 @@
 $ ->
-  init_common()
   init_global()
+  init_common()
   setTimeout ->
       ($ '.social').css('opacity', '1')
     , 2000
