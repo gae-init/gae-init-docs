@@ -85,7 +85,6 @@ REFERENCE_DEF = {
         ('debug', ''),
         ('default_db_limit', ''),
         ('styles', ''),
-        ('scripts_modules', ''),
         ('scripts', ''),
       ],
     'utils': [
