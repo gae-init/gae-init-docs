@@ -42,21 +42,15 @@ def contact_create():
     return flask.redirect(flask.url_for('welcome'))
   return flask.render_template()
 
-
-
-
-
-
-
-
 ```
 
 ```html
-{{"#"}} extends 'base.html'
+{% raw %}
+# extends 'base.html'
 
-{{"#"}} block content
+# block content
   <div class="page-header">
-    <h1>{{"{{"}}title{{"}}"}}</h1>
+    <h1>{{title}}</h1>
   </div>
   <table class="table table-bordered">
     <thead>
@@ -69,17 +63,18 @@ def contact_create():
       </tr>
     </thead>
     <tbody>
-      {{"#"}} for contact_db in contact_dbs
+      # for contact_db in contact_dbs
         <tr>
-          <td>{{"{{"}}contact_db.key.id(){{"}}"}}</td>
-          <td>{{"{{"}}contact_db.name{{"}}"}}</td>
-          <td>{{"{{"}}contact_db.email{{"}}"}}</td>
-          <td>{{"{{"}}contact_db.phone{{"}}"}}</td>
-          <td>{{"{{"}}contact_db.address{{"}}"}}</td>
+          <td>{{contact_db.key.id()}}</td>
+          <td>{{contact_db.name}}</td>
+          <td>{{contact_db.email}}</td>
+          <td>{{contact_db.phone}}</td>
+          <td>{{contact_db.address}}</td>
         </tr>
-      {{"#"}} endfor
+      # endfor
     </tbody>
   </table>
-{{"#"}} endblock
+# endblock
+{% endraw %}
 ```
 
