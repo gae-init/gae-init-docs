@@ -32,14 +32,14 @@
             </ul>
           # endif
         </li>
+        <li class="{{'active' if html_class.find('guide') >= 0 else ''}}">
+          <a href="{{url_for('guide')}}">Developer's Guide</a>
+        </li>
         <li class="{{'active' if html_class.find('tree') >= 0 else ''}}">
           <a href="{{url_for('tree')}}">Source Tree</a>
         </li>
         <li class="{{'active' if html_class.find('run') >= 0 else ''}}">
           <a href="{{url_for('run')}}">Run script</a>
-        </li>
-        <li class="{{'active' if html_class.find('guide') >= 0 else ''}}">
-          <a href="{{url_for('guide')}}">Developer's Guide</a>
         </li>
         <li class="{{'active' if html_class.find('reference') >= 0 else ''}}">
           <a href="{{url_for('reference')}}">API Reference</a>

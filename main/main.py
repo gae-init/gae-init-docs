@@ -15,6 +15,7 @@ app.jinja_env.line_statement_prefix = '#'
 app.jinja_env.line_comment_prefix = '##'
 app.jinja_env.globals.update(slugify=util.slugify)
 app.jinja_env.globals.update(update_query_argument=util.update_query_argument)
+app.jinja_env.add_extension('jinja2_markdown.MarkdownExtension')
 
 
 import admin
@@ -106,7 +107,7 @@ def requirement():
 @app.route('/guide/')
 def guide():
   return flask.render_template(
-      'coming_soon.html',
+      'guide/guide.html',
       html_class='guide',
       title="Developer Guide",
     )

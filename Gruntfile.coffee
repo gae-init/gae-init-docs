@@ -11,7 +11,7 @@ module.exports = (grunt) ->
       rest:
         options:
           livereload: true
-        files: 'main/**/*.{py,js,html}'
+        files: 'main/**/*.{py,js,html,md}'
 
     bower:
       install:
