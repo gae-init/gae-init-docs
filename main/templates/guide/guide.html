@@ -7,23 +7,3 @@
 # endmarkdown
 </div>
 # endblock
-
-# block scripts
-<script>
-  $(function() {
-    var code_nodes = $('div.markdown pre>code');
-    code_nodes.each(function(i, el) {
-      var e = $(el);
-      var p = e.parent();
-      var lang = e.attr('class');
-      if (lang) {
-        lang +=  '-lang';
-      }
-      p.addClass(lang)
-        .html(e.html())
-        .addClass('prettyprint linenums');
-    });
-    prettyPrint();
-  });
-</script>
-# endblock
