@@ -143,13 +143,8 @@ STYLES = [
     'src/style/style.less',
   ]
 
-SCRIPTS_MODULES = [
-    'libs',
-    'scripts',
-  ]
-
-SCRIPTS = {
-    'libs': [
+SCRIPTS = [
+    ('libs', [
         'ext/js/jquery/jquery.js',
         'ext/js/momentjs/moment.js',
         'ext/js/nprogress/nprogress.js',
@@ -162,8 +157,8 @@ SCRIPTS = {
         'ext/js/bootstrap/affix.js',
         'ext/js/bootstrap/popover.js',
         'src/lib/prettify.js',
-      ],
-    'scripts': [
+      ]),
+    ('scripts', [
         'src/script/common/service.coffee',
         'src/script/common/util.coffee',
         'src/script/site/app.coffee',
@@ -172,5 +167,5 @@ SCRIPTS = {
         'src/script/site/user.coffee',
         'src/script/site/main.coffee',
         'src/script/site/tree.coffee',
-      ],
-  }
+      ]),
+  ]
