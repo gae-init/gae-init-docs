@@ -1,80 +1,97 @@
-[Tutorial]({{url_for('tutorial')}})
-Test
+So after wetting your appetite in the [Tutorial]({{url_for('tutorial')}}) we
+will now give you the big picture overview of the gae-init environment. After
+reading this guide you should understand how the individual blocks of gae-init
+play together, how you can benefit most of them and where to start in case you
+want to customize things.
 
-Overview
+
+
+Overview { #overview }
 --------
-yupp, it works `inline='code'`, isn't that nice?
+- [interplay of components](#interplay)
+    - [run.py](#run_py)
+    - [config.py](#config_py)
+    - [appcfg & app.yaml](#appengine)
+    - [server side tasks](#server_side_tasks) (setup, compiling, minification, bundling)
+        - [node](#node)
+        - [grunt](#grunt)
+        - [bower](#bower)
+        - [livereload](#livereload)
+        - [coffee](#coffee)
+        - [lesscss](#lesscss)
+    - [server side libs](#server_side_libs) (python)
+    - [client side libs](#client_side_libs) (js)
+- [main.py](#main_py)
+- [templates/base.html](#templates_base)
+    - [available blocks](#templates_blocks)
+    - [bits](#templates_bits) (especially style + js)
+- [Frequent tasks / dev workflows](#workflows)
+    - [running the server](#run_dev_server)
+    - [customize styles](#custom_styles)
+    - [custom javascript / coffeescript](#custom_js)
+    - [add a new python lib](#new_python_lib)
+    - [add a new js lib](#new_js_lib) (bower)
+    - [add a new page](#new_page)
 
-```
-s = "test some code"
-1+1
-some = "more" * 2
-lines = 47
-foo = 13
-```
 
-```python
-
-from flask.ext import wtf
-
-class ContactUpdateForm(wtf.Form):
-  name = wtf.StringField('Name', [wtf.validators.required()])
-  email = wtf.StringField('Email', [wtf.validators.optional(), wtf.validators.email()])
-  phone = wtf.StringField('Phone', [wtf.validators.optional()])
-  address = wtf.TextAreaField('Address', [wtf.validators.optional()])
+To be done:
+===========
 
 
+interplay of components { #interplay }
+--------------------------------------
+{{"###"}} run.py { #run_py }
+
+{{"###"}} config.py { #config_py }
+
+{{"###"}} appcfg & app.yaml { #appengine }
+
+{{"###"}} server side tasks (setup, compiling, minification, bundling) { #server_side_tasks }
+
+{{"####"}} node { #node }
+
+{{"####"}} grunt { #grunt }
+
+{{"####"}} bower { #bower }
+
+{{"####"}} livereload { #livereload }
+
+{{"####"}} coffee { #coffee }
+
+{{"####"}} lesscss { #lesscss }
+
+{{"###"}} server side libs (python) { #server_side_libs }
+
+{{"###"}} client side libs (js) { #client_side_libs }
 
 
-@app.route('/contact/create/', methods=['GET', 'POST'])
-@auth.login_required
-def contact_create():
-  form = ContactUpdateForm()
-  if form.validate_on_submit():
-    contact_db = model.Contact(
-        user_key=auth.current_user_key(),
-        name=form.name.data,
-        email=form.email.data,
-        phone=form.phone.data,
-        address=form.address.data,
-      )
-    contact_db.put()
-    return flask.redirect(flask.url_for('welcome'))
-  return flask.render_template()
 
-```
+main.py { #main_py }
+--------------------
 
-```html
-{% raw %}
-# extends 'base.html'
 
-# block content
-  <div class="page-header">
-    <h1>{{title}}</h1>
-  </div>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Address</th>
-      </tr>
-    </thead>
-    <tbody>
-      # for contact_db in contact_dbs
-        <tr>
-          <td>{{contact_db.key.id()}}</td>
-          <td>{{contact_db.name}}</td>
-          <td>{{contact_db.email}}</td>
-          <td>{{contact_db.phone}}</td>
-          <td>{{contact_db.address}}</td>
-        </tr>
-      # endfor
-    </tbody>
-  </table>
-# endblock
-{% endraw %}
-```
+
+templates/base.html { #templates_base }
+---------------------------------------
+
+{{"###"}} available blocks { #templates_blocks }
+
+{{"###"}} bits (especially style + js) { #templates_bits }
+
+
+
+Frequent tasks / dev workflows { #workflows }
+---------------------------------------------
+
+{{"###"}} running the server { #run_dev_server }
+
+{{"###"}} customize styles { #custom_styles }
+
+{{"###"}} custom javascript / coffeescript { #custom_js }
+
+{{"###"}} add a new python lib { #new_python_lib }
+
+{{"###"}} add a new js lib (bower) { #new_js_lib }
+
+{{"###"}} add a new page { #new_page }
 
