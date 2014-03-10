@@ -55,6 +55,5 @@ window.update_hash_header = ->
     id = id.replace('.', '\\.').replace('@', '\\@')
     ($ '.hash').removeClass 'hash'
     if id.length > 0
-      if ($ "##{id}").hasClass 'self-link'
-        ($ "##{id}").addClass 'hash'
+      ($ "##{id}.self-link, ##{id} .self-link").first().addClass('hash')
 
