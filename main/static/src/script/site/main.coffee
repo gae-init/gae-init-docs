@@ -1,5 +1,5 @@
 window.init_global = () ->
-  $('a', '.self-link').attr('title', 'Permenant link')
+  $('.self-link > a').attr('title', 'Permenant link')
   $('a').each (index) ->
     $this = $($('a')[index])
     if $this.attr('href')?.substr(0, 4) == 'http'
