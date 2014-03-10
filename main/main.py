@@ -16,6 +16,7 @@ app.jinja_env.line_comment_prefix = '##'
 app.jinja_env.globals.update(slugify=util.slugify)
 app.jinja_env.globals.update(update_query_argument=util.update_query_argument)
 app.jinja_env.add_extension('jinja2_markdown.MarkdownExtension')
+app.jinja_env.markdowner.set_output_format('html5')
 
 
 import admin
