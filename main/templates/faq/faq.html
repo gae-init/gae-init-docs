@@ -1,36 +1,7 @@
 # extends 'base_doc.html'
 
 # block content_doc
-  <section id="faq">
-    <h4>Why do I need Node.js?</h4>
-    <p>
-      To install some dependences like CoffeeScript, LESS, UglifyJS and
-      Grunt. They are all installed inside the project's directory.
-    </p>
-    <h4>Why CoffeeScript?</h4>
-    <p>
-      Because it rocks!
-    </p>
-    <h4>Can I use JavaScript instead of CoffeeScript?</h4>
-    <p>
-      Yes, but you will not rock.
-    </p>
-    <h4>Why LESS?</h4>
-    <p>
-      Because it rocks as well!
-    </p>
-    <h4>Can I use CSS instead of LESS?</h4>
-    <p>
-      Yes, but you will not rock.
-    </p>
-    <h4>It rocks, but I still don't get it. Can you help me?</h4>
-    <p>
-      If you finished the <a href="{{url_for('tutorial')}}">tutorial</a>
-      and you still have questions, you can ask them using the
-      <a href="{{url_for('feedback')}}">feedback form</a> or by sending an email to
-      <strong>gaeinit</strong> at <strong>gmail</strong> dot <strong>com</strong>
-      or you can even try the
-      <a href="http://stackoverflow.com/questions/tagged/google-app-engine">StackOverflow</a>.
-    </p>
-  </section>
+  # markdown
+    # include 'faq/faq.md'
+  # endmarkdown
 # endblock
