@@ -121,7 +121,7 @@ TUTORIAL = [
     ('model.md', 'Modify the model'),
     ('create.md', 'Add contacts'),
     ('list', 'List contacts'),
-    ('view', 'View contacts'),
+    ('view.md', 'View contacts'),
     ('update', 'Update contacts'),
 #    ('delete', 'Deleting contacts'),
 #    ('theme', 'Change theme'),
