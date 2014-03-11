@@ -22,6 +22,6 @@ window.init_doc = () ->
     e = $(el)
     p = e.parent()
     lang = e.attr("class")
-    lang += "-lang"  if lang
+    lang = "lang-#{lang}" if lang
     p.addClass(lang).html(e.html()).addClass "prettyprint linenums"
   prettyPrint()

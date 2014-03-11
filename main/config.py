@@ -119,7 +119,7 @@ TUTORIAL = [
     ('code.md', 'Get the code'),
     ('run.md', 'Run the application'),
     ('model.md', 'Modify the model'),
-    ('create', 'Add contacts'),
+    ('create.md', 'Add contacts'),
     ('list', 'List contacts'),
     ('view', 'View contacts'),
     ('update', 'Update contacts'),
