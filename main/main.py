@@ -60,15 +60,6 @@ def what():
     )
 
 
-@app.route('/example/')
-def example():
-  return flask.render_template(
-      'example/example.html',
-      html_class='example',
-      title='Examples',
-    )
-
-
 @app.route('/tree/')
 def tree():
   return flask.render_template(
