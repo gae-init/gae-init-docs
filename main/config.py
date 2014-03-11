@@ -117,8 +117,8 @@ REFERENCE_DEF = {
 TUTORIAL = [
     ('introduction.md', 'Introduction'),
     ('code.md', 'Get the code'),
-    ('run', 'Run the application'),
-    ('model', 'Modify the model'),
+    ('run.md', 'Run the application'),
+    ('model.md', 'Modify the model'),
     ('create', 'Add contacts'),
     ('list', 'List contacts'),
     ('view', 'View contacts'),
