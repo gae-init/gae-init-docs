@@ -1,17 +1,11 @@
-<p>Clone the gae-init project to get the code locally on your computer using Git:</p>
+Clone the gae-init project to get the code locally on your computer using Git:
 
-<pre class="prettyprint">
-$ git clone <span class="nocode">https://github.com/gae-init/gae-init.git phonebook</span>
-</pre>
+    $ git clone https://github.com/gae-init/gae-init.git phonebook
 
-<p>If you are more familiar with Mercurial use:</p>
+If you are more familiar with Mercurial use:
 
-<pre class="prettyprint">
-$ hg clone <span class="nocode">https://bitbucket.org/gae-init/gae-init phonebook</span>
-</pre>
+    $ hg clone https://bitbucket.org/gae-init/gae-init phonebook
 
-<p>
-  This will create a new directory that is called <code>phonebook</code>
-  including another directory called <code>main</code> which contains all the source
-  files, libraries and more.
-</p>
+This will create a new directory that is called `phonebook`
+including another directory called `main` which contains all the source
+files, libraries and more.

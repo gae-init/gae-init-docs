@@ -19,7 +19,15 @@
           <a href="#{{section[0]}}"></a>
         </h2>
       </div>
-      # include 'tutorial/%s' % section[0]
+      # if section[0].endswith('.md')
+        <div class="markdown">
+          # markdown
+            # include 'tutorial/%s' % section[0]
+          # endmarkdown
+        </div>
+      # else
+        # include 'tutorial/%s.html' % section[0]
+      # endif
     </section>
   # endfor
 # endblock

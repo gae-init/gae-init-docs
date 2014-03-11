@@ -117,15 +117,15 @@ REFERENCE_DEF = {
 TUTORIAL = [
     ('introduction.md', 'Introduction'),
     ('code.md', 'Get the code'),
-    ('run.html', 'Run the application'),
-    ('model.html', 'Modify the model'),
-    ('create.html', 'Add contacts'),
-    ('list.html', 'List contacts'),
-    ('view.html', 'View contacts'),
-    ('update.html', 'Update contacts'),
-#    ('delete.html', 'Deleting contacts'),
-#    ('theme.html', 'Change theme'),
-    ('deploy.html', 'Deploy'),
+    ('run', 'Run the application'),
+    ('model', 'Modify the model'),
+    ('create', 'Add contacts'),
+    ('list', 'List contacts'),
+    ('view', 'View contacts'),
+    ('update', 'Update contacts'),
+#    ('delete', 'Deleting contacts'),
+#    ('theme', 'Change theme'),
+    ('deploy', 'Deploy'),
   ]
 
 CONVENTION = [
