@@ -2,8 +2,8 @@
 
 #### Why do I need Node.js?
 
-To install some dependences like CoffeeScript, LESS, UglifyJS and
-Grunt. They are all installed inside the project's directory.
+To install some dependences like CoffeeScript, LESS, UglifyJS, Grunt and Bower.
+They are all installed inside the project's directory.
 
 #### Why CoffeeScript?
 

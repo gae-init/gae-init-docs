@@ -30,18 +30,18 @@ DEFAULT_DB_LIMIT = 64
 # SITE
 ################################################################################
 REQUIREMENT = [
-  ('gae', 'Google App Engine', 'Required'),
-  ('nodejs', 'node.js', 'Required'),
-]
+    ('gae', 'Google App Engine', 'Required'),
+    ('nodejs', 'node.js', 'Required'),
+  ]
 
 REFERENCE = [
-  ('util', 'Utilities', 'util.py'),
-  ('auth', 'User related', 'auth.py'),
-  ('decorator', 'Decorators', 'auth.py'),
-  ('config', 'Config', 'config.py'),
-  ('utils', 'Utilities (HTML)', 'utils.html'),
-  ('forms', 'Forms (HTML)', 'forms.html'),
-]
+    ('util', 'Utilities', 'util.py'),
+    ('auth', 'User related', 'auth.py'),
+    ('decorator', 'Decorators', 'auth.py'),
+    ('config', 'Config', 'config.py'),
+    ('utils', 'Utilities (HTML)', 'utils.html'),
+    ('forms', 'Forms (HTML)', 'forms.html'),
+  ]
 
 REFERENCE_DEF = {
     'util': [
