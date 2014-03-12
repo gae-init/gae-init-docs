@@ -19,15 +19,24 @@
           <a href="#{{section[0]}}"></a>
         </h2>
       </div>
-      # if section[0].endswith('.md')
-        <div class="markdown">
-          # markdown
-            # include 'tutorial/%s' % section[0]
-          # endmarkdown
-        </div>
-      # else
-        # include 'tutorial/%s.html' % section[0]
-      # endif
+      <div class="markdown">
+        # markdown
+          # include 'tutorial/%s.md' % section[0]
+        # endmarkdown
+      </div>
     </section>
   # endfor
+
+  <div class="gi-callout gi-callout-success">
+    <h4>Source Code & Demo</h4>
+
+    <p>
+      Get the code for this tutorial from
+      <a href="https://github.com/gae-init/phonebook">GitHub</a> (or
+      <a href="https://bitbucket.org/gae-init/phonebook">Bitbucket</a>)
+      or check out the final result in action:
+      <a href="http://phonebook.gae-init.appspot.com">Phonebook</a>.
+    </p>
+  </div>
+
 # endblock

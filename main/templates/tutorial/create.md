@@ -1,4 +1,5 @@
 {% raw %}
+
 There are a few things that we need to do in order to start adding new
 contacts. In short we're going to create a Form, a Handler and a Template.
 

@@ -115,14 +115,14 @@ REFERENCE_DEF = {
   }
 
 TUTORIAL = [
-    ('introduction.md', 'Introduction'),
-    ('code.md', 'Get the code'),
-    ('run.md', 'Run the application'),
-    ('model.md', 'Modify the model'),
-    ('create.md', 'Add contacts'),
-    ('list.md', 'List contacts'),
-    ('view.md', 'View contacts'),
-    ('update.md', 'Update contacts'),
+    ('introduction', 'Introduction'),
+    ('code', 'Get the code'),
+    ('run', 'Run the application'),
+    ('model', 'Modify the model'),
+    ('create', 'Add contacts'),
+    ('list', 'List contacts'),
+    ('view', 'View contacts'),
+    ('update', 'Update contacts'),
 #    ('delete', 'Deleting contacts'),
 #    ('theme', 'Change theme'),
     ('deploy', 'Deploy'),
