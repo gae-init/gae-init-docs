@@ -70,7 +70,7 @@ REFERENCE_DEF = {
     'decorator': [
         ('login_required', ''),
         ('admin_required', ''),
-        ('permission_required', '(permission=None)')
+        ('permission_required', '(permission=None, methods=None)')
       ],
     'config': [
         ('config_db', ''),
