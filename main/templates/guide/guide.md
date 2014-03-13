@@ -27,7 +27,7 @@ Overview { #overview }
     - [available blocks](#templates_blocks)
     - [bits](#templates_bits) (especially style + js)
 - [Frequent tasks / dev workflows](#workflows)
-    - [running the server](#run_dev_server)
+    - [running the dev-server](#run_dev_server)
     - [customize styles](#custom_styles)
     - [custom javascript / coffeescript](#custom_js)
     - [add a new python lib](#new_python_lib)
@@ -83,7 +83,36 @@ templates/base.html { #templates_base }
 Frequent tasks / dev workflows { #workflows }
 ---------------------------------------------
 
-### running the server { #run_dev_server }
+### running the dev-server { #run_dev_server }
+You can simply run the server from the project directory (one above main) by
+executing `run.py` in a terminal with the `-s` flag.
+```bash
+$ ./run.py -s
+```
+Not only will this start the server, but it will also make sure that all
+dependencies are checked and install them if necessary. Furthermore, it will
+trigger an initial compilation of the coffescript and less files to js and css
+files so your browser has some javascript and stylesheets when visiting the dev
+webserver.
+
+While this should get your basic server up and running, in order not to have to
+restart it manually whenever you for example change some coffeescript or less
+files, we suggest that run two more commands at the same time in separate
+terminals:
+```bash
+$ ./run.py -w
+```
+This will watch coffeescript and less files and trigger a recompilation whenever
+they are changed.
+
+And:
+```bash
+$ ./node_modules/.bin/grunt
+```
+This will provide a watch-daemon which thanks to a the livereload.js which is
+embedded in the development mode will automatically reload the pages in your
+browser window when any of the relevant files change. Cool, eh? ;)
+
 
 ### customize styles { #custom_styles }
 
