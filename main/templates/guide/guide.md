@@ -31,7 +31,7 @@ Overview { #overview }
     - [customize styles](#custom_styles)
     - [custom javascript / coffeescript](#custom_js)
     - [add a new python lib](#new_python_lib)
-    - [add a new js lib](#new_js_lib) (bower)
+    - [add a new / update/reinstall js lib(s)](#new_js_lib) (bower)
     - [add a new page](#new_page)
 
 
@@ -120,7 +120,7 @@ browser window when any of the relevant files change. Cool, eh? ;)
 
 ### add a new python lib { #new_python_lib }
 
-### add a new js lib (bower) { #new_js_lib }
+### add a new / update/reinstall js lib(s) (bower) { #new_js_lib }
 
 ### add a new page { #new_page }
 
