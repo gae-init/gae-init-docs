@@ -7,7 +7,7 @@ view her in the browser and the link on the contact list for easy access.
 
 Add the following code to the `contact.py` file:
 
-    @app.route('/contact/<int:contact_id>>/')
+    @app.route('/contact/<int:contact_id>/')
     @auth.login_required
     def contact_view(contact_id):
       contact_db = model.Contact.get_by_id(contact_id)
