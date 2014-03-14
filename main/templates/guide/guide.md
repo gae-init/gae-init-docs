@@ -18,8 +18,8 @@ Overview { #overview }
         - [grunt](#grunt)
         - [bower](#bower)
         - [livereload](#livereload)
-        - [coffee](#coffee)
-        - [lesscss](#lesscss)
+        - [CoffeeScript](#coffeescript)
+        - [Less](#less)
     - [server side libs](#server_side_libs) (python)
     - [client side libs](#client_side_libs) (js)
 - [main.py](#main_py)
@@ -57,9 +57,9 @@ interplay of components { #interplay }
 
 #### livereload { #livereload }
 
-#### coffee { #coffee }
+#### CoffeeScript { #coffeescript }
 
-#### lesscss { #lesscss }
+#### Less { #less }
 
 ### server side libs (python) { #server_side_libs }
 
@@ -87,31 +87,41 @@ Frequent tasks / dev workflows { #workflows }
 You can simply run the server from the project directory (one above main) by
 executing `run.py` in a terminal with the `-s` flag.
 ```bash
+$ cd /path/to/project-name
 $ ./run.py -s
 ```
-Not only will this start the server, but it will also make sure that all
-dependencies are checked and install them if necessary. Furthermore, it will
-trigger an initial compilation of the coffescript and less files to js and css
-files so your browser has some javascript and stylesheets when visiting the dev
-webserver.
+Not only will this start the server ([http://localhost:8080/]), but it will also
+make sure that all dependencies are checked and install them if necessary.
+Furthermore, it will trigger an initial compilation of the CoffeeScript and Less
+files to js and css files so your browser has some javascript and stylesheets
+when visiting the dev webserver.
 
 While this should get your basic server up and running, in order not to have to
-restart it manually whenever you for example change some coffeescript or less
-files, we suggest that run two more commands at the same time in separate
-terminals:
+restart it manually whenever you for example change some CoffeeScript
+(`*.coffee`) or Less (`*.less`) files, we suggest that run two more commands at
+the same time in separate terminals:
 ```bash
 $ ./run.py -w
 ```
-This will watch coffeescript and less files and trigger a recompilation whenever
+This will watch CoffeeScript and Less files and trigger a recompilation whenever
 they are changed.
 
 And:
 ```bash
 $ ./node_modules/.bin/grunt
 ```
-This will provide a watch-daemon which thanks to a the livereload.js which is
+This will provide a watch-daemon which thanks to a the `livereload.js` which is
 embedded in the development mode will automatically reload the pages in your
 browser window when any of the relevant files change. Cool, eh? ;)
+
+If the path to grunt seems a bit weird: you can also safely install it globally:
+```bash
+$ npm install -g grunt-cli
+```
+After this you can just run grunt from the project root:
+```bash
+$ grunt
+```
 
 
 ### customize styles { #custom_styles }
