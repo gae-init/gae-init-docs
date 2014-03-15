@@ -14,14 +14,14 @@ Overview { #overview }
     - [config.py](#config_py)
     - [appcfg & app.yaml](#appengine)
     - [server side tasks](#server_side_tasks) (setup, compiling, minification, bundling)
-        - [node](#node)
-        - [grunt](#grunt)
-        - [bower](#bower)
+        - [Node.js](#node)
+        - [Grunt](#grunt)
+        - [Bower](#bower)
         - [livereload](#livereload)
         - [CoffeeScript](#coffeescript)
         - [Less](#less)
-    - [server side libs](#server_side_libs) (python)
-    - [client side libs](#client_side_libs) (js)
+    - [server side libs](#server_side_libs) (Python)
+    - [client side libs](#client_side_libs) (JS)
 - [main.py](#main_py)
 - [templates/base.html](#templates_base)
     - [available blocks](#templates_blocks)
@@ -29,9 +29,9 @@ Overview { #overview }
 - [Frequent tasks / dev workflows](#workflows)
     - [running the dev-server](#run_dev_server)
     - [customize styles](#custom_styles)
-    - [custom javascript / coffeescript](#custom_js)
-    - [add a new python lib](#new_python_lib)
-    - [add a new / update/reinstall js lib(s)](#new_js_lib) (bower)
+    - [custom JavaScript / CoffeeScript](#custom_js)
+    - [add a new Python lib](#new_python_lib)
+    - [add a new / update/reinstall JS lib(s)](#new_js_lib) (Bower)
     - [add a new page](#new_page)
 
 
@@ -49,11 +49,11 @@ interplay of components { #interplay }
 
 ### server side tasks (setup, compiling, minification, bundling) { #server_side_tasks }
 
-#### node { #node }
+#### Node.js { #node }
 
-#### grunt { #grunt }
+#### Grunt { #grunt }
 
-#### bower { #bower }
+#### Bower { #bower }
 
 #### livereload { #livereload }
 
@@ -61,7 +61,7 @@ interplay of components { #interplay }
 
 #### Less { #less }
 
-### server side libs (python) { #server_side_libs }
+### server side libs (Python) { #server_side_libs }
 
 ### client side libs (js) { #client_side_libs }
 
@@ -94,8 +94,8 @@ Not only will this start the server
 [http://localhost:8080/](http://localhost:8080/), but it will also
 make sure that all dependencies are checked and install them if necessary.
 Furthermore, it will trigger an initial compilation of the CoffeeScript and Less
-files to js and css files so your browser has some javascript and stylesheets
-when visiting the dev webserver.
+files to JavaScript and CSS files so your browser has some JavaScript and
+stylesheets when visiting the dev webserver.
 
 While this should get your basic server up and running, in order not to have to
 restart it manually whenever you for example change some CoffeeScript
@@ -127,9 +127,9 @@ $ grunt
 
 ### customize styles { #custom_styles }
 
-### custom javascript / coffeescript { #custom_js }
+### custom JavaScript / CoffeeScript { #custom_js }
 
-### add a new python lib { #new_python_lib }
+### add a new Python lib { #new_python_lib }
 
 ### add a new / update/reinstall js lib(s) (bower) { #new_js_lib }
 
