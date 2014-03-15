@@ -26,7 +26,13 @@
               <a href="#{{file[0]}}"></a>
             </h2>
           </div>
-          # include 'reference/%s/intro.html' % file[0]
+
+          <div class="markdown">
+            # markdown
+              # include 'reference/%s/intro.md' % file[0]
+            # endmarkdown
+          </div>
+
           <dl class="reference">
             # for def in config.REFERENCE_DEF[file[0]]
               # set def_name = def[0].split('.')[0]
