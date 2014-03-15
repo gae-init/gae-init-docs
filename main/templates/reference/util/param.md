@@ -1,9 +1,11 @@
-<p>
-  Returns the value of the requested argument either via a URL argument
-  or through the input element of a form. If the requested parameter is
-  not provided this function will return <code>None</code>.
-</p>
-<h5>Arguments</h5>
+{% raw %}
+
+Returns the value of the requested argument either via a URL argument
+or through the input element of a form. If the requested parameter is
+not provided this function will return `None`.
+
+##### Arguments
+
 <dl>
   <dt>name</dt>
   <dd>The name of the argument or the form's input name.</dd>
@@ -14,3 +16,5 @@
     these values: <code>true</code>, <code>yes</code> or <code>1</code>.
   </dd>
 </dl>
+
+{% endraw %}
