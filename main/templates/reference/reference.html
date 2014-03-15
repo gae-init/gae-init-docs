@@ -29,19 +29,29 @@
           # include 'reference/%s/intro.html' % file[0]
           <dl class="reference">
             # for def in config.REFERENCE_DEF[file[0]]
+              # set def_name = def[0].split('.')[0]
+
               # if file[0] == 'decorator'
-                # set name = '@auth.%s' % (def[0])
+                # set name = '@auth.%s' % (def_name)
               # elif file[0] == 'config'
-                # set name = '%s.%s' % (file[0], def[0].upper())
+                # set name = '%s.%s' % (file[0], def_name.upper())
               # else
-                # set name = '%s.%s' % (file[2].split('.')[0], def[0])
+                # set name = '%s.%s' % (file[2].split('.')[0], def_name)
               # endif
               <dt id="{{name}}" class="self-link">
                 {{name}}{{def[1]}}
                 <a href="#{{name}}"></a>
               </dt>
               <dd>
-                # include 'reference/%s/%s.html' % (file[0], def[0])
+                # if def[0].endswith('md')
+                  <div class="markdown">
+                    # markdown
+                      # include 'reference/%s/%s.md' % (file[0], def_name)
+                    # endmarkdown
+                  </div>
+                # else
+                  # include 'reference/%s/%s.html' % (file[0], def_name)
+                # endif
               </dd>
             # endfor
           </dl>

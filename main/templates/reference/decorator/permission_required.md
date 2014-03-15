@@ -1,6 +1,3 @@
-<div class="markdown">
-# markdown
-
 If you need more fine-grained control over who can access what, you can use
 the `@auth.permission_required(permission)` decorator. It will only
 allow accesses to the decorated function by registered users who were given
@@ -32,6 +29,7 @@ on all requests regardless of their method.
 Several uses of this decorator can be combined as in the example below.
 This only allows access to `endpoint` in GET requests if the user has `'foo_r'`
 permission. For POST requests the user needs both `'foo_r'` and `'foo_w'`:
+
 ```python
 @app.route('/endpoint/')
 @auth.permission_required('foo_r')
@@ -51,6 +49,3 @@ The order of the statements is not important as the permissions
 are wrapped around each other. All of the permission guards have to
 be passed in order to reach `endpoint`. Passing one of them does
 **not** skip the others.
-
-# endmarkdown
-</div>

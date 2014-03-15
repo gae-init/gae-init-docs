@@ -36,6 +36,7 @@ REQUIREMENT = [
 
 REFERENCE = [
     ('util', 'Utilities', 'util.py'),
+    ('task', 'Tasks', 'task.py'),
     ('auth', 'User related', 'auth.py'),
     ('decorator', 'Decorators', 'auth.py'),
     ('config', 'Config', 'config.py'),
@@ -61,6 +62,10 @@ REFERENCE_DEF = {
         ('strip_filter', '()'),
         ('email_filter', '()'),
       ],
+    'task': [
+        ('send_mail_notification.md', '(subject, body, **kwargs)'),
+        ('new_user_notification.md', '(user_db)'),
+      ],
     'auth': [
         ('current_user_id', '()'),
         ('current_user_key', '()'),
@@ -70,7 +75,7 @@ REFERENCE_DEF = {
     'decorator': [
         ('login_required', ''),
         ('admin_required', ''),
-        ('permission_required', '(permission=None, methods=None)')
+        ('permission_required.md', '(permission=None, methods=None)')
       ],
     'config': [
         ('config_db', ''),
