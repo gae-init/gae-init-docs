@@ -53,7 +53,7 @@ REFERENCE_DEF = {
         ('jsonify_model_db', '(model_db)'),
         ('model_db_to_object', '(model_db)'),
         ('json_value', '(value)'),
-        ('jsonpify', '(*args, **kwargs)'),
+        ('jsonpify.md', '(*args, **kwargs)'),
         ('generate_more_url', '(more_cursor, base_url=None)'),
         ('uuid', '()'),
         ('slugify', '(text)'),
