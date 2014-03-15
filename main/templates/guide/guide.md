@@ -90,7 +90,8 @@ executing `run.py` in a terminal with the `-s` flag.
 $ cd /path/to/project-name
 $ ./run.py -s
 ```
-Not only will this start the server ([http://localhost:8080/]), but it will also
+Not only will this start the server
+[http://localhost:8080/](http://localhost:8080/), but it will also
 make sure that all dependencies are checked and install them if necessary.
 Furthermore, it will trigger an initial compilation of the CoffeeScript and Less
 files to js and css files so your browser has some javascript and stylesheets
