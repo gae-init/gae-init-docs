@@ -67,10 +67,10 @@ REFERENCE_DEF = {
         ('new_user_notification.md', '(user_db)'),
       ],
     'auth': [
-        ('current_user_id', '()'),
-        ('current_user_key', '()'),
-        ('current_user_db', '()'),
-        ('is_logged_in', '()'),
+        ('current_user_id.md', '()'),
+        ('current_user_key.md', '()'),
+        ('current_user_db.md', '()'),
+        ('is_logged_in.md', '()'),
       ],
     'decorator': [
         ('login_required', ''),
