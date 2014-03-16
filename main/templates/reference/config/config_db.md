@@ -1,0 +1,3 @@
+It's a copy of the single entity of the `Config` model. For example if you want
+to use the `brand_name` you should use it like: `config.CONFIG_DB.brand_name`,
+instead of accessing it directly from the Model.

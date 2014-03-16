@@ -78,7 +78,7 @@ REFERENCE_DEF = {
         ('permission_required.md', '(permission=None, methods=None)')
       ],
     'config': [
-        ('config_db', ''),
+        ('config_db.md', ''),
         ('secret_key', ''),
         ('current_version_id', ''),
         ('current_version_name', ''),
