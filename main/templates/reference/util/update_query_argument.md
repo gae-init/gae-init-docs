@@ -1,13 +1,13 @@
-<p>
-  Takes the current URL request and updates only the argument <code>name</code>
-  with the given <code>value</code>. If the value is omitted then that
-  argument will be removed from the request. This function is intended to be
-  used in the Jinja2 templates and currently it's being used in
-  <a href="#utils.order_by_link"><code>utils.order_by_link()</code></a> and
-  <a href="#utils.filter_by_link"><code>utils.filter_by_link()</code></a>.
-</p>
+{% raw %}
 
-<h5>Arguments</h5>
+Takes the current URL request and updates only the argument `name` with the
+given `value`. If the value is omitted then that argument will be removed from
+the request. This function is intended to be used in the Jinja2 templates and
+currently it's being used in [`utils.order_by_link()`](#utils.order_by_link)
+and [`utils.filter_by_link()`](#utils.filter_by_link).
+
+##### Arguments
+
 <dl>
   <dt>name</dt>
   <dd>The name of the argument to be updated.</dd>
@@ -24,3 +24,5 @@
     arguments will have a different value.
   </dd>
 </dl>
+
+{% endraw %}
