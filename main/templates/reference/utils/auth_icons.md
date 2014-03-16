@@ -1,10 +1,11 @@
-<p>
-  Renders multiple authentication icons based on the given list. It uses
-  the <a href="#utils.auth_icon"><code>auth_icon</code></a> to render the
-  individual icons.
-</p>
+{% raw %}
 
-<h5>Arguments</h5>
+Renders multiple authentication icons based on the given list. It uses the
+[`auth_icon`](#utils.auth_icon) to render the individual icons.
+
+
+##### Arguments
+
 <dl>
   <dt>auth_ids</dt>
   <dd>
@@ -12,3 +13,5 @@
     <code>{brand}_{id}</code>.
   </dd>
 </dl>
+
+{% endraw %}

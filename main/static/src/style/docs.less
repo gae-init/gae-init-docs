@@ -82,7 +82,7 @@ section  {
   &.active {
     background-color: @brand-warning;
   }
-  a {
+  a:first-child {
     display: none;
     text-decoration: none;
     color: @gray-light;
@@ -101,7 +101,7 @@ section  {
       content: "";
     }
   }
-  &:hover a {
+  &:hover a:first-child {
     display: inline;
   }
 }
@@ -120,4 +120,17 @@ section  {
 .hash {
   background-color: fade(@brand-info, 8%);
   border-radius: 0  0 12px 12px;
+}
+
+
+.github-edit {
+  display: inline-block;
+  float: right;
+  font-size: 10px;
+  opacity: .2;
+  padding-right: 8px;
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+  }
 }

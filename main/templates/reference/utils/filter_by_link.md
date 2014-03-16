@@ -1,11 +1,12 @@
-<p>
-  Generates a link that will add (or replace) <code>&property=value</code>
-  to the current request or will remove it if it's already there. Optionally
-  instead of showing the actual value it is possible to show an icon. The icon
-  is more appropriate when filtering by boolean properties.
-</p>
+{% raw %}
 
-<h5>Arguments</h5>
+Generates a link that will add (or replace) <code>&property=value</code>
+to the current request or will remove it if it's already there. Optionally
+instead of showing the actual value it is possible to show an icon. The icon
+is more appropriate when filtering by boolean properties.
+
+##### Arguments
+
 <dl>
   <dt>property</dt>
   <dd>The name of the entity's property.</dd>
@@ -26,10 +27,10 @@
   </dd>
 </dl>
 
-<div class="gi-callout gi-callout-info">
-  <h4>Examples & Demo</h4>
-  Check how it is used in
-  <a href="https://github.com/gae-init/gae-init/blob/master/main/templates/user/user_list.html">user_list.html</a>
-  and play with filters in
-  <a href="https://gae-init.appspot.com/user/?order=-modified">User List</a>.
-</div>
+> #### Examples & Demo
+> Check how it is used in
+> [user_list.html](https://github.com/gae-init/gae-init/blob/master/main/templates/user/user_list.html)
+> and play with filters in
+> [User List](https://gae-init.appspot.com/user/?order=-modified).
+
+{% endraw %}
