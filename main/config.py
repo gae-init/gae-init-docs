@@ -80,7 +80,7 @@ REFERENCE_DEF = {
     'config': [
         ('config_db.md', ''),
         ('secret_key.md', ''),
-        ('current_version_id', ''),
+        ('current_version_id.md', ''),
         ('current_version_name', ''),
         ('current_version_timestamp', ''),
         ('current_version_date', ''),
