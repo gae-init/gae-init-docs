@@ -46,21 +46,21 @@ REFERENCE = [
 
 REFERENCE_DEF = {
     'util': [
-        ('param.md', '(name, cast=None)'),
-        ('get_next_url', '()'),
-        ('retrieve_dbs', '(query, order=None, limit=None, cursor=None, keys_only=None, **filters)'),
-        ('jsonify_model_dbs', '(model_dbs, more_cursor=None)'),
-        ('jsonify_model_db', '(model_db)'),
-        ('model_db_to_object', '(model_db)'),
-        ('json_value', '(value)'),
+        ('param.md.md', '(name, cast=None)'),
+        ('get_next_url.md', '()'),
+        ('retrieve_dbs.md', '(query, order=None, limit=None, cursor=None, keys_only=None, **filters)'),
+        ('jsonify_model_dbs.md', '(model_dbs, more_cursor=None)'),
+        ('jsonify_model_db.md', '(model_db)'),
+        ('model_db_to_object.md', '(model_db)'),
+        ('json_value.md', '(value)'),
         ('jsonpify.md', '(*args, **kwargs)'),
-        ('generate_more_url', '(more_cursor, base_url=None)'),
-        ('uuid', '()'),
-        ('slugify', '(text)'),
-        ('is_valid_username', '(username)'),
-        ('update_query_argument', '(name, value=None, ignore=[])'),
-        ('strip_filter', '()'),
-        ('email_filter', '()'),
+        ('generate_more_url.md', '(more_cursor, base_url=None)'),
+        ('uuid.md', '()'),
+        ('slugify.md', '(text)'),
+        ('is_valid_username.md', '(username)'),
+        ('update_query_argument.md', '(name, value=None, ignore=[])'),
+        ('strip_filter.md', '()'),
+        ('email_filter.md', '()'),
       ],
     'task': [
         ('send_mail_notification.md', '(subject, body, **kwargs)'),
@@ -73,8 +73,8 @@ REFERENCE_DEF = {
         ('is_logged_in.md', '()'),
       ],
     'decorator': [
-        ('login_required', ''),
-        ('admin_required', ''),
+        ('login_required.md', ''),
+        ('admin_required.md', ''),
         ('permission_required.md', '(permission=None, methods=None)')
       ],
     'config': [
