@@ -101,8 +101,13 @@ section  {
       content: "";
     }
   }
-  &:hover a:first-child {
-    display: inline;
+  &:hover {
+    a:first-child {
+      display: inline;
+    }
+    .github-edit {
+      opacity: .7;
+    }
   }
 }
 
@@ -127,10 +132,10 @@ section  {
   display: inline-block;
   float: right;
   font-size: 10px;
-  opacity: .1;
+  opacity: .2;
   padding-right: 8px;
   &:hover {
-    opacity: 1;
+    opacity: .7;
     text-decoration: none;
   }
 }

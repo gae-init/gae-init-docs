@@ -1,4 +1,4 @@
-If the `&next argument is provided in the URL then this function will return
+If the `&next` argument is provided in the URL then this function will return
 its value.
 
 If the `&next` argument is not present then it will return the `referrer` URL,
