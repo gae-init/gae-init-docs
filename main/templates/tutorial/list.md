@@ -7,26 +7,28 @@ present them in the browser and the link on the top bar to access this list.
 
 ### Contact List Handler
 
-Add the following code to the <code>contact.py</code> file:
+Add the following code to the `contact.py` file:
 
-    import util
+```python
+import util
 
-    @app.route('/contact/')
-    @auth.login_required
-    def contact_list():
-      contact_dbs, more_cursor = util.retrieve_dbs(
-          model.Contact.query(),
-          limit=util.param('limit', int),
-          cursor=util.param('cursor'),
-          order=util.param('order') or 'name',
-        )
-      return flask.render_template(
-          'contact_list.html',
-          html_class='contact-list',
-          title='Contact List',
-          contact_dbs=contact_dbs,
-          more_url=util.generate_more_url(more_cursor),
-        )
+@app.route('/contact/')
+@auth.login_required
+def contact_list():
+  contact_dbs, more_cursor = util.retrieve_dbs(
+      model.Contact.query(),
+      limit=util.param('limit', int),
+      cursor=util.param('cursor'),
+      order=util.param('order') or 'name',
+    )
+  return flask.render_template(
+      'contact_list.html',
+      html_class='contact-list',
+      title='Contact List',
+      contact_dbs=contact_dbs,
+      more_url=util.generate_more_url(more_cursor),
+    )
+```
 
 ### Contact List Template
 
@@ -108,12 +110,16 @@ the new contact was successfully created.
 
 Find the following line in the contat_create handler:
 
-    return flask.redirect(flask.url_for('welcome'))
+```python
+return flask.redirect(flask.url_for('welcome'))
+```
 
 and replace it with the following:
 
-    flask.flash('New contact was successfully created!', category='success')
-    return flask.redirect(flask.url_for('contact_list', order='-created'))
+```python
+flask.flash('New contact was successfully created!', category='success')
+return flask.redirect(flask.url_for('contact_list', order='-created'))
+```
 
 The first line is to flash the message that the creation was successful.
 The argument `category' is optional and can be one of the

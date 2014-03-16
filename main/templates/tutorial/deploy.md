@@ -4,7 +4,9 @@ and scripts because otherwise your latest changes won't appear online!
 To minify your styles and scripts execute the `run.py` script by
 providing the `-m` argument
 
-    $ ./run.py -m
+```bash
+$ ./run.py -m
+```
 
 After that make sure that you have created a new application on
 [App Engine](http://appengine.google.com)

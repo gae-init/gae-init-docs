@@ -12,24 +12,26 @@ we'll combine the create and update templates to maintain only one.
 
 Add the following code to the `contact.py` file:
 
-    @app.route('/contact/<int:contact_id>/update/', methods=['GET', 'POST'])
-    @auth.login_required
-    def contact_update(contact_id):
-      contact_db = model.Contact.get_by_id(contact_id)
-      if not contact_db or contact_db.user_key != auth.current_user_key():
-        flask.abort(404)
-      form = ContactUpdateForm(obj=contact_db)
-      if form.validate_on_submit():
-        form.populate_obj(contact_db)
-        contact_db.put()
-        return flask.redirect(flask.url_for('contact_list', order='-modified'))
-      return flask.render_template(
-          'contact_update.html',
-          html_class='contact-update',
-          title=contact_db.name,
-          form=form,
-          contact_db=contact_db,
-        )
+```python
+@app.route('/contact/<int:contact_id>/update/', methods=['GET', 'POST'])
+@auth.login_required
+def contact_update(contact_id):
+  contact_db = model.Contact.get_by_id(contact_id)
+  if not contact_db or contact_db.user_key != auth.current_user_key():
+    flask.abort(404)
+  form = ContactUpdateForm(obj=contact_db)
+  if form.validate_on_submit():
+    form.populate_obj(contact_db)
+    contact_db.put()
+    return flask.redirect(flask.url_for('contact_list', order='-modified'))
+  return flask.render_template(
+      'contact_update.html',
+      html_class='contact-update',
+      title=contact_db.name,
+      form=form,
+      contact_db=contact_db,
+    )
+```
 
 ### Contact Update Template
 

@@ -7,18 +7,20 @@ view her in the browser and the link on the contact list for easy access.
 
 Add the following code to the `contact.py` file:
 
-    @app.route('/contact/<int:contact_id>/')
-    @auth.login_required
-    def contact_view(contact_id):
-      contact_db = model.Contact.get_by_id(contact_id)
-      if not contact_db or contact_db.user_key != auth.current_user_key():
-        flask.abort(404)
-      return flask.render_template(
-          'contact_view.html',
-          html_class='contact-view',
-          title=contact_db.name,
-          contact_db=contact_db,
-        )
+```python
+@app.route('/contact/<int:contact_id>/')
+@auth.login_required
+def contact_view(contact_id):
+  contact_db = model.Contact.get_by_id(contact_id)
+  if not contact_db or contact_db.user_key != auth.current_user_key():
+    flask.abort(404)
+  return flask.render_template(
+      'contact_view.html',
+      html_class='contact-view',
+      title=contact_db.name,
+      contact_db=contact_db,
+    )
+```
 
 ### Contact View Template
 
