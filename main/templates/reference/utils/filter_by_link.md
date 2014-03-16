@@ -4,6 +4,7 @@
   instead of showing the actual value it is possible to show an icon. The icon
   is more appropriate when filtering by boolean properties.
 </p>
+
 <h5>Arguments</h5>
 <dl>
   <dt>property</dt>
