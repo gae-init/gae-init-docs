@@ -1,3 +1,1 @@
-<p>
-  Same as <code>config.DEVELOPMENT</code> and it's used in Flask configuration.
-</p>
+Same as `config.DEVELOPMENT` and it's used in Flask configuration.

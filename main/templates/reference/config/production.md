@@ -1,3 +1,1 @@
-<p>
-  <code>True</code> if running on production server, <code>False</code> otherwise.
-</p>
+`True` if running on production server, `False` otherwise.
