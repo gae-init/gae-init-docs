@@ -1,70 +1,14 @@
 # extends 'base_doc.html'
+# import 'macro/utils.html' as utils
 
 # block content_doc
   <div class="row">
     <div class="col-md-7">
-      <h3>Highlights</h3>
-      <ul>
-        <li>
-          JSON services with
-          <a href="http://gae-init.appspot.com{{url_for('user_list_service')}}" target="_blank">more URL</a>,
-          <a href="http://gae-init.appspot.com{{url_for('user_list_service', limit=8)}}" target="_blank">limits</a>,
-          <a href="http://gae-init.appspot.com{{url_for('user_list_service', admin='true')}}" target="_blank">filters</a>,
-          <a href="http://gae-init.appspot.com{{url_for('user_list_service', order='name')}}" target="_blank">orders</a> and
-          <a href="http://gae-init.appspot.com{{url_for('user_list_service', limit=4, order='name', admin='true')}}" target="_blank">more..</a>
-        </li>
-        <li>
-          JSONP support by providing a
-          <a href="http://gae-init.appspot.com{{url_for('user_list_service', limit=2, order='name', callback='hello')}}" target="_blank"><code>&amp;callback</code></a>
-          argument to JSON services
-        </li>
-        <li>Custom pages for error handlings, like <a href="/404">404</a></li>
-        <li>
-          Jinja2 template macros for
-          <a href="{{url_for('feedback')}}">form inputs</a>,
-          <a href="http://gae-init.appspot.com{{url_for('user_list', order='name')}}" target="_blank">order by links</a>,
-          <a href="http://gae-init.appspot.com{{url_for('user_list', admin=True, active=True, limit=16)}}" target="_blank">filter by links</a>,
-          <a href="http://gae-init.appspot.com{{url_for('user_list', limit=4, active=True, order='-modified')}}" target="_blank">easy pagination</a>
-          and more..
-        </li>
-        <li>Secret keys and other settings are stored securely in Datastore</li>
-        <li>Admin console to manage secret keys and other settings</li>
-        <li>Mobile first through Bootstrap 3</li>
-        <li>Automatic redirect to where you were after sign-in</li>
-        <li>Showing relative time for <code>&lt;time datetime='...'&gt;</code></li>
-        <li>Add <code>.btn-loading</code> and your buttons will have the loading functionality</li>
-        <li>Working <a href="{{url_for('feedback')}}">feedback form</a></li>
-        <li>Multiple OAuth options to <a href="{{url_for('signin')}}">sign-in</a> (Google, Facebook, Twitter)</li>
-        <li>Add easily any other OAuth provider</li>
-        <li>User list that is visible only to the administrators</li>
-        <li>Delete or merge users</li>
-        <li>User permissions are rout decorators</li>
-        <li>Easy pagination with custom wrappers using NDB cursors</li>
-        <li>Prefetch links for next pages</li>
-        <li>Gravatar support for <a href="{{url_for('profile')}}">user profile</a></li>
-        <li>Secure cookies through Flask's sessions</li>
-        <li>HTML5 Rocks</li>
-        <li><a href="http://validator.w3.org/check?verbose=1&amp;uri={{request.host_url[:-1]}}{{request.path}}">This document was successfully checked as HTML5!</a></li>
-        <li>SEO friendly with stuff like <a href="{{url_for('sitemap')}}">sitemaps.xml</a>, <a href="/robots.txt">robots.txt</a> and even <a href="/favicon.ico">favicon.ico</a></li>
-        <li>Dismissible user notifications in 4 different categories</li>
-        <li>Announcement posts across the whole site configurable by admininistrators</li>
-        <li>Many more small details and optimizations</li>
-      </ul>
-      <h3>Development</h3>
-      <ul>
-        <li>Custom <a href="{{url_for('run')}}">run script</a> to watch, minify and run your app locally</li>
-        <li>Out of the box support for CoffeeScript and LESS</li>
-        <li>Compile on save <code>*.coffee</code> via custom script</li>
-        <li>Compile on save <code>*.less</code> via custom script</li>
-        <li>Hussle free frontend js lib management with <a href="http://bower.io/">bower</a></li>
-        <li>Custom template macros and utilities for Jinja2</li>
-        <li>Form creations and HTML5 inputs are done easy through template macros</li>
-        <li>Minify and concatenate scripts and styles (reducing GAE quota use and bandwidth)</li>
-        <li>3rd party libraries are zipped for faster uploads</li>
-        <li>Live reload and support for other recurring tasks through <a href="http://gruntjs.com/">Grunt</a></li>
-        <li>Write your scripts in vanilla JavaScript or CoffeeScript</li>
-        <li>Write your styles in vanilla CSS or LESS</li>
-      </ul>
+      <h3>Highlights {{utils.github_edit_template_link('feature/highlights.md')}}</h3>
+      {{utils.include_md('feature/highlights.md')}}
+
+      <h3>Development {{utils.github_edit_template_link('feature/development.md')}}</h3>
+      {{utils.include_md('feature/development.md')}}
     </div>
     <div class="col-md-5">
       # include 'doc/tech_stack.html'
@@ -81,14 +25,9 @@
         <li><a href="https://github.com/mgood/flask-debugtoolbar">Flask DebugToolbar</a></li>
         <li><a href="https://github.com/kamens/gae_mini_profiler">gae_mini_profiler</a></li>
       </ul>
-      <h3>Forks</h3>
-      <ul>
-        <li>Only the core functionality fork <a href="http://babel.gae-init.appspot.com">gae-init</a></li>
-        <li>Sign in with even more options though <a href="http://gae-init.appspot.com/signin/">gae-init-auth</a></li>
-        <li>Add i18n and L10n support through <a href="http://babel.gae-init.appspot.com">gae-init-babel</a></li>
-        <li>Start uploading files to Google Cloud Storage through <a href="http://upload.gae-init.appspot.com">gae-init-upload</a></li>
-        <li>Start monitoring your requests and more through <a href="http://debug.gae-init.appspot.com">gae-init-debug</a></li>
-      </ul>
+
+      <h3>Forks {{utils.github_edit_template_link('feature/forks.md')}}</h3>
+      {{utils.include_md('feature/forks.md')}}
     </div>
   </div>
 # endblock

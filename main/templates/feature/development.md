@@ -1,0 +1,12 @@
+- Custom [run script]({{url_for('run')}}) to watch, minify and run your app locally
+- Out of the box support for CoffeeScript and LESS
+- Compile on save `*.coffee` via custom script
+- Compile on save `*.less` via custom script
+- Hassle free frontend JS lib management with [Bower](http://bower.io/)
+- Custom template macros and utilities for Jinja2
+- Form creations and HTML5 inputs are done easy through template macros
+- Minify and concatenate scripts and styles (reducing GAE quota use and bandwidth)
+- 3rd party libraries are zipped for faster uploads
+- Live reload and support for other recurring tasks through [Grunt](http://gruntjs.com/)
+- Write your scripts in vanilla JavaScript or CoffeeScript
+- Write your styles in vanilla CSS or LESS
