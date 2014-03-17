@@ -75,26 +75,7 @@ versions. This should be used whenever you want to update your 3rd party
 libraries and tools. See also the [Node.js](#node), [Bower](#bower) and
 [add a new / update/reinstall js lib(s)](#new_js_lib) sections below.
 
-For completeness:
-```bash
-$ ./run.py -h
-usage: run.py [-h] [-w] [-c] [-C] [-m] [-s] [-o HOST] [-p PORT] [-f]
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -w, --watch           watch files for changes when running the development
-                        web server
-  -c, --clean           recompiles files when running the development web
-                        server
-  -C, --clean-all       Cleans all the Node & Bower related tools / libraries
-                        and updates them to their latest versions
-  -m, --minify          compiles files into minified version before deploying
-  -s, --start           starts the dev_appserver.py with storage_path pointing
-                        to temp
-  -o HOST, --host HOST  the host to start the dev_appserver.py
-  -p PORT, --port PORT  the port to start the dev_appserver.py
-  -f, --flush           clears the datastore, blobstore, etc
-```
+For completeness also have a look at our [Run Script]({% endraw %}{{url_for('run')}}{% raw %}) page.
 
 ### config.py { #config_py }
 
