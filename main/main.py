@@ -108,7 +108,7 @@ def guide():
 @app.route('/features/')
 def features():
   return flask.render_template(
-      'doc/features.html',
+      'feature/feature.html',
       html_class='features',
       title='Features',
     )
