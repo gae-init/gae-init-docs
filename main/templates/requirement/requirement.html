@@ -1,4 +1,5 @@
 # extends 'base_doc.html'
+# import 'macro/utils.html' as utils
 
 # block content_doc
   <div class="row">
@@ -25,11 +26,10 @@
                 {{section[2]}}
                 <a href="#{{section[0]}}"></a>
               </small>
+              {{utils.github_edit_template_link('requirement/%s.md' % (section[0]))}}
             </h2>
           </div>
-          # markdown
-            # include 'requirement/%s.md' % section[0]
-          # endmarkdown
+          {{utils.include_md('requirement/%s.md' % section[0])}}
         </section>
       # endfor
     </div>

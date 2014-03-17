@@ -72,6 +72,19 @@
   #- endif
 # endmacro
 
+
 # macro github_edit_template_link(file)
-  <a class="github-edit" title="Edit on GitHub" href="https://github.com/gae-init/gae-init-docs/blob/master/main/templates/{{file}}"><i class="fa fa-github"></i> Edit</a>
+  <a class="github-edit" title="Edit on GitHub" href="https://github.com/gae-init/gae-init-docs/blob/master/main/templates/{{file}}">
+    <i class="fa fa-github"></i> Edit
+    <i class="fa fa-chevron-down"></i>
+  </a>
+# endmacro
+
+
+# macro include_md(file)
+  <div class="markdown">
+    # markdown
+      # include file
+    # endmarkdown
+  </div>
 # endmacro

@@ -19,11 +19,7 @@
           <a href="#{{section[0]}}"></a>
         </h2>
       </div>
-      <div class="markdown">
-        # markdown
-          # include 'tutorial/%s.md' % section[0]
-        # endmarkdown
-      </div>
+      {{utils.include_md('tutorial/%s.md' % section[0])}}
     </section>
   # endfor
 

@@ -28,11 +28,7 @@
             </h2>
           </div>
 
-          <div class="markdown">
-            # markdown
-              # include 'reference/%s/intro.md' % file[0]
-            # endmarkdown
-          </div>
+          {{utils.include_md('reference/%s/intro.md' % file[0])}}
 
           <dl class="reference">
             # for def in config.REFERENCE_DEF[file[0]]
@@ -49,11 +45,7 @@
                 {{utils.github_edit_template_link('reference/%s/%s.md' % (file[0], def[0]))}}
               </dt>
               <dd>
-                <div class="markdown">
-                  # markdown
-                    # include 'reference/%s/%s.md' % (file[0], def[0])
-                  # endmarkdown
-                </div>
+                {{utils.include_md('reference/%s/%s.md' % (file[0], def[0]))}}
               </dd>
             # endfor
           </dl>

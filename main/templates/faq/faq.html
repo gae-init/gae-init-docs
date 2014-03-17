@@ -1,7 +1,6 @@
 # extends 'base_doc.html'
+# import 'macro/utils.html' as utils
 
 # block content_doc
-  # markdown
-    # include 'faq/faq.md'
-  # endmarkdown
+  {{utils.include_md('faq/faq.md')}}
 # endblock

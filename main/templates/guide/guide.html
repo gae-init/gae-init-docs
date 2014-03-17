@@ -1,9 +1,6 @@
 # extends 'base_doc.html'
+# import 'macro/utils.html' as utils
 
 # block content_doc
-  <div class="markdown">
-    # markdown
-      # include 'guide/guide.md'
-    # endmarkdown
-  </div>
+  {{utils.include_md('guide/guide.md')}}
 # endblock
