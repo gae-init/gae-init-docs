@@ -1,15 +1,15 @@
-{% raw %}
 So after wetting your appetite in the [Tutorial]({{url_for('tutorial')}}) we
 will now give you the big picture overview of the gae-init environment. After
 reading this guide you should understand how the individual blocks of gae-init
 play together, how you can benefit most of them and where to start in case you
 want to customise things.
 
+{% raw %}
 
 Overview { #overview }
 --------
 
-- [interplay of components](#interplay)
+- [Interplay of components](#interplay)
     - [run.py](#run_py)
     - [config.py](#config_py)
     - [appcfg & app.yaml](#appengine)
@@ -35,17 +35,53 @@ Overview { #overview }
     - [add a new page](#new_page)
 
 
-To be done:
-===========
-
-
-interplay of components { #interplay }
+Interplay of components { #interplay }
 --------------------------------------
+gae-init is built on top of several tools that try to ease your job as developer
+by supporting common tasks. In order to be awesome you have to know these little
+helpers and how they work together, so let's get you on the line.
+
 ### run.py { #run_py }
+It all starts with `./run.py` which you might still know from the
+[Tutorial]({% endraw %}{{url_for('tutorial')}}{% raw %}). As its name implies it
+runs your dev-server on [http://localhost:8080](http://localhost:8080) with
+`./run.py -s`.
+
+What we didn't mention in the Tutorial is that you typically want start a second
+`./run.py -w` in a different terminal window to watch for changes in `*.coffee`
+and `*.less` files and automagically trigger a recompilation (also see our
+Frequent Tasks section [running the dev-server](#run_dev_server) for some more
+included batteries).
+
+`./run.py` can also flush your dev-server's datastore `-f`, so you can start
+from scratch with a fresh store without worrying about interference with already
+existing objects in it from previous runs.
+
+`./run.py -m` will minify and bundle together your `*.js` and `*.css` files
+(manually generated ones, the ones from installed libs as well as the ones
+generated from CoffeeScript and Less). On your dev-server you will normally not
+see the minified version of your page as it is cumbersome for debugging, but in
+production the minification can drastically reduce the size and amounts of
+requests to your page (in case of this docs page from 49 to 28) and thereby
+increase your page load speed. Therefore, you need to run `./run.py -m` before
+deploying your app. If you want to see the effects without deploying feel free
+to temporarily set `PRODUCTION=True` in your `config.py`. Be aware of the fact
+that the minified files don't auto-update though, so you need to re-run the
+minification if you change something in your scripts or styles.
+
+Last but not least `./run.py -C` will clean up and reinstall all the local
+tools and libraries that were downloaded via Node and Bower to their latest
+versions. This should be used whenever you want to update your 3rd party 
+libraries and tools. See also the [Node.js](#node), [Bower](#bower) and
+[add a new / update/reinstall js lib(s)](#new_js_lib) sections below.
+
+For completeness also have a look at our 
+[Run Script]({% endraw %}{{url_for('run')}}{% raw %}) page.
 
 ### config.py { #config_py }
 
 ### appcfg & app.yaml { #appengine }
+TODO: mention need for `./run.py -m` before deployment
 
 ### server side tasks (setup, compiling, minification, bundling) { #server_side_tasks }
 
