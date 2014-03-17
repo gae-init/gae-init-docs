@@ -67,11 +67,12 @@ increase your page load speed. Therefore, you need to run `./run.py -m` before
 deploying your app. If you want to see the effects without deploying feel free
 to temporarily set `PRODUCTION=True` in your `config.py`. Be aware of the fact
 that the minified files don't auto-update though, so you need to re-run the
-minification if you change something.
+minification if you change something in your scripts or styles.
 
-Last but not least `./run.py -C` will clean up your libs installed with node and
-bower. The next start of `./run.py -s` will reinstall them, so this can also be
-used to update your js libs. Also see the [Node.js](#node), [Bower](#bower) and
+Last but not least `./run.py -C` will clean up and reinstall all the local
+tools and libraries that were downloaded via Node and Bower to their latest
+versions. This should be used whenever you want to update your 3rd party 
+libraries and tools. See also the [Node.js](#node), [Bower](#bower) and
 [add a new / update/reinstall js lib(s)](#new_js_lib) sections below.
 
 For completeness:
