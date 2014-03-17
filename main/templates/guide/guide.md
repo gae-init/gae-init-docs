@@ -75,7 +75,8 @@ versions. This should be used whenever you want to update your 3rd party
 libraries and tools. See also the [Node.js](#node), [Bower](#bower) and
 [add a new / update/reinstall js lib(s)](#new_js_lib) sections below.
 
-For completeness also have a look at our [Run Script]({% endraw %}{{url_for('run')}}{% raw %}) page.
+For completeness also have a look at our 
+[Run Script]({% endraw %}{{url_for('run')}}{% raw %}) page.
 
 ### config.py { #config_py }
 
