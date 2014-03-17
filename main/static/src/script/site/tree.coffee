@@ -46,11 +46,7 @@ tooltips =
   'static': 'All the static files, including images, scripts, stylesheets, front end libraries and more. If it is not Python related then most likely it goes into this directory.'
   'favicon.ico': 'Update this file with your own favicon.ico.'
   'robots.txt': 'List of pages that you would like to hide from the web crawlers.'
-  'static-lib': 'All the client side libraries, usually going to this folder. Stuff like jQuery, jQuery Plugins, Bootstrap, etc.'
-  'font-awesome': 'The Font Awesome stylesheets that are used to replace the default Glpyhicons that are bundled with Bootstrap.'
-  'jquery.js': 'The latest unminified jQuery library, but it is minified before deployment.'
 
-  'font': 'All the custom fonts.'
   'img': 'All the static images.'
 
   'dst': 'The auto generated directory that contains the compiled scripts and stylesheets, that are used when running on local server.'
