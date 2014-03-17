@@ -18,6 +18,7 @@
             {{section[2]}}
           </small>
           <a href="#{{section[0]}}"></a>
+          {{utils.github_edit_template_link('tutorial/%s.md' % section[0])}}
         </h2>
       </div>
       {{utils.include_md('tutorial/%s.md' % section[0])}}
