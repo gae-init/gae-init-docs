@@ -138,7 +138,7 @@ CONVENTION = [
     ('global', 'Global'),
     ('python', 'Python'),
     ('html', 'HTML'),
-    ('less', 'LESS'),
+    ('less', 'Less'),
     ('coffee', 'CoffeeScript'),
   ]
 
