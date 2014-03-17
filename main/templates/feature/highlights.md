@@ -7,7 +7,7 @@
 - JSONP support by providing a
   <a href="http://gae-init.appspot.com{{url_for('user_list_service', limit=2, order='name', callback='hello')}}" target="_blank">`&callback`</a>
   argument to JSON services
-- Custom pages for error handlings, like [404](/404)</li>
+- Custom pages for error handlings, like [404](/404)
 - Jinja2 template macros for
   [form inputs]({{url_for('feedback')}}),
   <a href="http://gae-init.appspot.com{{url_for('user_list', order='name')}}" target="_blank">order by links</a>,
