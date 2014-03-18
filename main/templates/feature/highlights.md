@@ -1,18 +1,18 @@
 - JSON services with
-  <a href="http://gae-init.appspot.com{{url_for('user_list_service')}}" target="_blank">more URL</a>,
-  <a href="http://gae-init.appspot.com{{url_for('user_list_service', limit=8)}}" target="_blank">limits</a>,
-  <a href="http://gae-init.appspot.com{{url_for('user_list_service', admin='true')}}" target="_blank">filters</a>,
-  <a href="http://gae-init.appspot.com{{url_for('user_list_service', order='name')}}" target="_blank">orders</a> and
-  <a href="http://gae-init.appspot.com{{url_for('user_list_service', limit=4, order='name', admin='true')}}" target="_blank">more..</a>
+  [more URL]({{url_for('user_list_service')}}),
+  [limits]({{url_for('user_list_service', limit=8)}}),
+  [filters]({{url_for('user_list_service', admin='true')}}),
+  [orders]({{url_for('user_list_service', order='name')}}) and
+  [more..]({{url_for('user_list_service', limit=4, order='name', admin='true')}})
 - JSONP support by providing a
-  <a href="http://gae-init.appspot.com{{url_for('user_list_service', limit=2, order='name', callback='hello')}}" target="_blank">`&callback`</a>
+  [`&callback`](http://gae-init.appspot.com{{url_for('user_list_service', limit=2, order='name', callback='hello')}})
   argument to JSON services
 - Custom pages for error handlings, like [404](/404)
 - Jinja2 template macros for
   [form inputs]({{url_for('feedback')}}),
-  <a href="http://gae-init.appspot.com{{url_for('user_list', order='name')}}" target="_blank">order by links</a>,
-  <a href="http://gae-init.appspot.com{{url_for('user_list', admin=True, active=True, limit=16)}}" target="_blank">filter by links</a>,
-  <a href="http://gae-init.appspot.com{{url_for('user_list', limit=4, active=True, order='-modified')}}" target="_blank">easy pagination</a>
+  [order by links](http://gae-init.appspot.com{{url_for('user_list', order='name')}}),
+  [filter by links](http://gae-init.appspot.com{{url_for('user_list', admin=True, active=True, limit=16)}}),
+  [easy pagination](http://gae-init.appspot.com{{url_for('user_list', limit=4, active=True, order='-modified')}})
   and more..
 - Secret keys and other settings are stored securely in Datastore
 - Admin console to manage secret keys and other settings

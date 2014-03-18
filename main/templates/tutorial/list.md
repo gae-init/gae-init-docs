@@ -81,10 +81,9 @@ and changing the redirect after creating the contact to take us to the this
 list instead of going back to the welcome page.
 
 
-#### Adding a link on the top bar</h4>
+#### Adding a link on the top bar
 
-Add the lines `3 - 5' inside the
-`<ul class="nav">...</ul>' element that you will find in the
+Add the lines `3 - 5` inside the `<ul class="nav">...</ul>' element that you will find in the
 `header.html' file that is located in the
 `templates/bit' directory.
 
@@ -102,7 +101,7 @@ After refreshing the page ([http://localhost:8080/](http://localhost:8080/)),
 you should be able to see the link on the top and if you're in watching the
 contact list it should also be `active'.
 
-#### Changing the redirect</h4>
+#### Changing the redirect
 
 After creating a new contact we will now redirect the user to the contact
 list instead of the welcome page and also and also show her a message that
