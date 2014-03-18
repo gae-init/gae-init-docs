@@ -5,6 +5,7 @@ $ ->
       ($ '.social').css('opacity', '1')
     , 2000
 
+
 $ -> ($ 'html.welcome').each ->
   ($ 'abbr').tooltip()
   ($ '.tip').tooltip()
@@ -37,3 +38,7 @@ $ -> ($ 'html.guide').each ->
 
 $ -> ($ 'html.tree').each ->
   init_tree()
+
+$ -> ($ 'html.convention').each ->
+  LOG 'sdf'
+  init_doc()

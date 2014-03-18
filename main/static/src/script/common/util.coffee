@@ -51,8 +51,8 @@ window.init_hash_header_highlight = ->
 
 
 window.update_hash_header = ->
-    id = location.hash.substr(1)
-    id = id.replace('.', '\\.').replace('@', '\\@')
-    ($ '.hash').removeClass 'hash'
-    if id.length > 0
-      ($ "##{id}.self-link, ##{id} .self-link").first().addClass('hash')
+  id = location.hash.substr(1)
+  id = id.replace('.', '\\.').replace('@', '\\@')
+  ($ '.hash').removeClass 'hash'
+  if id.length > 0
+    ($ "##{id}.self-link, ##{id} .self-link").first().addClass('hash')

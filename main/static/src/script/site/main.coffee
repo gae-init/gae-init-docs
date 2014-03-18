@@ -15,7 +15,7 @@ window.init_markdown_header_links = ->
       e.append(" <a href=\"##{e.attr('id')}\"></a>")
 
 
-window.init_doc = () ->
+window.init_doc = ->
   # unpack markdown double wraps of code blocks
   code_nodes = $("div.markdown pre>code")
   code_nodes.each (i, el) ->

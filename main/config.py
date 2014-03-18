@@ -135,11 +135,12 @@ TUTORIAL = [
   ]
 
 CONVENTION = [
-    ('global', 'Global'),
-    ('python', 'Python'),
-    ('html', 'HTML'),
-    ('less', 'Less'),
-    ('coffee', 'CoffeeScript'),
+    ('global', 'Global', ''),
+    ('python', 'Python', ''),
+    ('html', 'HTML', ''),
+    ('less', 'Less', ''),
+    ('coffee', 'CoffeeScript', ''),
+    ('markdown', 'Markdown', 'for gae-init documentation'),
   ]
 
 ###############################################################################

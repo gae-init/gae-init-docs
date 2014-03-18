@@ -6,7 +6,7 @@ want to customise things.
 
 {% raw %}
 
-Overview { #overview }
+Overview {#overview}
 --------
 
 - [Interplay of components](#interplay)
@@ -35,13 +35,13 @@ Overview { #overview }
     - [add a new page](#new_page)
 
 
-Interplay of components { #interplay }
+Interplay of components {#interplay}
 --------------------------------------
 gae-init is built on top of several tools that try to ease your job as developer
 by supporting common tasks. In order to be awesome you have to know these little
 helpers and how they work together, so let's get you on the line.
 
-### run.py { #run_py }
+### run.py {#run_py}
 It all starts with `./run.py` which you might still know from the
 [Tutorial]({% endraw %}{{url_for('tutorial')}}{% raw %}). As its name implies it
 runs your dev-server on [http://localhost:8080](http://localhost:8080) with
@@ -71,55 +71,55 @@ minification if you change something in your scripts or styles.
 
 Last but not least `./run.py -C` will clean up and reinstall all the local
 tools and libraries that were downloaded via Node and Bower to their latest
-versions. This should be used whenever you want to update your 3rd party 
+versions. This should be used whenever you want to update your 3rd party
 libraries and tools. See also the [Node.js](#node), [Bower](#bower) and
 [add a new / update/reinstall js lib(s)](#new_js_lib) sections below.
 
-For completeness also have a look at our 
+For completeness also have a look at our
 [Run Script]({% endraw %}{{url_for('run')}}{% raw %}) page.
 
-### config.py { #config_py }
+### config.py {#config_py}
 
-### appcfg & app.yaml { #appengine }
+### appcfg & app.yaml {#appengine}
 TODO: mention need for `./run.py -m` before deployment
 
-### server side tasks (setup, compiling, minification, bundling) { #server_side_tasks }
+### server side tasks (setup, compiling, minification, bundling) {#server_side_tasks}
 
-#### Node.js { #node }
+#### Node.js {#node}
 
-#### Grunt { #grunt }
+#### Grunt {#grunt}
 
-#### Bower { #bower }
+#### Bower {#bower}
 
-#### livereload { #livereload }
+#### livereload {#livereload}
 
-#### CoffeeScript { #coffeescript }
+#### CoffeeScript {#coffeescript}
 
-#### Less { #less }
+#### Less {#less}
 
-### server side libs (Python) { #server_side_libs }
+### server side libs (Python) {#server_side_libs}
 
-### client side libs (js) { #client_side_libs }
+### client side libs (js) {#client_side_libs}
 
 
 
-main.py { #main_py }
+main.py {#main_py}
 --------------------
 
 
-templates/base.html { #templates_base }
+templates/base.html {#templates_base}
 ---------------------------------------
 
-### available blocks { #templates_blocks }
+### available blocks {#templates_blocks}
 
-### bits (especially style + js) { #templates_bits }
+### bits (especially style + js) {#templates_bits}
 
 
 
-Frequent tasks / dev workflows { #workflows }
+Frequent tasks / dev workflows {#workflows}
 ---------------------------------------------
 
-### running the dev-server { #run_dev_server }
+### running the dev-server {#run_dev_server}
 You can simply run the server from the project directory (one above main) by
 executing `run.py` in a terminal with the `-s` flag.
 ```bash
@@ -161,14 +161,14 @@ $ grunt
 ```
 
 
-### customize styles { #custom_styles }
+### customize styles {#custom_styles}
 
-### custom JavaScript / CoffeeScript { #custom_js }
+### custom JavaScript / CoffeeScript {#custom_js}
 
-### add a new Python lib { #new_python_lib }
+### add a new Python lib {#new_python_lib}
 
-### add a new / update/reinstall js lib(s) (bower) { #new_js_lib }
+### add a new / update/reinstall js lib(s) (bower) {#new_js_lib}
 
-### add a new page { #new_page }
+### add a new page {#new_page}
 
 {% endraw %}

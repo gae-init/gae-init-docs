@@ -1,15 +1,21 @@
 # extends 'base_doc.html'
+# import 'macro/utils.html' as utils
+
 
 # block content_doc
+  {{utils.include_md('convention/intro.md')}}
+
   # for section in config.CONVENTION
     <section id="{{section[0]}}">
       <div class="page-header">
         <h2 class="self-link">
           {{section[1]}}
-          <a href="#{{section[0]}}"></a>
+          <small>{{section[2]}}</small>
+          <small><a href="#{{section[0]}}"></a></small>
+          {{utils.github_edit_template_link('convention/%s.md' % section[0])}}
         </h2>
       </div>
-      # include 'convention/%s.html' % section[0]
+      {{utils.include_md('convention/%s.md' % section[0])}}
     </section>
   # endfor
 # endblock
