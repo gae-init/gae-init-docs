@@ -1,5 +1,5 @@
 - Custom [run script]({{url_for('run')}}) to watch, minify and run your app locally
-- Out of the box support for CoffeeScript and LESS
+- Out of the box support for CoffeeScript and Less
 - Compile on save `*.coffee` via custom script
 - Compile on save `*.less` via custom script
 - Hassle free frontend JS lib management with [Bower](http://bower.io/)
@@ -9,4 +9,4 @@
 - 3rd party libraries are zipped for faster uploads
 - Live reload and support for other recurring tasks through [Grunt](http://gruntjs.com/)
 - Write your scripts in vanilla JavaScript or CoffeeScript
-- Write your styles in vanilla CSS or LESS
+- Write your styles in vanilla CSS or Less
