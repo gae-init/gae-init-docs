@@ -3,8 +3,10 @@ applications from a command line, but if not you should refer to the
 [documentation](https://developers.google.com/appengine/docs/python/gettingstartedpython27/helloworld).
 Execute in your terminal the <code>run.py</code> from the root directory
 
-    $ cd /path/to/phonebook
-    $ ./run.py -s
+```bash
+$ cd /path/to/phonebook
+$ ./run.py -s
+```
 
 If everything went smoothly you can test the application by visiting the
 following URL in your web browser:

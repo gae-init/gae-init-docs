@@ -3,6 +3,7 @@
   "dependencies": {
     "bootstrap": "~3",
     "font-awesome": "~4",
+    "highlight.js": "https://github.com/isagalaev/highlight.js.git#8.0",
     "jquery": "~2",
     "momentjs": "~2",
     "nprogress": "https://github.com/lipis/nprogress.git#master"
@@ -16,6 +17,9 @@
     "font-awesome": {
       "less": "less/*.less",
       "font": "fonts/*"
+    },
+    "highlight.js": {
+      "css": "src/styles/*.css"
     },
     "jquery": {
       "js": "dist/jquery.js"

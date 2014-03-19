@@ -11,20 +11,9 @@
       {{utils.include_md('feature/development.md')}}
     </div>
     <div class="col-md-5">
-      # include 'doc/tech_stack.html'
-      <h5>gae-init-babel only</h5>
-      <ul>
-        <li><a href="http://babel.edgewall.org/wiki/Download">Babel</a></li>
-      </ul>
-      <h5>gae-init-upload only</h5>
-      <ul>
-        <li><a href="https://cloud.google.com/products/cloud-storage">Google Cloud Storage</a></li>
-      </ul>
-      <h5>gae-init-debug only</h5>
-      <ul>
-        <li><a href="https://github.com/mgood/flask-debugtoolbar">Flask DebugToolbar</a></li>
-        <li><a href="https://github.com/kamens/gae_mini_profiler">gae_mini_profiler</a></li>
-      </ul>
+      <h3>Tech Stack {{utils.github_edit_template_link('feature/tech_stack.md')}}</h3>
+      {{utils.include_md('feature/tech_stack.md')}}
+      {{utils.include_md('feature/tech_stack_more.md')}}
 
       <h3>Forks {{utils.github_edit_template_link('feature/forks.md')}}</h3>
       {{utils.include_md('feature/forks.md')}}

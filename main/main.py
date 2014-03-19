@@ -22,6 +22,7 @@ import admin
 import auth
 import task
 import user
+import model
 
 
 if config.DEVELOPMENT:

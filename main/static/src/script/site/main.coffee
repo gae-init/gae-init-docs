@@ -16,12 +16,4 @@ window.init_markdown_header_links = ->
 
 
 window.init_doc = ->
-  # unpack markdown double wraps of code blocks
-  code_nodes = $("div.markdown pre>code")
-  code_nodes.each (i, el) ->
-    e = $(el)
-    p = e.parent()
-    lang = e.attr("class")
-    lang = "lang-#{lang}" if lang
-    p.addClass(lang).html(e.html()).addClass "prettyprint linenums"
-  prettyPrint()
+  hljs.initHighlightingOnLoad()

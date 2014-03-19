@@ -163,7 +163,7 @@ SCRIPTS = [
         'ext/js/bootstrap/tooltip.js',
         'ext/js/bootstrap/affix.js',
         'ext/js/bootstrap/popover.js',
-        'src/lib/prettify.js',
+        'src/lib/highlight.pack.js',
       ]),
     ('scripts', [
         'src/script/common/service.coffee',

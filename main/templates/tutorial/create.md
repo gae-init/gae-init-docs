@@ -3,7 +3,9 @@
 There are a few things that we need to do in order to start adding new
 contacts. In short we're going to create a Form, a Handler and a Template.
 
+
 ### Contact Create Form
+
 Create a new file `contact.py` in the `main` directory
 and add the following code that will be responsible for validating the user's
 input.
@@ -20,6 +22,7 @@ class ContactUpdateForm(wtf.Form):
 
 For more information regarding the form validation refert to
 [Flask-WTForms](http://flask.pocoo.org/docs/patterns/wtforms/).
+
 
 ### Contact Create Handler
 
@@ -123,10 +126,12 @@ and paste the following code there:
 # endblock
 ```
 
+
 ### Finalise Contact Creation
 
 Before we can actually test the contact creation there are couple of things
 that we have to complete.
+
 
 #### Import contact.py
 
@@ -138,6 +143,8 @@ in the `main.py` file.
 ```python
 import contact
 ```
+
+
 #### Adding a link on the top bar
 
 The most important thing to make the user experience better, we will have
@@ -155,6 +162,7 @@ directory.
   ...
 </ul>
 ```
+
 
 ### Testing Contact Creation
 
