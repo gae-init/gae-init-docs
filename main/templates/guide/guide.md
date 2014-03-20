@@ -116,7 +116,29 @@ for more on this).
 
 
 ### appcfg & app.yaml {#appengine}
-TODO: mention need for `./run.py -m` before deployment
+As every other App Engine app you will find the main configurations (e.g., the
+app's name, its programming language, the main handler definitions, ...) in
+[main/app.yaml](https://github.com/gae-init/gae-init-docs/blob/master/main/app.yaml).
+
+The main handler definitions include serving the `main/static` dir under `/p/`
+and invoke `main/main.app` (so the app object defined in
+[main/main.py](https://github.com/gae-init/gae-init-docs/blob/master/main/main.py)
+for nearly everything else.
+
+`app.yaml` also defines `skip_files`, so what not to upload. Notice how
+`lib/.*`, `static/dst/.*`, some folders from `static/ext/` and `static/src/.*`
+are excluded. The reason for these to be excluded is the minification process
+as described for `./run.py -m` above and configured in `config.py`. This means
+that before deployment you need ot run `./run.py -m` as your production server
+will otherwise lack critical libraries at runtime. This also means that you
+should not place own libraries or files in these folders manually without
+adding them to `config.py`.
+
+After running `./run.py -m` you can deploy the app with Google App Engine's
+tools as usual, either from command line with `appcfg.py` or via the
+GoogleAppEngineLauncher app.
+
+
 
 ### server side tasks (setup, compiling, minification, bundling) {#server_side_tasks}
 
