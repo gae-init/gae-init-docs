@@ -7,19 +7,15 @@ Trim trailing white space on save.
 
 -------------------------------------------------------------------------------
 
-Set encoding to UTF-8.
-
--------------------------------------------------------------------------------
-
 Add new line at end of files.
 
 -------------------------------------------------------------------------------
 
-Nested elements should be indented once (two spaces).
+Set encoding to UTF-8.
 
 -------------------------------------------------------------------------------
 
-Ensure file ends with a newline when saving.
+Nested elements should be indented once (two spaces).
 
 -------------------------------------------------------------------------------
 

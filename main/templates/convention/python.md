@@ -10,3 +10,9 @@ Add `_dbs` suffix to variables for list of entities. For example:
 
 Add `_qry` suffix to variables for queries. For example:
 `user_qry = User.query()`
+
+-------------------------------------------------------------------------------
+
+Specify the UTF-8 encoding in every file: `# -*- coding: utf-8 -*-`.
+
+-------------------------------------------------------------------------------
