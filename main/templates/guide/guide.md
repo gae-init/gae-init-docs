@@ -222,7 +222,7 @@ $ grunt
 In order to customize the style of your page you can edit the files in
 [main/static/src/style](https://github.com/gae-init/gae-init-docs/blob/master/main/static/src/style),
 the main file being
-[style.less]((https://github.com/gae-init/gae-init-docs/blob/master/main/static/src/style/style.less).
+[style.less](https://github.com/gae-init/gae-init-docs/blob/master/main/static/src/style/style.less).
 
 [Less](http://lesscss.org) is a powerful CSS generation language that will help
 you to not repeat yourself while writing your stylesheets. In the case of
