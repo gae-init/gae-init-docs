@@ -219,10 +219,12 @@ $ grunt
 
 
 ### customize styles {#custom_styles}
-In order to customize the style of your page you can edit the files in
+In order to customize the style of your page you can edit or in most cases
+simply add further files in
 [main/static/src/style](https://github.com/gae-init/gae-init-docs/blob/master/main/static/src/style),
 the main file being
 [style.less](https://github.com/gae-init/gae-init-docs/blob/master/main/static/src/style/style.less).
+If you add further files make sure to include them in `style.less`.
 
 [Less](http://lesscss.org) is a powerful CSS generation language that will help
 you to not repeat yourself while writing your stylesheets. In the case of
