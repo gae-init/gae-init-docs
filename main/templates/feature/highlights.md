@@ -21,7 +21,7 @@
 - Showing relative time for `<time datetime='...'>`
 - Add `.btn-loading` and your buttons will have the loading functionality
 - Working [feedback form]({{url_for('feedback')}})
-- Multiple OAuth options to [sign-in]({{url_for('signin')}})
+- Multiple OAuth options to [sign-in](https://gae-init.appspot.com/signin/)
   (Google, Facebook, Twitter)
 - Add easily any other OAuth provider
 - User list that is visible only to the administrators
