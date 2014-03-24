@@ -155,6 +155,21 @@ GoogleAppEngineLauncher app.
 #### Less {#less}
 
 ### server side libs (Python) {#server_side_libs}
+The server side python libraries are in general installed in `main/lib`.
+[appengine_config.py](https://github.com/gae-init/gae-init-docs/blob/master/main/appengine_config.py)
+will take care that the `sys.path` is modified at runtime to include these libs
+so they can simply be imported. On the dev-server the lib folder is added to
+the path as is (`sys.path.insert(0, 'lib')`), but in production the lib folder
+is zipped by `run.py -m` ([see above](#run_py)) and so all libraries are
+imported from one single file called `lib.zip`.
+
+In case you want to include a library such as babel which does not work when
+zipped you can manually add them to another folder (don't use `lib` as it is
+excluded in [app.yaml](#appengine) and won't be uploaded to App Engine) such as
+`main/libx`. In that case be sure to also include its path in `sys.path` (e.g.,
+`sys.path.insert(0, 'libx')`).
+
+
 
 ### client side libs (js) {#client_side_libs}
 
