@@ -8,8 +8,10 @@ import os
 import shutil
 import sys
 import time
+import urllib
 import urllib2
 
+import main
 from main import config
 
 
@@ -87,6 +89,7 @@ FILE_LESS = os.path.join(DIR_BIN, 'lessc')
 FILE_UGLIFYJS = os.path.join(DIR_BIN, 'uglifyjs')
 
 DIR_STORAGE = os.path.join(DIR_TEMP, 'storage')
+FILE_UPDATE = os.path.join(DIR_TEMP, 'update')
 
 
 ###############################################################################
@@ -234,10 +237,6 @@ def get_dependencies(file_name):
 
 
 def install_dependencies():
-  if not internet_on():
-    print_out('NO INTERNET')
-    return
-
   for dependency in get_dependencies('package.json'):
     if not os.path.exists(os.path.join(DIR_NODE_MODULES, dependency)):
       os.system('npm install')
@@ -257,6 +256,34 @@ def update_missing_args():
 def uniq(seq):
   seen = set()
   return [e for e in seq if e not in seen and not seen.add(e)]
+
+
+def check_for_update():
+  if not os.path.exists(FILE_UPDATE):
+    open(FILE_UPDATE, 'a').close()
+  else:
+    mtime = os.path.getmtime(FILE_UPDATE)
+    last = datetime.fromtimestamp(mtime).strftime('%Y-%m-%d')
+    today = datetime.utcnow().strftime('%Y-%m-%d')
+    if last == today:
+      return
+  try:
+    request = urllib2.Request(
+        'https://gae-init.appspot.com/_s/version/',
+        urllib.urlencode({'version': main.__version__}),
+      )
+    response = urllib2.urlopen(request)
+    data = json.loads(response.read())
+    if main.__version__ < data['version']:
+      print_out('UPDATE')
+      print_out(data['version'], 'Latest version of gae-init')
+      print_out(main.__version__, 'Your version is a bit behind')
+      print_out('CHANGESET', data['changeset'])
+    open(FILE_UPDATE, 'w').close()
+  except urllib2.HTTPError:
+    pass
+  except KeyError:
+    pass
 
 
 ###############################################################################
@@ -359,7 +386,12 @@ def run():
   if ARGS.clean_all:
     run_clean_all()
 
-  install_dependencies()
+  if internet_on():
+    install_dependencies()
+    check_for_update()
+  else:
+    print_out('NO INTERNET')
+
 
   if ARGS.clean:
     run_clean()
