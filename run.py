@@ -89,7 +89,7 @@ FILE_LESS = os.path.join(DIR_BIN, 'lessc')
 FILE_UGLIFYJS = os.path.join(DIR_BIN, 'uglifyjs')
 
 DIR_STORAGE = os.path.join(DIR_TEMP, 'storage')
-FILE_UPDATE = os.path.join(DIR_TEMP, 'update')
+FILE_UPDATE = os.path.join(DIR_TEMP, 'update.json')
 
 
 ###############################################################################
@@ -248,20 +248,8 @@ def install_dependencies():
       break
 
 
-def update_missing_args():
-  if ARGS.start or ARGS.clean_all:
-    ARGS.clean = True
-
-
-def uniq(seq):
-  seen = set()
-  return [e for e in seq if e not in seen and not seen.add(e)]
-
-
 def check_for_update():
-  if not os.path.exists(FILE_UPDATE):
-    open(FILE_UPDATE, 'a').close()
-  else:
+  if os.path.exists(FILE_UPDATE):
     mtime = os.path.getmtime(FILE_UPDATE)
     last = datetime.fromtimestamp(mtime).strftime('%Y-%m-%d')
     today = datetime.utcnow().strftime('%Y-%m-%d')
@@ -273,17 +261,37 @@ def check_for_update():
         urllib.urlencode({'version': main.__version__}),
       )
     response = urllib2.urlopen(request)
-    data = json.loads(response.read())
+    update_json = open(FILE_UPDATE, 'w')
+    update_json.write(response.read())
+    update_json.close()
+  except urllib2.HTTPError:
+    pass
+
+
+def print_out_update():
+  try:
+    update_json = open(FILE_UPDATE)
+    data = json.load(update_json)
+    update_json.close()
     if main.__version__ < data['version']:
       print_out('UPDATE')
       print_out(data['version'], 'Latest version of gae-init')
       print_out(main.__version__, 'Your version is a bit behind')
       print_out('CHANGESET', data['changeset'])
-    open(FILE_UPDATE, 'w').close()
-  except urllib2.HTTPError:
+  except (ValueError, KeyError):
+    os.remove(FILE_UPDATE)
+  except IOError:
     pass
-  except KeyError:
-    pass
+
+
+def update_missing_args():
+  if ARGS.start or ARGS.clean_all:
+    ARGS.clean = True
+
+
+def uniq(seq):
+  seen = set()
+  return [e for e in seq if e not in seen and not seen.add(e)]
 
 
 ###############################################################################
@@ -392,6 +400,7 @@ def run():
   else:
     print_out('NO INTERNET')
 
+  print_out_update()
 
   if ARGS.clean:
     run_clean()
