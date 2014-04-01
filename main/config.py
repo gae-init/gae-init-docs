@@ -32,6 +32,8 @@ DEFAULT_DB_LIMIT = 64
 REQUIREMENT = [
     ('gae', 'Google App Engine', 'Required'),
     ('nodejs', 'Node.js', 'Required'),
+    ('pip', 'pip', 'Required'),
+    ('virtualenv', 'virtualenv', 'Required'),
     ('git', 'Git', 'Required'),
   ]
 
