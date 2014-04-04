@@ -16,3 +16,7 @@ Add `_qry` suffix to variables for queries. For example:
 Specify the UTF-8 encoding in every file: `# -*- coding: utf-8 -*-`.
 
 -------------------------------------------------------------------------------
+
+Every import should be on separate lines.
+
+-------------------------------------------------------------------------------
