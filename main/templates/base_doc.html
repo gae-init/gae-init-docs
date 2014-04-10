@@ -2,10 +2,12 @@
 
 # block content
   <div class="row">
-    <div class="col-sm-3 col-md-2">
+    <div class="col-sm-3 col-md-2 left-nav">
       <div class="page-header text-center hidden-xs">
         <h1>
-          <a href="{{url_for('welcome')}}"><span class="fa fa-home"></span></a>
+          <a href="{{url_for('welcome')}}">
+            <img class="brand" src="/p/img/{{config.CONFIG_DB.brand_name}}.svg" alt="{{config.CONFIG_DB.brand_name}} logo">
+          </a>
         </h1>
       </div>
       <ul class="nav nav-stacked docs-sidebar">
