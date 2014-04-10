@@ -1,7 +1,10 @@
 Before you begin you should go through the
-[requirements]({{url_for('requirement')}}) and make sure that
-[Google App Engine SDK for Python](https://developers.google.com/appengine/downloads)
-and [Node.js](http://nodejs.org) are installed.
+[requirements]({{url_for('requirement')}}) and make sure that you have:
+
+# for section in config.REQUIREMENT
+{% if loop.last %} and {% elif not loop.first %},{% endif %} [{{section[1]}}]({{url_for('requirement')}}{{'#'}}{{section[0]}})
+#- endfor
+.
 
 We are also going to assume that you will follow all the suggested names
 for the directories and files, because in some steps we might refer to
