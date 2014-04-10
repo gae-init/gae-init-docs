@@ -7,5 +7,5 @@ your system. This installation also includes the
 [Node Packaged Modules](https://npmjs.org/) which is a very easy way to install
 packages.
 
-After the installation make sure that you are able to run the `npm --help`
+After the installation make sure that you are able to run the `npm --version`
 command from your terminal.
