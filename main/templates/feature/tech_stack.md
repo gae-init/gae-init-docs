@@ -1,14 +1,19 @@
-- [Google App Engine](https://developers.google.com/appengine/)
-- [Python 2.7](https://developers.google.com/appengine/docs/python/python27/using27)
-- [NDB](https://developers.google.com/appengine/docs/python/ndb/)
-- [Jinja2](http://jinja.pocoo.org/docs/), [Flask](http://flask.pocoo.org/)
+- [Google App Engine](https://developers.google.com/appengine/),
+  [NDB](https://developers.google.com/appengine/docs/python/ndb/)
+- [Jinja2](http://jinja.pocoo.org/docs/),
+  [Flask](http://flask.pocoo.org/),
+  [Flask-WTF](https://flask-wtf.readthedocs.org)
+- [CoffeeScript](http://coffeescript.org/),
+  [Less](http://lesscss.org/)
+- [Bootstrap](http://twitter.github.com/bootstrap/),
+  [Font Awesome](http://fortawesome.github.com/Font-Awesome/),
+  [Social Buttons](http://lipis.github.io/bootstrap-social/)
+- [jQuery](http://jquery.com/),
+  [NProgress](http://ricostacruz.com/nprogress/),
+  [Moment.js](http://momentjs.com/)
 - [OpenID](http://en.wikipedia.org/wiki/OpenID) sign in (Google, Facebook, Twitter)
-- [CoffeeScript](http://coffeescript.org/)
-- [Less](http://lesscss.org/)
-- [Grunt](http://gruntjs.com/)
-- [Bower](http://bower.io/)
-- [Bootstrap](http://twitter.github.com/bootstrap/)
-- [Font Awesome](http://fortawesome.github.com/Font-Awesome/)
-- [jQuery](http://jquery.com/)
-- [NProgress](http://ricostacruz.com/nprogress/)
-- [Moment.js](http://momentjs.com/)
+- [Python 2.7](https://developers.google.com/appengine/docs/python/python27/using27),
+  [pip](http://www.pip-installer.org/),
+  [virtualenv](http://www.virtualenv.org/)
+- [Grunt](http://gruntjs.com/),
+  [Bower](http://bower.io/)
