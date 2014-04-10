@@ -17,6 +17,17 @@
         </li>
         <li class="{{'active' if html_class.find('requirement') >= 0 else ''}}">
           <a href="{{url_for('requirement')}}">Requirements</a>
+          # if html_class.find('requirement') >= 0
+            <ul class="nav">
+              # for section in config.REQUIREMENT
+                <li>
+                  <a href="{{'#'}}{{section[0]}}">
+                    {{section[1]}}
+                  </a>
+                </li>
+              # endfor
+            </ul>
+          # endif
         </li>
         <li class="{{'active' if html_class.find('tutorial') >= 0 else ''}}">
           <a href="{{url_for('tutorial')}}">Tutorial</a>

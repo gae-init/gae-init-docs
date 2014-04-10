@@ -3,19 +3,6 @@
 
 # block content_doc
   <div class="row">
-    <div class="col-md-3 hide">
-      <div class="docs-sidebar">
-        <ul class="nav nav-list docs-sidenav">
-          # for section in config.REQUIREMENT
-            <li>
-              <a href="{{'#'}}{{section[0]}}">
-                {{section[1]}}
-              </a>
-            </li>
-          # endfor
-        </ul>
-      </div>
-    </div>
     <div class="col-md-12">
       # for section in config.REQUIREMENT
         <section id="{{section[0]}}">
