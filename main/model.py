@@ -2,8 +2,7 @@
 
 from google.appengine.ext import ndb
 
-from config import APPLICATION_ID
-from config import CURRENT_VERSION_TIMESTAMP
+import config
 import modelx
 import util
 
@@ -11,7 +10,7 @@ import util
 class Base(ndb.Model, modelx.BaseX):
   created = ndb.DateTimeProperty(auto_now_add=True)
   modified = ndb.DateTimeProperty(auto_now=True)
-  version = ndb.IntegerProperty(default=CURRENT_VERSION_TIMESTAMP)
+  version = ndb.IntegerProperty(default=config.CURRENT_VERSION_TIMESTAMP)
 
   _PROPERTIES = {
       'key',
