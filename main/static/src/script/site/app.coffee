@@ -13,6 +13,9 @@ $ -> ($ 'html.welcome').each ->
 $ -> ($ 'html.profile').each ->
   init_profile()
 
+$ -> ($ 'html.signin').each ->
+  init_signin()
+
 $ -> ($ 'html.feedback').each ->
 
 $ -> ($ 'html.user-list').each ->
@@ -40,5 +43,4 @@ $ -> ($ 'html.tree').each ->
   init_tree()
 
 $ -> ($ 'html.convention').each ->
-  LOG 'sdf'
   init_doc()

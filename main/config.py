@@ -178,6 +178,7 @@ SCRIPTS = [
         'src/script/site/app.coffee',
         'src/script/site/admin.coffee',
         'src/script/site/profile.coffee',
+        'src/script/site/signin.coffee',
         'src/script/site/user.coffee',
         'src/script/site/main.coffee',
         'src/script/site/tree.coffee',
