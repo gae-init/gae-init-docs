@@ -52,11 +52,6 @@ tooltips =
   'dst': 'The auto generated directory that contains the compiled scripts and stylesheets, that are used when running on local server.'
   'min': 'The auto generated directory that contains the compiled, minified and uglified scripts and stylesheets, that are used when running on remote server.'
 
-  'lib': 'The server side (Python) libraries. If you want to add more Python libraries that are not included in the default installation, just put them here.'
-  'bootstrap': 'The Bootstrap sources that includes all the *.less and *.js files.'
-  'moment.js': 'A javascript date library for parsing, validating, manipulating, and formatting dates. <hr> <a href="http://momentjs.com/" target="_blank">Read More <i class=" icon-external-link"></i></a>'
-  'nprogress': 'A nanoscopic progress bar. Featuring realistic trickle animations to convince your users that something is happening. <hr> <a href="http://ricostacruz.com/nprogress/" target="_blank">Read More <i class=" icon-external-link"></i></a>'
-
   'templates': 'The Jinja2 templates.'
   'base.html': 'The base template that most of the pages are inheriting from.'
   'error.html': 'The user friendly error template'
