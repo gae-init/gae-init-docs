@@ -34,7 +34,7 @@ def contact_list():
 
 After creating the handler, we are going to need a template to be able to
 present a table of all the contacts that we've added so far. Create a new file
-`contact_list.html' in the `templates' directory
+`contact_list.html` in the `templates` directory
 and paste the following code there:
 
 ```html
@@ -83,11 +83,11 @@ list instead of going back to the welcome page.
 
 #### Adding a link on the top bar
 
-Add the lines `3 - 5` inside the `<ul class="nav">...</ul>' element that you will find in the
-`header.html' file that is located in the
-`templates/bit' directory.
+Add the lines `3 - 5` inside the `<ul class="nav">...</ul>` element that you will find in the
+`header.html` file that is located in the
+`templates/bit` directory.
 
-````html
+```html
 <ul class="nav">
   ...
   <li class="{{'active' if html_class == 'contact-list'}}">
@@ -95,11 +95,11 @@ Add the lines `3 - 5` inside the `<ul class="nav">...</ul>' element that you wil
   </li>
   ...
 </ul>
-````
+```
 
 After refreshing the page ([http://localhost:8080/](http://localhost:8080/)),
 you should be able to see the link on the top and if you're in watching the
-contact list it should also be `active'.
+contact list it should also be `active`.
 
 #### Changing the redirect
 
@@ -121,12 +121,12 @@ return flask.redirect(flask.url_for('contact_list', order='-created'))
 ```
 
 The first line is to flash the message that the creation was successful.
-The argument `category' is optional and can be one of the
-following: `warning' (default), `danger',
-`success' or `info'.
+The argument `category` is optional and can be one of the
+following: `warning` (default), `danger`,
+`success` or `info`.
 
-In the second line notice that we are using the `order='-created''
-in the `url_for' function, which will be translated to:
+In the second line notice that we are using the `order='-created'`
+in the `url_for` function, which will be translated to:
 [http://localhost:8080/contact/?order=-created](http://localhost:8080/contact/?order=-created).
 You can choose whatever order you like and you can also play with the url
 by providing different orders for the fields that you have in the
