@@ -107,7 +107,7 @@ After creating a new contact we will now redirect the user to the contact
 list instead of the welcome page and also and also show her a message that
 the new contact was successfully created.
 
-Find the following line in the contat_create handler:
+Find the following line in the contact_create handler:
 
 ```python
 return flask.redirect(flask.url_for('welcome'))
@@ -130,7 +130,7 @@ in the `url_for' function, which will be translated to:
 [http://localhost:8080/contact/?order=-created](http://localhost:8080/contact/?order=-created).
 You can choose whatever order you like and you can also play with the url
 by providing different orders for the fields that you have in the
-`Contact' model. Use the `-' if you want the inverse
-order and `,' to combine more than one field for order.
+`Contact` model. Use the `-` if you want the inverse
+order and `,` to combine more than one field for order.
 
 {% endraw %}
