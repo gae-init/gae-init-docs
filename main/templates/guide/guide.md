@@ -225,7 +225,7 @@ And:
 ```bash
 $ ./node_modules/.bin/grunt
 ```
-This will provide a watch-daemon which thanks to a the `livereload.js` which is
+This will provide a watch-daemon which thanks to `livereload.js` which is
 embedded in the development mode will automatically reload the pages in your
 browser window when any of the relevant files change. Cool, eh? ;)
 
