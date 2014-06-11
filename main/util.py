@@ -1,6 +1,7 @@
 # coding: utf-8
 
 from datetime import datetime
+from datetime import date
 from uuid import uuid4
 import re
 import unicodedata
@@ -49,7 +50,7 @@ def get_next_url():
 ###############################################################################
 # Model manipulations
 ###############################################################################
-def retrieve_dbs(
+def get_dbs(
     query, order=None, limit=None, cursor=None, keys_only=None, **filters
   ):
   limit = limit or config.DEFAULT_DB_LIMIT
@@ -127,7 +128,7 @@ def model_db_to_object(model_db):
 
 
 def json_value(value):
-  if isinstance(value, datetime):
+  if isinstance(value, datetime) or isinstance(value, date):
     return value.isoformat()
   if isinstance(value, ndb.Key):
     return value.urlsafe()

@@ -2,45 +2,45 @@ $ ->
   init_global()
   init_common()
   setTimeout ->
-      ($ '.social').css('opacity', '1')
+      $('.social').css('opacity', '1')
     , 2000
 
 
-$ -> ($ 'html.welcome').each ->
-  ($ 'abbr').tooltip()
-  ($ '.tip').tooltip()
+$ -> $('html.welcome').each ->
+  $('abbr').tooltip()
+  $('.tip').tooltip()
 
-$ -> ($ 'html.profile').each ->
+$ -> $('html.profile').each ->
   init_profile()
 
-$ -> ($ 'html.signin').each ->
+$ -> $('html.signin').each ->
   init_signin()
 
-$ -> ($ 'html.feedback').each ->
+$ -> $('html.feedback').each ->
 
-$ -> ($ 'html.user-list').each ->
+$ -> $('html.user-list').each ->
   init_user_list()
 
-$ -> ($ 'html.user-merge').each ->
+$ -> $('html.user-merge').each ->
   init_user_merge()
 
-$ -> ($ 'html.admin-config').each ->
+$ -> $('html.admin-config').each ->
   init_admin_config()
 
-$ -> ($ 'html.reference').each ->
+$ -> $('html.reference').each ->
   init_doc()
 
-$ -> ($ 'html.tutorial').each ->
+$ -> $('html.tutorial').each ->
   init_doc()
 
-$ -> ($ 'html.requirement').each ->
+$ -> $('html.requirement').each ->
   init_doc()
 
-$ -> ($ 'html.guide').each ->
+$ -> $('html.guide').each ->
   init_doc()
 
-$ -> ($ 'html.tree').each ->
+$ -> $('html.tree').each ->
   init_tree()
 
-$ -> ($ 'html.convention').each ->
+$ -> $('html.convention').each ->
   init_doc()
