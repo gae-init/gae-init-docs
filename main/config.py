@@ -56,7 +56,7 @@ REFERENCE_DEF = {
     'util': [
         ('param', '(name, cast=None)'),
         ('get_next_url', '()'),
-        ('retrieve_dbs', '(query, order=None, limit=None, cursor=None, keys_only=None, **filters)'),
+        ('get_dbs', '(query, order=None, limit=None, cursor=None, keys_only=None, **filters)'),
         ('jsonify_model_dbs', '(model_dbs, more_cursor=None)'),
         ('jsonify_model_db', '(model_db)'),
         ('model_db_to_object', '(model_db)'),
