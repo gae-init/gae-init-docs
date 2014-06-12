@@ -1,9 +1,14 @@
 As we are building a personal phonebook, we'll need to add the contact list.
-Add the following at the end of `model.py`:
+
+Create a new file called `contact.py` in the `main/model` directory with the
+following contents:
 
 ```python
-class Contact(Base):
-  user_key = ndb.KeyProperty(kind=User, required=True)
+from google.appengine.ext import ndb
+import model
+
+class Contact(model.Base):
+  user_key = ndb.KeyProperty(kind=model.User, required=True)
   name = ndb.StringProperty(required=True)
   email = ndb.StringProperty(default='')
   phone = ndb.StringProperty(default='')
@@ -13,3 +18,10 @@ class Contact(Base):
 The `user_key` property will store the `User`'s key to
 make the contact list personal for every user. The rest of the properties are
 self explanatory.
+
+
+Finally import it in the `main/model/__init__.py` file like this:
+
+```python
+from .contact import Contact
+```

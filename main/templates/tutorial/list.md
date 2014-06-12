@@ -15,18 +15,16 @@ import util
 @app.route('/contact/')
 @auth.login_required
 def contact_list():
-  contact_dbs, more_cursor = util.retrieve_dbs(
-      model.Contact.query(),
-      limit=util.param('limit', int),
-      cursor=util.param('cursor'),
-      order=util.param('order') or 'name',
+  contact_dbs, contact_cursor = model.Contact.get_dbs(
+      user_key=auth.current_user_key(),
     )
+
   return flask.render_template(
       'contact_list.html',
       html_class='contact-list',
       title='Contact List',
       contact_dbs=contact_dbs,
-      more_url=util.generate_more_url(more_cursor),
+      next_url=util.generate_next_url(contact_cursor),
     )
 ```
 
