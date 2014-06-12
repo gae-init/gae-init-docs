@@ -161,6 +161,9 @@ def jsonpify(*args, **kwargs):
 # Helpers
 ###############################################################################
 def generate_next_url(next_cursor, base_url=None, cursor_name='cursor'):
+  '''Substitutes or alters the current request URL with a new cursor parameter
+  for next page of results
+  '''
   if not next_cursor:
     return None
   base_url = base_url or flask.request.base_url
@@ -185,8 +188,11 @@ def slugify(text):
   return _slugify_hyphenate_re.sub('-', text)
 
 
+_username_re = re.compile(r'^[a-z0-9]+(?:[\.][a-z0-9]+)*$')
+
+
 def is_valid_username(username):
-  return True if re.match('^[a-z0-9]+(?:[\.][a-z0-9]+)*$', username) else False
+  return True if _username_re.match(username) else False
 
 
 def update_query_argument(name, value=None, ignore='cursor', is_list=False):
