@@ -1,6 +1,6 @@
-Download the
-[Google App Engine SDK for Python](https://developers.google.com/appengine/downloads#Google_App_Engine_SDK_for_Python)
-and follow the SDK installation instructions for your operating system.
+Download and install the
+[Google Cloud SDK](https://developers.google.com/cloud/sdk/) which includes,
+among other things, the App Engine SDK for Python.
 
 After the installation make sure that you are able to run
 [the Python Development Server](https://developers.google.com/appengine/docs/python/tools/devserver)
