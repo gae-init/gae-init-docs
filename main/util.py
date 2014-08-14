@@ -29,9 +29,9 @@ def param(name, cast=None):
     value = flask.request.form.get(name, None)
 
   if cast and value is not None:
-    if cast == bool:
+    if cast is bool:
       return value.lower() in ['true', 'yes', '1', '']
-    if cast == list:
+    if cast is list:
       return value.split(',') if len(value) > 0 else []
     return cast(value)
   return value
@@ -85,9 +85,7 @@ def get_dbs(
 def jsonify_model_dbs(model_dbs, next_cursor=None):
   '''Return a response of a list of dbs as JSON service result
   '''
-  result_objects = []
-  for model_db in model_dbs:
-    result_objects.append(model_db_to_object(model_db))
+  result_objects = [model_db_to_object(model_db) for model_db in model_dbs]
 
   response_object = {
       'status': 'success',
@@ -118,7 +116,7 @@ def model_db_to_object(model_db):
     if prop == 'id':
       try:
         value = json_value(getattr(model_db, 'key', None).id())
-      except:
+      except AttributeError:
         value = None
     else:
       value = json_value(getattr(model_db, prop, None))
@@ -128,7 +126,7 @@ def model_db_to_object(model_db):
 
 
 def json_value(value):
-  if isinstance(value, datetime) or isinstance(value, date):
+  if isinstance(value, (datetime, date)):
     return value.isoformat()
   if isinstance(value, ndb.Key):
     return value.urlsafe()
@@ -136,7 +134,7 @@ def json_value(value):
     return urllib.quote(str(value))
   if isinstance(value, ndb.GeoPt):
     return '%s,%s' % (value.lat, value.lon)
-  if isinstance(value, list):
+  if is_iterable(value):
     return [json_value(v) for v in value]
   if isinstance(value, long):
     # Big numbers are sent as strings for accuracy in JavaScript
@@ -160,6 +158,20 @@ def jsonpify(*args, **kwargs):
 ###############################################################################
 # Helpers
 ###############################################################################
+def is_iterable(value):
+  return isinstance(value, (tuple, list))
+
+
+def check_form_fields(*fields):
+  fields_data = []
+  for field in fields:
+    if is_iterable(field):
+      fields_data.extend([field.data for field in field])
+    else:
+      fields_data.append(field.data)
+  return all(fields_data)
+
+
 def generate_next_url(next_cursor, base_url=None, cursor_name='cursor'):
   '''Substitutes or alters the current request URL with a new cursor parameter
   for next page of results
