@@ -1,4 +1,5 @@
 As we are building a personal phonebook, we'll need to add the contact list.
+We are going to use a database structure for that.
 
 Create a new file called `contact.py` in the `main/model` directory with the
 following contents:
