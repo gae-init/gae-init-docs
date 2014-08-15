@@ -12,7 +12,7 @@ what was suggested without further explanations. If you decide to have
 your own names, continue at your own risk.
 
 In this
-tutorial we're not going to explain how Google App Engine works, so if you
-have never played with it before you should at least finish the
+tutorial we're not going to explain how Google App Engine works, or teach you how to code in Python.
+So if you are unfamiliar with these topics, you should at least finish the
 [Getting Started: Python 2.7](https://developers.google.com/appengine/docs/python/gettingstartedpython27/)
 before continuing with this one.
