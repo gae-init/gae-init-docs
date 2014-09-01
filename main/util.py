@@ -30,16 +30,18 @@ def param(name, cast=None):
 
   if cast and value is not None:
     if cast is bool:
-      return value.lower() in ['true', 'yes', '1', '']
+      return value.lower() in ['true', 'yes', 'y', '1', '']
     if cast is list:
       return value.split(',') if len(value) > 0 else []
     return cast(value)
   return value
 
 
-def get_next_url():
-  next_url = param('next')
+def get_next_url(next_url=''):
+  next_url = next_url or param('next') or param('next_url')
   if next_url:
+    if flask.url_for('signin') in next_url:
+      return flask.url_for('welcome')
     return next_url
   referrer = flask.request.referrer
   if referrer and referrer.startswith(flask.request.host_url):
@@ -79,6 +81,10 @@ def get_dbs(
   return list(model_dbs), next_cursor
 
 
+def get_keys(*arg, **kwargs):
+  return get_dbs(*arg, keys_only=True, **kwargs)
+
+
 ###############################################################################
 # JSON Response Helpers
 ###############################################################################
@@ -101,14 +107,12 @@ def jsonify_model_dbs(model_dbs, next_cursor=None):
 
 
 def jsonify_model_db(model_db):
-  result_object = model_db_to_object(model_db)
-  response = jsonpify({
+  return jsonpify({
       'status': 'success',
       'now': datetime.utcnow().isoformat(),
-      'result': result_object,
+      'result': model_db_to_object(model_db),
     })
-  return response
-
+  
 
 def model_db_to_object(model_db):
   model_db_object = {}
