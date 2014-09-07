@@ -5,7 +5,7 @@
     "font-awesome": "~4",
     "highlight.js": "https://github.com/isagalaev/highlight.js.git#8.0",
     "jquery": "~2",
-    "momentjs": "~2",
+    "moment": "~2",
     "nprogress": "https://github.com/lipis/nprogress.git#master"
   },
   "exportsOverride": {
@@ -25,7 +25,7 @@
     "jquery": {
       "js": "dist/jquery.js"
     },
-    "momentjs": {
+    "moment": {
       "js": "*.js"
     },
     "nprogress": {

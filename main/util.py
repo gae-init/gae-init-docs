@@ -40,7 +40,10 @@ def param(name, cast=None):
 def get_next_url(next_url=''):
   next_url = next_url or param('next') or param('next_url')
   if next_url:
-    if flask.url_for('signin') in next_url:
+    do_not_redirect_urls = [
+        flask.url_for('signin'),
+      ]
+    if any(url in next_url for url in do_not_redirect_urls):
       return flask.url_for('welcome')
     return next_url
   referrer = flask.request.referrer
@@ -89,8 +92,6 @@ def get_keys(*arg, **kwargs):
 # JSON Response Helpers
 ###############################################################################
 def jsonify_model_dbs(model_dbs, next_cursor=None):
-  '''Return a response of a list of dbs as JSON service result
-  '''
   result_objects = [model_db_to_object(model_db) for model_db in model_dbs]
 
   response_object = {
@@ -112,7 +113,7 @@ def jsonify_model_db(model_db):
       'now': datetime.utcnow().isoformat(),
       'result': model_db_to_object(model_db),
     })
-  
+
 
 def model_db_to_object(model_db):
   model_db_object = {}
@@ -177,9 +178,6 @@ def check_form_fields(*fields):
 
 
 def generate_next_url(next_cursor, base_url=None, cursor_name='cursor'):
-  '''Substitutes or alters the current request URL with a new cursor parameter
-  for next page of results
-  '''
   if not next_cursor:
     return None
   base_url = base_url or flask.request.base_url
@@ -209,6 +207,10 @@ _username_re = re.compile(r'^[a-z0-9]+(?:[\.][a-z0-9]+)*$')
 
 def is_valid_username(username):
   return True if _username_re.match(username) else False
+
+
+def create_name_from_email(email):
+  return re.sub(r'_+|-+|\.+|\++', ' ', email.split('@')[0]).title()
 
 
 def update_query_argument(name, value=None, ignore='cursor', is_list=False):

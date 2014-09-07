@@ -12,12 +12,13 @@ input.
 
 ```python
 from flask.ext import wtf
+import wtforms
 
 class ContactUpdateForm(wtf.Form):
-  name = wtf.StringField('Name', [wtf.validators.required()])
-  email = wtf.StringField('Email', [wtf.validators.optional(), wtf.validators.email()])
-  phone = wtf.StringField('Phone', [wtf.validators.optional()])
-  address = wtf.TextAreaField('Address', [wtf.validators.optional()])
+  name = wtforms.StringField('Name', [wtforms.validators.required()])
+  email = wtforms.StringField('Email', [wtforms.validators.optional(), wtforms.validators.email()])
+  phone = wtforms.StringField('Phone', [wtforms.validators.optional()])
+  address = wtforms.TextAreaField('Address', [wtforms.validators.optional()])
 ```
 
 For more information regarding the form validation refert to

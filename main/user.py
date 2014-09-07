@@ -43,21 +43,25 @@ def user_list():
 # User Update
 ###############################################################################
 class UserUpdateForm(wtf.Form):
-  username = wtforms.StringField('Username',
+  username = wtforms.StringField(
+      'Username',
       [wtforms.validators.required(), wtforms.validators.length(min=3)],
       filters=[util.email_filter],
     )
-  name = wtforms.StringField('Name',
+  name = wtforms.StringField(
+      'Name',
       [wtforms.validators.required()], filters=[util.strip_filter],
     )
-  email = wtforms.StringField('Email',
+  email = wtforms.StringField(
+      'Email',
       [wtforms.validators.optional(), wtforms.validators.email()],
       filters=[util.email_filter],
     )
   admin = wtforms.BooleanField('Admin')
   active = wtforms.BooleanField('Active')
   verified = wtforms.BooleanField('Verified')
-  permissions = wtforms.SelectMultipleField('Permissions',
+  permissions = wtforms.SelectMultipleField(
+      'Permissions',
       filters=[util.sort_filter],
     )
 
@@ -118,7 +122,7 @@ def user_verify(token):
   user_db = auth.current_user_db()
   if user_db.token != token:
     flask.flash('That link is either invalid or expired.', category='danger')
-    return flask.redirect(flask.url_for('profile', token=token))
+    return flask.redirect(flask.url_for('profile'))
   user_db.verified = True
   user_db.token = util.uuid()
   user_db.put()
@@ -153,10 +157,12 @@ class UserMergeForm(wtf.Form):
   user_key = wtforms.StringField('User Key', [wtforms.validators.required()])
   user_keys = wtforms.StringField('User Keys', [wtforms.validators.required()])
   username = wtforms.StringField('Username', [wtforms.validators.optional()])
-  name = wtforms.StringField('Name (merged)',
+  name = wtforms.StringField(
+      'Name (merged)',
       [wtforms.validators.required()], filters=[util.strip_filter],
     )
-  email = wtforms.StringField('Email (merged)',
+  email = wtforms.StringField(
+      'Email (merged)',
       [wtforms.validators.optional(), wtforms.validators.email()],
       filters=[util.email_filter],
     )
@@ -209,7 +215,7 @@ def user_merge():
     merged_user_db.auth_ids = auth_ids
     merged_user_db.put()
 
-    deprecated_keys = [key for key in user_db_keys if key != merged_user_db.key]
+    deprecated_keys = [k for k in user_db_keys if k != merged_user_db.key]
     merge_user_dbs(merged_user_db, deprecated_keys)
     return flask.redirect(
         flask.url_for('user_update', user_id=merged_user_db.key.id()),

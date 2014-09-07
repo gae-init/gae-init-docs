@@ -180,7 +180,7 @@ def signin():
 def signout():
   login.logout_user()
   flask.flash(u'You have been signed out.', category='success')
-  return flask.redirect(flask.url_for('welcome'))
+  return flask.redirect(util.param('next') or flask.url_for('signin'))
 
 
 ###############################################################################
@@ -215,7 +215,7 @@ def retrieve_user_from_google(google_user):
 
   return create_user_db(
       auth_id,
-      re.sub(r'_+|-+|\.+', ' ', google_user.email().split('@')[0]).title(),
+      util.create_name_from_email(google_user.email()),
       google_user.email(),
       google_user.email(),
       verified=True,
@@ -355,10 +355,10 @@ def decorator_order_guard(f, decorator_name):
       )
 
 
-def create_user_db(auth_id, name, username, email='', verified=False, **params):
+def create_user_db(auth_id, name, username, email='', verified=False, **props):
   email = email.lower()
   if verified and email:
-    user_dbs, _ = model.User.get_dbs(email=email, verified=True, limit=2)
+    user_dbs, user_cr = model.User.get_dbs(email=email, verified=True, limit=2)
     if len(user_dbs) == 1:
       user_db = user_dbs[0]
       user_db.auth_ids.append(auth_id)
@@ -380,10 +380,10 @@ def create_user_db(auth_id, name, username, email='', verified=False, **params):
       name=name,
       email=email,
       username=new_username,
-      auth_ids=[auth_id],
+      auth_ids=[auth_id] if auth_id else [],
       verified=verified,
       token=util.uuid(),
-      **params
+      **props
     )
   user_db.put()
   task.new_user_notification(user_db)
@@ -406,6 +406,7 @@ def signin_user_db(user_db):
       'next': flask.url_for('welcome'),
       'remember': False,
     })
+  flask.session.pop('auth-params', None)
   if login.login_user(flask_user_db, remember=auth_params['remember']):
     user_db.put_async()
     flask.flash('Hello %s, welcome to %s.' % (
