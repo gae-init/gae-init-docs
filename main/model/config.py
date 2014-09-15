@@ -10,11 +10,11 @@ import util
 
 class Config(model.Base):
   analytics_id = ndb.StringProperty(default='')
-  anonymous_recaptcha = ndb.BooleanProperty(default=False)
   announcement_html = ndb.TextProperty(default='')
   announcement_type = ndb.StringProperty(default='info', choices=[
       'info', 'warning', 'success', 'danger',
     ])
+  anonymous_recaptcha = True
   brand_name = 'gae-init-docs'
   check_unique_email = ndb.BooleanProperty(default=True)
   facebook_app_id = ndb.StringProperty(default='')
@@ -46,9 +46,9 @@ class Config(model.Base):
 
   _PROPERTIES = model.Base._PROPERTIES.union({
       'analytics_id',
-      'anonymous_recaptcha',
       'announcement_html',
       'announcement_type',
+      'anonymous_recaptcha',
       'brand_name',
       'check_unique_email',
       'facebook_app_id',
