@@ -80,7 +80,8 @@ For completeness also have a look at our
 
 
 ### config.py {#config_py}
-`config.py` is a central place to orchestrate the gae-init toolbox.
+[config.py](https://github.com/gae-init/gae-init/blob/master/main/config.py)
+is a central place to orchestrate the gae-init toolbox.
 
 `run.py` for example needs to know a couple of things for its various tasks
 like minification and compiling: which are the relevant Less, JavaScript and
