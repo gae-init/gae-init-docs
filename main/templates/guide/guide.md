@@ -80,7 +80,8 @@ libraries and tools. See also the [Node.js](#node), [Bower](#bower) and
 [add a new / update/reinstall js lib(s)](#new_js_lib) sections below.
 
 For completeness also have a look at our
-[Run Script]({% endraw %}{{url_for('run')}}{% raw %}) page.
+[Run Script]({% endraw %}{{url_for('run')}}{% raw %}) page or have a look into
+[run.py](https://github.com/gae-init/gae-init/blob/master/run.py)'s code.
 
 
 ### config.py {#config_py}
