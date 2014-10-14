@@ -6,12 +6,12 @@
   # else
     <script src="/p/min/script/{{module}}.min.js?{{config.CURRENT_VERSION_ID}}"></script>
   # endif
+# endfor
 
   <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
   <script>
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
   </script>
-# endfor
 
 # if config.DEVELOPMENT
   <script src="http://{{request.host.split(':')[0]}}:35729/livereload.js"></script>
