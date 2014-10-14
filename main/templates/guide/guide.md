@@ -45,7 +45,11 @@ helpers and how they work together, so let's get you on the line.
 It all starts with `./run.py` which you might still know from the
 [Tutorial]({% endraw %}{{url_for('tutorial')}}{% raw %}). As its name implies it
 runs your dev-server on [http://localhost:8080](http://localhost:8080) with
-`./run.py -s`.
+`./run.py -s`. This is done by invoking AppEngine's `dev_appserver.py`
+internally. While `./run.py` will wrap certain common arguments to that, it's
+possible to pass additional arg along with the `--appserver-args` option. So
+if you for example want to see debug logging output of your app in the terminal,
+you can run: `./run.py -s --appserver-args --log_level debug`.
 
 What we didn't mention in the Tutorial is that you typically want to start a
 second `./run.py -w` in a different terminal window to watch for changes in
