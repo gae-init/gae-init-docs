@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html class="{% block html_class %}{{html_class}}{% endblock %}" lang="en" prefix="og: http://ogp.me/ns#">
   <head>
-    <meta charset="utf-8">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-
-    <meta property="og:title" content="gae-init" />
-    <meta property="og:description" content="gae-init is the easiest way to start developing new applications on Google App Engine!" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://gae-init.appspot.com/" />
-    <meta property="og:image" content="http://gae-init.appspot.com/p/img/gae-init-favicon-512.png" />
+    # include 'bit/meta.html'
     <title>
       # block title
         {{title + ' |' if title}}

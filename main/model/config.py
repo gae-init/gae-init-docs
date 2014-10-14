@@ -17,6 +17,7 @@ class Config(model.Base):
   anonymous_recaptcha = True
   brand_name = 'gae-init-docs'
   check_unique_email = ndb.BooleanProperty(default=True)
+  email_authentication = ndb.BooleanProperty(default=False)
   facebook_app_id = ndb.StringProperty(default='')
   facebook_app_secret = ndb.StringProperty(default='')
   feedback_email = ndb.StringProperty(default='')
@@ -24,6 +25,7 @@ class Config(model.Base):
   notify_on_new_user = ndb.BooleanProperty(default=True)
   recaptcha_private_key = ndb.StringProperty(default='')
   recaptcha_public_key = ndb.StringProperty(default='')
+  salt = ndb.StringProperty(default=util.uuid())
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
   verify_email = ndb.BooleanProperty(default=True)
@@ -31,6 +33,10 @@ class Config(model.Base):
   @property
   def has_anonymous_recaptcha(self):
     return bool(self.anonymous_recaptcha and self.has_recaptcha)
+
+  @property
+  def has_email_authentication(self):
+    return bool(self.email_authentication and self.feedback_email and self.verify_email)
 
   @property
   def has_facebook(self):
@@ -51,6 +57,7 @@ class Config(model.Base):
       'anonymous_recaptcha',
       'brand_name',
       'check_unique_email',
+      'email_authentication',
       'facebook_app_id',
       'facebook_app_secret',
       'feedback_email',
@@ -58,6 +65,7 @@ class Config(model.Base):
       'notify_on_new_user',
       'recaptcha_private_key',
       'recaptcha_public_key',
+      'salt',
       'twitter_consumer_key',
       'twitter_consumer_secret',
       'verify_email',
