@@ -47,11 +47,11 @@ It all starts with `./run.py` which you might still know from the
 runs your dev-server on [http://localhost:8080](http://localhost:8080) with
 `./run.py -s`.
 
-What we didn't mention in the Tutorial is that you typically want start a second
-`./run.py -w` in a different terminal window to watch for changes in `*.coffee`
-and `*.less` files and automagically trigger a recompilation (also see our
-Frequent Tasks section [running the dev-server](#run_dev_server) for some more
-included batteries).
+What we didn't mention in the Tutorial is that you typically want to start a
+second `./run.py -w` in a different terminal window to watch for changes in
+`*.coffee` and `*.less` files and automagically trigger a recompilation (also
+see our Frequent Tasks section [running the dev-server](#run_dev_server) for
+some more included batteries).
 
 `./run.py` can also flush your dev-server's datastore `-f`, so you can start
 from scratch with a fresh store without worrying about interference with already
@@ -213,7 +213,7 @@ stylesheets when visiting the dev webserver.
 
 While this should get your basic server up and running, in order not to have to
 restart it manually whenever you for example change some CoffeeScript
-(`*.coffee`) or Less (`*.less`) files, we suggest that run two more commands at
+(`*.coffee`) or Less (`*.less`) files, we suggest to run two more commands at
 the same time in separate terminals:
 ```bash
 $ ./run.py -w
@@ -225,8 +225,8 @@ And:
 ```bash
 $ ./node_modules/.bin/grunt
 ```
-This will provide a watch-daemon which thanks to `livereload.js` which is
-embedded in the development mode will automatically reload the pages in your
+This will provide a watch-daemon, which thanks to `livereload.js`, which is
+embedded in the development mode, will automatically reload the pages in your
 browser window when any of the relevant files change. Cool, eh? ;)
 
 If the path to grunt seems a bit weird: you can also safely install it globally:
