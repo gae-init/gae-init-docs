@@ -152,18 +152,13 @@ As you know by now gae-init takes care to setup, compile, minify and bundle
 many files before you can deploy them. For this it makes use of well established
 tools for web development.
 
-On invocation of `./run.py -s` gae-init will first check that some basic tools
+On invocation of `./run.py` gae-init will first check that some basic tools
 it needs are installed. If not it will print a message pointing you to our
 [requirements]({% endraw %}{{url_for('requirement')}}{% raw %}) page which
 explains how to install them. If those basic requirements are installed they'll
-be used to pull in the remaining tech-stack and setup everything else in the
-app's directory (it's magic).
-
-Most of this magic actually happens in
-[run.py](https://github.com/gae-init/gae-init/blob/master/run.py#L381)'s
-`install_dependencies()` function. It first creates the `/temp` dir in your
-app's folder if it isn't there. It then runs through the following steps about
-which you can read more in the following sections:
+be used to pull in the remaining tech stack and setup everything else in the
+app's directory (it's magic). It runs through the following steps about which
+you can read more in the following sections:
 
  - [`npm install`](#node)
  - [`grunt ext`](#grunt)
@@ -178,7 +173,7 @@ If you think something went wrong you can always start fresh by running
 
 #### Node.js / npm {#node}
 [Node.js](http://nodejs.org) is a JavaScript runtime environment which allows
-us to run js code from the command line. We first use it for its package
+us to run JavaScript code from the command line. We first use it for its package
 manager npm to first run `npm install`
 ([docs](https://www.npmjs.org/doc/cli/npm-install.html)) which installs all the
 the `dependencies` and `devDependencies` from
