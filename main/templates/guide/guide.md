@@ -14,12 +14,13 @@ Overview {#overview}
     - [config.py](#config_py)
     - [appcfg & app.yaml](#appengine)
     - [server side tasks](#server_side_tasks) (setup, compiling, minification, bundling)
-        - [Node.js](#node)
+        - [Node.js / npm](#node)
         - [Grunt](#grunt)
         - [Bower](#bower)
         - [livereload](#livereload)
         - [CoffeeScript](#coffeescript)
-        - [Less](#less)
+        - [UglifyJS / JS Minification](#uglifyjs)
+        - [Less & CSS Minification](#less)
     - [server side libs](#server_side_libs) (Python)
     - [client side libs](#client_side_libs) (JS)
 - [main.py](#main_py)
@@ -147,18 +148,164 @@ GoogleAppEngineLauncher app.
 
 
 ### server side tasks (setup, compiling, minification, bundling) {#server_side_tasks}
+As you know by now gae-init takes care to setup, compile, minify and bundle
+many files before you can deploy them. For this it makes use of well established
+tools for web development.
 
-#### Node.js {#node}
+On invocation of `./run.py -s` gae-init will first check that some basic tools
+it needs are installed. If not it will print a message pointing you to our
+[requirements]({% endraw %}{{url_for('requirement')}}{% raw %}) page which
+explains how to install them. If those basic requirements are installed they'll
+be used to pull in the remaining tech-stack and setup everything else in the
+app's directory (it's magic).
+
+Most of this magic actually happens in
+[run.py](https://github.com/gae-init/gae-init/blob/master/run.py#L381)'s
+`install_dependencies()` function. It first creates the `/temp` dir in your
+app's folder if it isn't there. It then runs through the following steps about
+which you can read more in the following sections:
+
+ - [`npm install`](#node)
+ - [`grunt ext`](#grunt)
+     - this will run [`bower install`](#bower)
+ - [`(venv) pip install`](#server_side_libs)
+
+In general each of these steps is only executed if it has either never been
+run or if the corresponding config files have been changed since the last run.
+If you think something went wrong you can always start fresh by running
+`./run -C`.
+
+
+#### Node.js / npm {#node}
+[Node.js](http://nodejs.org) is a JavaScript runtime environment which allows
+us to run js code from the command line. We first use it for its package
+manager npm to first run `npm install`
+([docs](https://www.npmjs.org/doc/cli/npm-install.html)) which installs all the
+the `dependencies` and `devDependencies` from
+[/package.json](https://github.com/gae-init/gae-init/blob/master/package.json).
+
+These dependencies end up in the `/node_modules` folder and are server side js
+libraries (so to be super explicit: they're never directly used by clients
+(browsers) of your app in the end, they rather help you during development and
+are run by you either directly or through `./run.py`).
+
+A couple of things that are installed by this (at the time of writing this) are
+
+ - [CoffeeScript](#coffeescript)
+ - [Less](#less)
+ - [UglifyJS](#uglifyjs)
+ - [Bower](#bower)
+ - [Grunt](#grunt) (and several extensions)
+
 
 #### Grunt {#grunt}
+[Grunt](http://gruntjs.com) is a "JavaScript task runner". We mainly use it to
+wipe certain directories, run [Bower](#bower) from it and watch certain files
+for changes.
+
+For this we use several Grunt extensions:
+
+   - [load-grunt-tasks](https://github.com/sindresorhus/load-grunt-tasks)
+     Load multiple grunt tasks using globbing patterns.
+   - [grunt-bower-task](https://github.com/yatskevich/grunt-bower-task)
+     Bower integration.
+   - [grunt-contrib-clean](https://github.com/gruntjs/grunt-contrib-clean)
+     Clear files and folders.
+   - [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
+     Run tasks whenever watched files change.
+
+Grunt is configured in
+[/Gruntfile.coffee](https://github.com/gae-init/gae-init/blob/master/Gruntfile.coffee).
+As can be seen, `load-grunt-tasks` is used to auto-load all `"grunt-*"`
+extensions defined in `/package.json`. `grunt-contrib-watch` is set up to watch
+over changes to `'main/static/**/*.css'` and `'main/**/*.{py,js,html}'` triggers
+a [livereload](#livereload) if any of those change. `grunt-contrib-clean` is set
+up to clean files in `main/static/{ext,min,dst}`.
+
+Last but not least `grunt-bower-task` is configured to correctly invoke bower
+as explained [below](#bower), and `grunt ext` is defined to clean the
+`main/static/ext` folder and then run Bower. As mentioned
+[above](#server_side_tasks) `grunt ext` is invoked in `run.py`'s
+`install_dependencies()`.
+
 
 #### Bower {#bower}
+[Bower](http://bower.io/) is "a package manager for the web". We use it to
+download and install the packages (e.g., js libraries) that in the end reach
+your clients (browsers). Examples for such packages are
+[jQuery](http://jquery.com/) and [Bootstrap](http://getbootstrap.com/).
+As Bower is invoked through `grunt` with
+[grunt-bower-task](https://github.com/yatskevich/grunt-bower-task) a part of its
+config is found in
+[/Gruntfile.coffee](https://github.com/gae-init/gae-init/blob/master/Gruntfile.coffee).
+There you can see that bower installs packages under `main/static/ext` and that
+we use`type/component` layout by default (e.g., `js/bootstrap/tooltip.js`,
+`js/jquery/jquery.js`, `less/bootstrap/tooltip.less`).
+
+With this initial config, Bower then reads
+[/bower.json](https://github.com/gae-init/gae-init/blob/master/bower.json) and
+installs its dependencies. At the time of this writing, the installed packages
+are `bootstrap`, `font-awesome`, `jquery`, `moment` and `nprogress`.
+For each of the dependencies make sure to define a section in `exportsOverride`
+that collects all files of the respective types (e.g., have a look at the
+`bootstrap` section in that file).
+
 
 #### livereload {#livereload}
+As mentioned [before](#grunt), the default `grunt` task is a `grunt watch` task
+which makes the browser reload the page from dev-server if any of the files
+change. This is done by a special `livereload.js` which is served by
+`grunt watch` and loaded via
+[/main/templates/bit/script.html](https://github.com/gae-init/gae-init/blob/master/main/templates/bit/script.html)
+on the dev-server.
+
 
 #### CoffeeScript {#coffeescript}
+[CoffeeScript](http://coffeescript.org/) "is a little language that compiles
+into JavaScript" and "is an attempt to expose the good parts of JavaScript in a
+simple way". In gae-init we use it to compile `*.coffee` files defined in
+`SCRIPTS` in
+[config.py](https://github.com/gae-init/gae-init/blob/master/main/config.py)
+into JavaScript files. This is invoked from `./run.py` by one of the `-s`, `-c`,
+`-w` flags via the `compile_all_dst()` function. The corresponding result JS
+files will be placed inside the `main/static/dst/script` folder (listed non
+`.coffee` files from the `main/static/src/script` folder are just copied). From
+there they are picked up directly on the dev-server (via some magic in
+[/main/templates/bit/script.html](https://github.com/gae-init/gae-init/blob/master/main/templates/bit/script.html)).
+For production the [minification process](#uglifyjs) picks them up.
 
-#### Less {#less}
+
+#### UglifyJS / JS Minification {#uglifyjs}
+In gae-init we use [UglifyJS](https://github.com/mishoo/UglifyJS) to compress
+the JS files listed in the blocks in `SCRIPTS` in `config.py` into a single
+minified JS file in `/main/static/min/script/` per block. This is done with the
+`./run.py -m` invocation. For each block the
+[CoffeeScript files are compiled](#coffeescript), the resulting or original JS
+files concatenated into a single file and then minified by UglifyJS into a
+`.min.js` file.
+
+
+#### Less & CSS Minification {#less}
+[Less](http://lesscss.org/) "is a CSS pre-processor". It is widely used, for
+example by [Bootstrap](http://getbootstrap.com/). In gae-init we use it to
+compile `*.less` files listed in `STYLES` in
+[config.py](https://github.com/gae-init/gae-init/blob/master/main/config.py)
+into CSS files. This happens similarly to the
+[aforementioned CoffeeScript compilation](#coffeescript) by several of the
+`./run.py` flags. As Less also directly supports inclusion, currently
+`config.py` only includes a single reference to
+[/main/static/src/style/style.less](https://github.com/gae-init/gae-init/blob/master/main/static/src/style/style.less).
+Inside this the other relevant stylesheets are then included. This has the nice
+side-effect of them being in a single big resulting `style.css` file already,
+which is put in the `main/static/dst/style` folder. From there it's picked up
+by the dev-server. For production `./run.py -m` invokes Less with the `-x` style
+to create a minified version of each of the `STYLES` in `config.py` in the
+`main/static/min/style` folder. The magic in
+[/main/templates/bit/style.html](https://github.com/gae-init/gae-init/blob/master/main/templates/bit/style.html)
+makes sure to load the right `style.css` / `style.min.css` in dev-server /
+production.
+
+
 
 ### server side libs (Python) {#server_side_libs}
 Python libraries are in general installed with pip via the
@@ -184,6 +331,7 @@ contents are uploaded in a zipped form as described above).
 
 
 ### client side libs (js) {#client_side_libs}
+Client side libs / packages can easily be installed via [Bower](#bower).
 
 
 
@@ -253,7 +401,7 @@ the main file being
 [style.less](https://github.com/gae-init/gae-init/blob/master/main/static/src/style/style.less).
 If you add further files make sure to include them in `style.less`.
 
-[Less](http://lesscss.org) is a powerful CSS generation language that will help
+[Less](#less) is a powerful CSS generation language that will help
 you to not repeat yourself while writing your stylesheets. In the case of
 `style.less` you will mainly find it including other files. Have a look at them
 and at our section about [templates/base.html](#templates_base) in order to
