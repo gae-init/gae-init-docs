@@ -69,7 +69,7 @@ from main import app
 ```
 
 The necessary imports for creation handler, just put
-them in the beginning of the `contact.py` file with the rest of the
+them in the beginning of the `main/contact.py` file with the rest of the
 imports.
 
 ```python
