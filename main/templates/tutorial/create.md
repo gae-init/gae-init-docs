@@ -1,7 +1,7 @@
 {% raw %}
 
 There are a few things that we need to do in order to start adding new
-contacts into the datastore. In short we're going to create a Form, 
+contacts into the datastore. In short we're going to create a Form,
 a Handler and a Template.
 
 
@@ -22,14 +22,14 @@ class ContactUpdateForm(wtf.Form):
   address = wtforms.TextAreaField('Address', [wtforms.validators.optional()])
 ```
 
-For more information regarding the form validation refert to
+For more information regarding the form validation refer to
 [Flask-WTForms](http://flask.pocoo.org/docs/patterns/wtforms/).
 
 
 ### Contact Create Handler
 
 After creating the form we have to create a handler for it. Add the
-following code into the `contact.py` file.
+following code into the `main/contact.py` file.
 
 ```python
 import flask
