@@ -28,6 +28,7 @@ import auth
 import model
 import profile
 import task
+import test
 
 if config.DEVELOPMENT:
   from werkzeug import debug
