@@ -16,6 +16,10 @@
       "less/mixins": "less/mixins/*.less",
       "font": "fonts/*"
     },
+    "bootstrap-sweetalert": {
+      "js": "lib/sweet-alert.js",
+      "less": "lib/*.less"
+    },
     "font-awesome": {
       "less": "less/*.less",
       "font": "fonts/*"
@@ -32,10 +36,6 @@
     "nprogress": {
       "js": "*.js",
       "less": "*.less"
-    },
-    "bootstrap-sweetalert": {
-      "js": "lib/sweet-alert.js",
-      "less": "lib/*.less"
     }
   }
 }
