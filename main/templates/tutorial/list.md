@@ -86,7 +86,7 @@ Add the lines `3 - 5` inside the `<ul class="nav">...</ul>` element that you wil
 `templates/bit` directory.
 
 ```html
-<ul class="nav">
+<ul class="nav navbar-nav">
   ...
   <li class="{{'active' if html_class == 'contact-list'}}">
     <a href="{{url_for('contact_list')}}"><i class="fa fa-list"></i> Contact List</a>
