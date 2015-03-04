@@ -81,7 +81,7 @@ list instead of going back to the welcome page.
 
 #### Adding a link on the top bar
 
-Add the lines `3 - 5` inside the `<ul class="nav">...</ul>` element that you will find in the
+Add the lines `3 - 5` inside the `<ul class="nav navbar-nav">...</ul>` element that you will find in the
 `header.html` file that is located in the
 `templates/bit` directory.
 
