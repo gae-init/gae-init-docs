@@ -14,7 +14,7 @@ def moderate():
 This will automagically register `'moderator'` as an available
 permission which an admin can assign to individual users via the user list.
 For convenience you can leave the `permission` string empty, which
-will cause the permission to  named as the decorated function (so
+will cause the permission to be named as the decorated function (so
 `@auth.permission_required()` would introduce and check for the
 permission `'moderate'` in the example above).
 
