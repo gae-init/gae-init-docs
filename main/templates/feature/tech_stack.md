@@ -15,5 +15,5 @@
 - [Python 2.7](https://developers.google.com/appengine/docs/python/python27/using27),
   [pip](http://www.pip-installer.org/),
   [virtualenv](http://www.virtualenv.org/)
-- [Grunt](http://gruntjs.com/),
+- [Gulp](http://gulpjs.com/),
   [Bower](http://bower.io/)
