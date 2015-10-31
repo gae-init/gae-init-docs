@@ -24,6 +24,7 @@ paths.static.root = "#{paths.main}/static"
 paths.static.dev = "#{paths.static.root}/dev"
 paths.static.ext = "#{paths.static.root}/ext"
 paths.static.min = "#{paths.static.root}/min"
+paths.static.lib = "#{paths.static.root}/src/lib"
 
 paths.src.root = "#{paths.static.root}/src"
 paths.src.script = "#{paths.src.root}/script"

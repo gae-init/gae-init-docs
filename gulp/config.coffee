@@ -11,6 +11,7 @@ config =
     "#{paths.static.ext}/bootstrap/js/collapse.js"
     "#{paths.static.ext}/bootstrap/js/dropdown.js"
     "#{paths.static.ext}/bootstrap/js/tooltip.js"
+    "#{paths.static.lib}/highlight.pack.js",
   ]
   style: [
     "#{paths.src.style}/style.less"
