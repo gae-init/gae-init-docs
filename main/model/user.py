@@ -6,6 +6,7 @@ import hashlib
 
 from google.appengine.ext import ndb
 
+from api import fields
 import model
 import util
 import config
@@ -28,22 +29,11 @@ class User(model.Base):
 
   def avatar_url_size(self, size=None):
     return '//gravatar.com/avatar/%(hash)s?d=identicon&r=x%(size)s' % {
-        'hash': hashlib.md5(self.email or self.username).hexdigest(),
+        'hash': hashlib.md5(
+            (self.email or self.username).encode('utf-8')).hexdigest(),
         'size': '&s=%d' % size if size > 0 else '',
       }
   avatar_url = property(avatar_url_size)
-
-  _PROPERTIES = model.Base._PROPERTIES.union({
-      'active',
-      'admin',
-      'auth_ids',
-      'avatar_url',
-      'email',
-      'name',
-      'permissions',
-      'username',
-      'verified',
-    })
 
   @classmethod
   def get_dbs(
@@ -72,3 +62,17 @@ class User(model.Base):
         cls.query(), email=email, verified=True, limit=2,
       )
     return not user_keys or self_key in user_keys and not user_keys[1:]
+
+  FIELDS = {
+      'active': fields.Boolean,
+      'admin': fields.Boolean,
+      'auth_ids': fields.List(fields.String),
+      'avatar_url': fields.String,
+      'email': fields.String,
+      'name': fields.String,
+      'permissions': fields.List(fields.String),
+      'username': fields.String,
+      'verified': fields.Boolean,
+    }
+
+  FIELDS.update(model.Base.FIELDS)

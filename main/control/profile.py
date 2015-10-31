@@ -6,6 +6,7 @@ import wtforms
 
 import auth
 import config
+import model
 import util
 import task
 
@@ -15,21 +16,16 @@ from main import app
 ###############################################################################
 # Profile View
 ###############################################################################
-@app.route('/_s/profile/', endpoint='profile_service')
 @app.route('/profile/')
 @auth.login_required
 def profile():
   user_db = auth.current_user_db()
-
-  if flask.request.path.startswith('/_s/'):
-    return util.jsonify_model_db(user_db)
 
   return flask.render_template(
       'profile/profile.html',
       title=user_db.name,
       html_class='profile-view',
       user_db=user_db,
-      has_json=True,
     )
 
 
@@ -38,11 +34,11 @@ def profile():
 ###############################################################################
 class ProfileUpdateForm(wtf.Form):
   name = wtforms.StringField(
-      'Name',
+      model.User.name._verbose_name,
       [wtforms.validators.required()], filters=[util.strip_filter],
     )
   email = wtforms.StringField(
-      'Email',
+      model.User.email._verbose_name,
       [wtforms.validators.optional(), wtforms.validators.email()],
       filters=[util.email_filter],
     )

@@ -21,15 +21,12 @@ from main import app
 ###############################################################################
 # User List
 ###############################################################################
-@app.route('/_s/user/', endpoint='user_list_service')
-@app.route('/user/')
+@app.route('/admin/user/')
 @auth.admin_required
 def user_list():
-  user_dbs, user_cursor = model.User.get_dbs(email=util.param('email'))
-
-  if flask.request.path.startswith('/_s/'):
-    return util.jsonify_model_dbs(user_dbs, user_cursor)
-
+  user_dbs, cursors = model.User.get_dbs(
+      email=util.param('email'), prev_cursor=True,
+    )
   permissions = list(UserUpdateForm._permission_choices)
   permissions += util.param('permissions', list) or []
   return flask.render_template(
@@ -37,8 +34,9 @@ def user_list():
       html_class='user-list',
       title='User List',
       user_dbs=user_dbs,
-      next_url=util.generate_next_url(user_cursor),
-      has_json=True,
+      next_url=util.generate_next_url(cursors['next']),
+      prev_url=util.generate_next_url(cursors['prev']),
+      api_url=flask.url_for('api.user.list'),
       permissions=sorted(set(permissions)),
     )
 
@@ -48,24 +46,24 @@ def user_list():
 ###############################################################################
 class UserUpdateForm(wtf.Form):
   username = wtforms.StringField(
-      'Username',
-      [wtforms.validators.required(), wtforms.validators.length(min=3)],
+      model.User.username._verbose_name,
+      [wtforms.validators.required(), wtforms.validators.length(min=2)],
       filters=[util.email_filter],
     )
   name = wtforms.StringField(
-      'Name',
+      model.User.name._verbose_name,
       [wtforms.validators.required()], filters=[util.strip_filter],
     )
   email = wtforms.StringField(
-      'Email',
+      model.User.email._verbose_name,
       [wtforms.validators.optional(), wtforms.validators.email()],
       filters=[util.email_filter],
     )
-  admin = wtforms.BooleanField('Admin')
-  active = wtforms.BooleanField('Active')
-  verified = wtforms.BooleanField('Verified')
+  admin = wtforms.BooleanField(model.User.admin._verbose_name)
+  active = wtforms.BooleanField(model.User.active._verbose_name)
+  verified = wtforms.BooleanField(model.User.verified._verbose_name)
   permissions = wtforms.SelectMultipleField(
-      'Permissions',
+      model.User.permissions._verbose_name,
       filters=[util.sort_filter],
     )
 
@@ -82,10 +80,14 @@ class UserUpdateForm(wtf.Form):
     UserUpdateForm._permission_choices.add(permission)
 
 
-@app.route('/user/<int:user_id>/update/', methods=['GET', 'POST'])
+@app.route('/admin/user/create/', methods=['GET', 'POST'])
+@app.route('/admin/user/<int:user_id>/update/', methods=['GET', 'POST'])
 @auth.admin_required
-def user_update(user_id):
-  user_db = model.User.get_by_id(user_id)
+def user_update(user_id=0):
+  if user_id:
+    user_db = model.User.get_by_id(user_id)
+  else:
+    user_db = model.User(name='', username='')
   if not user_db:
     flask.abort(404)
 
@@ -100,7 +102,7 @@ def user_update(user_id):
       form.username.errors.append('This username is already taken.')
     else:
       form.populate_obj(user_db)
-      if auth.current_user_id() == user_db.key.id():
+      if auth.current_user_key() == user_db.key:
         user_db.admin = True
         user_db.active = True
       user_db.put()
@@ -108,15 +110,13 @@ def user_update(user_id):
           'user_list', order='-modified', active=user_db.active,
         ))
 
-  if flask.request.path.startswith('/_s/'):
-    return util.jsonify_model_db(user_db)
-
   return flask.render_template(
       'user/user_update.html',
-      title=user_db.name,
+      title=user_db.name or 'New User',
       html_class='user-update',
       form=form,
       user_db=user_db,
+      api_url=flask.url_for('api.user', user_key=user_db.key.urlsafe()) if user_db.key else ''
     )
 
 
@@ -146,7 +146,7 @@ class UserForgotForm(wtf.Form):
       [wtforms.validators.required(), wtforms.validators.email()],
       filters=[util.email_filter],
     )
-  recaptcha = wtf.RecaptchaField('Are you human?')
+  recaptcha = wtf.RecaptchaField()
 
 
 @app.route('/user/forgot/', methods=['GET', 'POST'])
@@ -158,7 +158,7 @@ def user_forgot(token=None):
   if form.validate_on_submit():
     cache.bump_auth_attempt()
     email = form.email.data
-    user_dbs, _ = util.get_dbs(
+    user_dbs, cursors = util.get_dbs(
         model.User.query(), email=email, active=True, limit=2,
       )
     count = len(user_dbs)
@@ -197,11 +197,8 @@ class UserResetForm(wtf.Form):
 
 
 @app.route('/user/reset/<token>/', methods=['GET', 'POST'])
-@app.route('/user/reset/', methods=['GET', 'POST'])
+@app.route('/user/reset/')
 def user_reset(token=None):
-  if token is None:
-    flask.abort(404)
-
   user_db = model.User.get_by('token', token)
   if not user_db:
     flask.flash('That link is either invalid or expired.', category='danger')
@@ -234,7 +231,7 @@ def user_reset(token=None):
 ###############################################################################
 class UserActivateForm(wtf.Form):
   name = wtforms.StringField(
-      'Name',
+      model.User.name._verbose_name,
       [wtforms.validators.required()], filters=[util.strip_filter],
     )
   password = wtforms.StringField(
@@ -273,26 +270,6 @@ def user_activate(token):
 
 
 ###############################################################################
-# User Delete
-###############################################################################
-@app.route('/_s/user/delete/', methods=['DELETE'])
-@auth.admin_required
-def user_delete_service():
-  user_keys = util.param('user_keys', list)
-  user_db_keys = [ndb.Key(urlsafe=k) for k in user_keys]
-  delete_user_dbs(user_db_keys)
-  return flask.jsonify({
-      'result': user_keys,
-      'status': 'success',
-    })
-
-
-@ndb.transactional(xg=True)
-def delete_user_dbs(user_db_keys):
-  ndb.delete_multi(user_db_keys)
-
-
-###############################################################################
 # User Merge
 ###############################################################################
 class UserMergeForm(wtf.Form):
@@ -310,8 +287,7 @@ class UserMergeForm(wtf.Form):
     )
 
 
-@app.route('/_s/user/merge/')
-@app.route('/user/merge/', methods=['GET', 'POST'])
+@app.route('/admin/user/merge/', methods=['GET', 'POST'])
 @auth.admin_required
 def user_merge():
   user_keys = util.param('user_keys', list)
@@ -322,9 +298,6 @@ def user_merge():
   user_dbs = ndb.get_multi(user_db_keys)
   if len(user_dbs) < 2:
     flask.abort(400)
-
-  if flask.request.path.startswith('/_s/'):
-    return util.jsonify_model_dbs(user_dbs)
 
   user_dbs.sort(key=lambda user_db: user_db.created)
   merged_user_db = user_dbs[0]
@@ -371,6 +344,7 @@ def user_merge():
       merged_user_db=merged_user_db,
       form=form,
       auth_ids=auth_ids,
+      api_url=flask.url_for('api.user.list', user_keys=','.join(user_keys)),
     )
 
 

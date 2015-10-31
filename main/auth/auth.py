@@ -13,7 +13,6 @@ import flask
 import unidecode
 import wtforms
 
-
 import cache
 import config
 import model
@@ -106,10 +105,10 @@ def login_required(f):
   decorator_order_guard(f, 'auth.login_required')
 
   @functools.wraps(f)
-  def decorated_function(*args, **kws):
+  def decorated_function(*args, **kwargs):
     if is_logged_in():
-      return f(*args, **kws)
-    if flask.request.path.startswith('/_s/'):
+      return f(*args, **kwargs)
+    if flask.request.path.startswith('/api/'):
       return flask.abort(401)
     return flask.redirect(flask.url_for('signin', next=flask.request.url))
   return decorated_function
@@ -119,10 +118,10 @@ def admin_required(f):
   decorator_order_guard(f, 'auth.admin_required')
 
   @functools.wraps(f)
-  def decorated_function(*args, **kws):
+  def decorated_function(*args, **kwargs):
     if is_logged_in() and current_user_db().admin:
-      return f(*args, **kws)
-    if not is_logged_in() and flask.request.path.startswith('/_s/'):
+      return f(*args, **kwargs)
+    if not is_logged_in() and flask.request.path.startswith('/api/'):
       return flask.abort(401)
     if not is_logged_in():
       return flask.redirect(flask.url_for('signin', next=flask.request.url))
@@ -144,13 +143,13 @@ def permission_required(permission=None, methods=None):
     permission_registered.send(f, permission=perm)
 
     @functools.wraps(f)
-    def decorated_function(*args, **kws):
+    def decorated_function(*args, **kwargs):
       if meths and flask.request.method.upper() not in meths:
-        return f(*args, **kws)
+        return f(*args, **kwargs)
       if is_logged_in() and current_user_db().has_permission(perm):
-        return f(*args, **kws)
+        return f(*args, **kwargs)
       if not is_logged_in():
-        if flask.request.path.startswith('/_s/'):
+        if flask.request.path.startswith('/api/'):
           return flask.abort(401)
         return flask.redirect(flask.url_for('signin', next=flask.request.url))
       return flask.abort(403)
@@ -175,7 +174,7 @@ class SignInForm(wtf.Form):
       'Keep me signed in',
       [wtforms.validators.optional()],
     )
-  recaptcha = wtf.RecaptchaField('Are you human?')
+  recaptcha = wtf.RecaptchaField()
   next_url = wtforms.HiddenField()
 
 
@@ -221,7 +220,7 @@ class SignUpForm(wtf.Form):
       [wtforms.validators.required(), wtforms.validators.email()],
       filters=[util.email_filter],
     )
-  recaptcha = wtf.RecaptchaField('Are you human?')
+  recaptcha = wtf.RecaptchaField()
 
 
 @app.route('/signup/', methods=['GET', 'POST'])
@@ -268,7 +267,6 @@ def signup():
 @app.route('/signout/')
 def signout():
   login.logout_user()
-  flask.flash('You have been signed out.', category='success')
   return flask.redirect(util.param('next') or flask.url_for('signin'))
 
 
@@ -286,10 +284,13 @@ def urls_for_oauth(next_url):
       'facebook_signin_url': url_for_signin('facebook', next_url),
       'github_signin_url': url_for_signin('github', next_url),
       'google_signin_url': url_for_signin('google', next_url),
+      'gae_signin_url': url_for_signin('gae', next_url),
       'instagram_signin_url': url_for_signin('instagram', next_url),
       'linkedin_signin_url': url_for_signin('linkedin', next_url),
       'microsoft_signin_url': url_for_signin('microsoft', next_url),
+      'reddit_signin_url': url_for_signin('reddit', next_url),
       'twitter_signin_url': url_for_signin('twitter', next_url),
+      'vk_signin_url': url_for_signin('vk', next_url),
       'yahoo_signin_url': url_for_signin('yahoo', next_url),
     }
 
@@ -318,7 +319,7 @@ def save_request_params():
     }
 
 
-def signin_oauth(oauth_app, scheme='http'):
+def signin_oauth(oauth_app, scheme=None):
   try:
     flask.session.pop('oauth_token', None)
     save_request_params()
@@ -346,7 +347,7 @@ def form_with_recaptcha(form):
 def create_user_db(auth_id, name, username, email='', verified=False, **props):
   email = email.lower() if email else ''
   if verified and email:
-    user_dbs, user_cr = model.User.get_dbs(email=email, verified=True, limit=2)
+    user_dbs, cursors = model.User.get_dbs(email=email, verified=True, limit=2)
     if len(user_dbs) == 1:
       user_db = user_dbs[0]
       user_db.auth_ids.append(auth_id)
@@ -390,16 +391,13 @@ def signin_user_db(user_db):
   flask.session.pop('auth-params', None)
   if login.login_user(flask_user_db, remember=auth_params['remember']):
     user_db.put_async()
-    flask.flash('Hello %s, welcome to %s.' % (
-        user_db.name, config.CONFIG_DB.brand_name,
-      ), category='success')
     return flask.redirect(util.get_next_url(auth_params['next']))
   flask.flash('Sorry, but you could not sign in.', category='danger')
   return flask.redirect(flask.url_for('signin'))
 
 
 def get_user_db_from_email(email, password):
-  user_dbs, user_cursor = model.User.get_dbs(email=email, active=True, limit=2)
+  user_dbs, cursors = model.User.get_dbs(email=email, active=True, limit=2)
   if not user_dbs:
     return None
   if len(user_dbs) > 1:

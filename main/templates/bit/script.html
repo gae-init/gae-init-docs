@@ -1,18 +1,13 @@
-# for module, scripts in config.SCRIPTS
-  # if config.DEVELOPMENT
-    # for script in scripts
-      <script src="/p/{{script.replace('.coffee', '.js').replace('src/script/', 'dst/script/')}}?{{config.CURRENT_VERSION_ID}}"></script>
-    # endfor
-  # else
-    <script src="/p/min/script/{{module}}.min.js?{{config.CURRENT_VERSION_ID}}"></script>
-  # endif
-# endfor
-
-  <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-  <script>
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-  </script>
-
 # if config.DEVELOPMENT
+  <script src="/p/dev/script/ext.js?{{config.CURRENT_VERSION_ID}}"></script>
+  <script src="/p/dev/script/script.js?{{config.CURRENT_VERSION_ID}}"></script>
   <script src="http://{{request.host.split(':')[0]}}:35729/livereload.js"></script>
+# else
+  <script src="/p/min/script/ext.js?{{config.CURRENT_VERSION_ID}}"></script>
+  <script src="/p/min/script/script.js?{{config.CURRENT_VERSION_ID}}"></script>
 # endif
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>

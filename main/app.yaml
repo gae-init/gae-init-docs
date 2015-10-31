@@ -16,6 +16,9 @@ libraries:
 - name: jinja2
   version: latest
 
+error_handlers:
+- file: templates/error_static.html
+
 handlers:
 - url: /favicon.ico
   static_files: static/img/favicon.ico
@@ -31,12 +34,19 @@ handlers:
   mime_type: font/ttf
   expiration: 1000d
 
+- url: /p/(.*\.woff2)
+  static_files: static/\1
+  upload: static/(.*\.woff2)
+  mime_type: font/woff2
+  expiration: 1000d
+
 - url: /p/
   static_dir: static/
   expiration: 1000d
 
 - url: /.*
   script: main.app
+  secure: always
 
 skip_files:
 - ^(.*/)?#.*#
@@ -51,9 +61,10 @@ skip_files:
 - ^(.*/)?index\.yaml
 - ^(.*/)?index\.yml
 - ^lib/.*
-- ^static/dst/.*
-- ^static/ext/coffee/.*
-- ^static/ext/css/.*
-- ^static/ext/js/.*
-- ^static/ext/less/.*
+- ^static/dev/.*
+- ^static/ext/.*\.coffee
+- ^static/ext/.*\.css
+- ^static/ext/.*\.js
+- ^static/ext/.*\.less
+- ^static/ext/.*\.json
 - ^static/src/.*

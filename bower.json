@@ -2,40 +2,21 @@
   "name": "gae-init",
   "dependencies": {
     "bootstrap": "~3",
-    "bootstrap-sweetalert": "~0",
     "font-awesome": "~4",
     "highlight.js": "https://github.com/isagalaev/highlight.js.git#8.0",
     "jquery": "~2",
     "moment": "~2",
     "nprogress": "https://github.com/lipis/nprogress.git#master"
   },
-  "exportsOverride": {
+  "overrides": {
     "bootstrap": {
-      "js": "js/*.js",
-      "less": "less/*.less",
-      "less/mixins": "less/mixins/*.less",
-      "font": "fonts/*"
-    },
-    "bootstrap-sweetalert": {
-      "js": "lib/sweet-alert.js",
-      "less": "lib/*.less"
+      "main": ["less/**", "fonts/*", "js/*"]
     },
     "font-awesome": {
-      "less": "less/*.less",
-      "font": "fonts/*"
+      "main": ["less/*", "fonts/*"]
     },
     "highlight.js": {
-      "css": "src/styles/*.css"
-    },
-    "jquery": {
-      "js": "dist/jquery.js"
-    },
-    "moment": {
-      "js": "*.js"
-    },
-    "nprogress": {
-      "js": "*.js",
-      "less": "*.less"
+      "main": ["src/styles/*.css"]
     }
   }
 }
