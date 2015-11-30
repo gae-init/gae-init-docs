@@ -43,6 +43,7 @@ TAG_SEPARATOR = ' '
 REQUIREMENT = [
     ('gae', 'Google App Engine', 'Required'),
     ('nodejs', 'Node.js', 'Required'),
+    ('gulp', 'Gulp', 'Required'),
     ('pip', 'pip', 'Required'),
     ('virtualenv', 'virtualenv', 'Required'),
     ('git', 'Git', 'Required'),
