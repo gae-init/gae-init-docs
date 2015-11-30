@@ -45,18 +45,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>{{url_for('run', _external=True)}})}}</loc>
-    <lastmod>{{lastmod}}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>{{url_for('guide', _external=True)}})}}</loc>
-    <lastmod>{{lastmod}}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>{{url_for('reference', _external=True)}})}}</loc>
     <lastmod>{{lastmod}}</lastmod>
     <changefreq>weekly</changefreq>
