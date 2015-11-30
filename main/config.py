@@ -156,39 +156,3 @@ CONVENTION = [
     ('coffee', 'CoffeeScript', ''),
     ('markdown', 'Markdown', 'for gae-init documentation'),
   ]
-
-###############################################################################
-# Client modules, also used by the run.py script.
-###############################################################################
-STYLES = [
-    'src/style/style.less',
-  ]
-
-SCRIPTS = [
-    ('libs', [
-        'ext/js/jquery/jquery.js',
-        'ext/js/moment/moment.js',
-        'ext/js/nprogress/nprogress.js',
-        'ext/js/bootstrap-sweetalert/sweet-alert.js',
-        'ext/js/bootstrap/alert.js',
-        'ext/js/bootstrap/button.js',
-        'ext/js/bootstrap/transition.js',
-        'ext/js/bootstrap/collapse.js',
-        'ext/js/bootstrap/dropdown.js',
-        'ext/js/bootstrap/tooltip.js',
-        'ext/js/bootstrap/affix.js',
-        'ext/js/bootstrap/popover.js',
-        'src/lib/highlight.pack.js',
-      ]),
-    ('scripts', [
-        'src/script/common/service.coffee',
-        'src/script/common/util.coffee',
-        'src/script/site/app.coffee',
-        'src/script/site/admin.coffee',
-        'src/script/site/profile.coffee',
-        'src/script/site/auth.coffee',
-        'src/script/site/user.coffee',
-        'src/script/site/main.coffee',
-        'src/script/site/tree.coffee',
-      ]),
-  ]

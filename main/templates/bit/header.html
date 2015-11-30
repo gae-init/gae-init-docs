@@ -12,13 +12,12 @@
     <ul class="nav navbar-nav">
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-          <i class="fa fa-lightbulb-o"></i> Learn
+          <span class="fa fa-lightbulb-o"></span> Learn
           <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
           <li><a href="{{url_for('what')}}">What is gae-init?</a></li>
           <li><a href="{{url_for('tutorial')}}">Tutorial</a></li>
-          <li><a href="{{url_for('guide')}}">Guide</a></li>
           <li><a href="{{url_for('features')}}">Features</a></li>
           <li><a href="{{url_for('requirement')}}">Requirements</a></li>
           <li><a href="{{url_for('faq')}}">FAQ</a></li>
@@ -26,7 +25,7 @@
       </li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-          <i class="fa fa-code"></i> Develop
+          <span class="fa fa-code"></span> Develop
           <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
@@ -41,20 +40,20 @@
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-          <i class="fa fa-code-fork"></i>
+          <span class="fa fa-code-fork"></span>
           Source &amp; Demos
           <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
           <li class="dropdown-header">Live Demos</li>
-          <li><a href="http://gae-init.appspot.com" target="_blank"><i class="fa fa-briefcase fa-fw"></i> gae-init</a></li>
-          <li><a href="http://babel.gae-init.appspot.com" target="_blank"><i class="fa fa-globe fa-fw"></i> gae-init-babel</a></li>
-          <li><a href="http://upload.gae-init.appspot.com" target="_blank"><i class="fa fa-cloud fa-fw"></i> gae-init-upload</a></li>
-          <li><a href="http://debug.gae-init.appspot.com" target="_blank"><i class="fa fa-bug fa-fw"></i> gae-init-debug</a></li>
+          <li><a href="http://gae-init.appspot.com" target="_blank"><span class="fa fa-briefcase fa-fw"></span> gae-init</a></li>
+          <li><a href="http://babel.gae-init.appspot.com" target="_blank"><span class="fa fa-globe fa-fw"></span> gae-init-babel</a></li>
+          <li><a href="http://upload.gae-init.appspot.com" target="_blank"><span class="fa fa-cloud fa-fw"></span> gae-init-upload</a></li>
+          <li><a href="http://debug.gae-init.appspot.com" target="_blank"><span class="fa fa-bug fa-fw"></span> gae-init-debug</a></li>
           <li class="divider"></li>
           <li class="dropdown-header">Source Code</li>
-          <li><a href="https://github.com/gae-init" target="_blank"><i class="fa fa-github fa-fw"></i> GitHub</a></li>
-          <li><a href="https://bitbucket.org/gae-init" target="_blank"><i class="fa fa-bitbucket fa-fw"></i> Bitbucket</a></li>
+          <li><a href="https://github.com/gae-init" target="_blank"><span class="fa fa-github fa-fw"></span> GitHub</a></li>
+          <li><a href="https://bitbucket.org/gae-init" target="_blank"><span class="fa fa-bitbucket fa-fw"></span> Bitbucket</a></li>
         </ul>
       </li>
       # if current_user.admin
