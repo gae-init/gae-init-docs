@@ -57,7 +57,7 @@ def guide():
   return flask.render_template(
       'guide/guide.html',
       html_class='guide',
-      title="Guide",
+      title='Guide',
     )
 
 
