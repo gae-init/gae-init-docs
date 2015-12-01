@@ -35,7 +35,6 @@
 .social {
   opacity: 0;
   transition: 0.5s ease;
-  -webkit-transition: 0.5s ease;
 
   iframe {
     border: none;
@@ -46,14 +45,16 @@
 
 
 section  {
-  padding-top: 0;
   > .page-header {
+    margin-top: @line-height-computed;
     color: #5a5a5a;
   }
-}
 
-.reference > dt {
-//  padding-top: @navbar-height;
+  &.hash {
+    .page-header {
+      background-color: fade(@brand-info, 8%);
+    }
+  }
 }
 
 .reference {
@@ -82,27 +83,26 @@ section  {
   &.active {
     background-color: @brand-warning;
   }
-  a:first-child {
-    display: none;
+  .permalink {
+    opacity: 0.05;
     text-decoration: none;
-    color: @gray-light;
     padding: 0 4px;
+    transition: opacity .2s ease-in;
+    color: @text-color;
+    border-radius: 2px;
     &:hover {
-      color: @text-color;
-      background-color: @gray-lighter;
+      background-color: fade(@gray-lighter, 60%);
     }
     &:before {
       content: "¶";
     }
-  }
-
-  &:hover {
-    a:first-child {
-      display: inline;
-    }
-    .github-edit {
+    :hover& {
       opacity: .7;
     }
+  }
+  &:hover .github-edit {
+    opacity: .7;
+    text-decoration: none;
   }
 }
 
@@ -113,13 +113,7 @@ section  {
   position: sticky;
   top: 0;
   z-index: 1;
-  background-color: white;
-}
-
-
-.hash {
-  background-color: fade(@brand-info, 8%);
-  border-radius: 0  0 12px 12px;
+  background-color: #fff;
 }
 
 
@@ -128,7 +122,8 @@ section  {
   float: right;
   font-size: 10px;
   opacity: .2;
-  padding-right: 8px;
+  padding: 4px 8px;
+  transition: opacity .2s ease-in;
   &:hover {
     opacity: .7;
     text-decoration: none;

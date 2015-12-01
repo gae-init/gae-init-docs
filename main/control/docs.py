@@ -61,6 +61,15 @@ def guide():
     )
 
 
+@app.route('/howto/')
+def howto():
+  return flask.render_template(
+      'howto/howto.html',
+      html_class='howto',
+      title='How To',
+    )
+
+
 @app.route('/features/')
 def features():
   return flask.render_template(

@@ -49,15 +49,20 @@ REQUIREMENT = [
     ('git', 'Git', 'Required'),
   ]
 
+HOWTO = [
+  ('add_frontend', 'Add Frontend Library'),
+  ('add_backend', 'Add Backend Library'),
+]
+
 REFERENCE = [
-    ('util', 'Utilities', 'util.py'),
-    ('task', 'Tasks', 'task.py'),
-    ('auth', 'User related', 'auth.py'),
-    ('decorator', 'Decorators', 'auth.py'),
-    ('config', 'Config', 'config.py'),
-    ('utils', 'Utilities (HTML)', 'utils.html'),
-    ('forms', 'Forms (HTML)', 'forms.html'),
-  ]
+  ('util', 'Utilities', 'util.py'),
+  ('task', 'Tasks', 'task.py'),
+  ('auth', 'User related', 'auth.py'),
+  ('decorator', 'Decorators', 'auth.py'),
+  ('config', 'Config', 'config.py'),
+  ('utils', 'Utilities (HTML)', 'utils.html'),
+  ('forms', 'Forms (HTML)', 'forms.html'),
+]
 
 REFERENCE_DEF = {
     'util': [

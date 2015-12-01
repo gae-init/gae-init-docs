@@ -1,6 +1,6 @@
 window.init_global = () ->
   init_markdown_header_links()
-  $('.self-link > a:first-child').attr('title', 'Permenant link')
+  $('.permalink').attr 'title', 'Permenant link'
   $('a').each (index) ->
     $this = $($('a')[index])
     if $this.attr('href')?.substr(0, 4) == 'http'

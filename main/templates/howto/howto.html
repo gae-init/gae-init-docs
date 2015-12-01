@@ -1,0 +1,20 @@
+# extends 'base_doc.html'
+# import 'macro/utils.html' as utils
+
+# block content_doc
+  {{utils.github_edit_template_link('howto/intro.md')}}
+  {{utils.include_md('howto/intro.md')}}
+
+  # for section in config.HOWTO
+    <section id="{{section[0]}}">
+      <div class="page-header">
+        <h2 class="self-link">
+          {{section[1]}}
+          <a class="permalink" href="#{{section[0]}}"></a>
+          {{utils.github_edit_template_link('howto/%s.md' % (section[0]))}}
+        </h2>
+      </div>
+      {{utils.include_md('howto/%s.md' % section[0])}}
+    </section>
+  # endfor
+# endblock

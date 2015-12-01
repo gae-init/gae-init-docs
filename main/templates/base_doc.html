@@ -2,7 +2,7 @@
 
 # block content
   <div class="row">
-    <div class="col-sm-3 col-md-2 left-nav">
+    <div class="col-sm-3 left-nav">
       <div class="page-header text-center hidden-xs">
         <h1>
           <a href="{{url_for('welcome')}}">
@@ -45,11 +45,22 @@
             </ul>
           # endif
         </li>
+        <li class="{{'active' if html_class.find('howto') >= 0 else ''}}">
+          <a href="{{url_for('howto')}}">How To</a>
+          # if html_class.find('howto') >= 0
+            <ul class="nav">
+              # for section in config.HOWTO
+                <li>
+                  <a href="{{'#'}}{{section[0]}}">
+                    {{section[1]}}
+                  </a>
+                </li>
+              # endfor
+            </ul>
+          # endif
+        </li>
         <li class="{{'active' if html_class.find('convention') >= 0 else ''}}">
           <a href="{{url_for('convention')}}">Code Conventions</a>
-        </li>
-        <li class="{{'active' if html_class.find('tree') >= 0 else ''}}">
-          <a href="{{url_for('tree')}}">Source Tree</a>
         </li>
         <li class="{{'active' if html_class.find('reference') >= 0 else ''}}">
           <a href="{{url_for('reference')}}">API Reference</a>
@@ -73,7 +84,7 @@
         </li>
       </ul>
     </div>
-    <div class="col-sm-9 col-md-10">
+    <div class="col-sm-9">
       <div class="page-header">
         <h1>{{title}}</h1>
       </div>

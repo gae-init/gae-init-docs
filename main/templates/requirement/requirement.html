@@ -2,23 +2,19 @@
 # import 'macro/utils.html' as utils
 
 # block content_doc
-  <div class="row">
-    <div class="col-md-12">
-      # for section in config.REQUIREMENT
-        <section id="{{section[0]}}">
-          <div class="page-header">
-            <h2 class="self-link">
-              {{section[1]}}
-              <small>
-                {{section[2]}}
-                <a href="#{{section[0]}}"></a>
-              </small>
-              {{utils.github_edit_template_link('requirement/%s.md' % (section[0]))}}
-            </h2>
-          </div>
-          {{utils.include_md('requirement/%s.md' % section[0])}}
-        </section>
-      # endfor
-    </div>
-  </div>
+  # for section in config.REQUIREMENT
+    <section id="{{section[0]}}">
+      <div class="page-header">
+        <h2 class="self-link">
+          {{section[1]}}
+          <small>
+            {{section[2]}}
+            <a href="#{{section[0]}}"></a>
+          </small>
+          {{utils.github_edit_template_link('requirement/%s.md' % (section[0]))}}
+        </h2>
+      </div>
+      {{utils.include_md('requirement/%s.md' % section[0])}}
+    </section>
+  # endfor
 # endblock
