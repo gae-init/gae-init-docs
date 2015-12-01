@@ -39,6 +39,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>{{url_for('howto', _external=True)}})}}</loc>
+    <lastmod>{{lastmod}}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>{{url_for('tree', _external=True)}})}}</loc>
     <lastmod>{{lastmod}}</lastmod>
     <changefreq>weekly</changefreq>
