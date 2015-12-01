@@ -33,6 +33,9 @@ $ -> $('html.tutorial').each ->
 $ -> $('html.requirement').each ->
   init_doc()
 
+$ -> $('html.howto').each ->
+  init_doc()
+
 $ -> $('html.guide').each ->
   init_doc()
 
