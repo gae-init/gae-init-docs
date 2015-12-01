@@ -8,7 +8,7 @@
         <ul class="nav nav-list docs-sidenav">
           # for section in config.REFERENCE
             <li>
-              <a href="{{'#'}}{{section[0]}}">
+              <a class="permalink" href="#{{section[0]}}">
                 {{section[1]}}
               </a>
             </li>
@@ -24,7 +24,7 @@
             <h2 class="self-link">
               {{file[1]}}
               <small>{{file[2]}}</small>
-              <a href="#{{file[0]}}"></a>
+              <a class="permalink" href="#{{file[0]}}"></a>
             </h2>
           </div>
 
@@ -41,7 +41,7 @@
               # endif
               <dt id="{{name}}" class="self-link">
                 {{name}}{{def[1]}}
-                <a href="#{{name}}"></a>
+                <a class="permalink" href="#{{name}}"></a>
                 {{utils.github_edit_template_link('reference/%s/%s.md' % (file[0], def[0]))}}
               </dt>
               <dd>
