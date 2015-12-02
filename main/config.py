@@ -50,7 +50,8 @@ REQUIREMENT = [
   ]
 
 HOWTO = [
-  ('start', 'Start'),
+  ('start', 'Getting Started'),
+  ('add_styles', 'Add Custom Styles'),
   ('add_frontend', 'Add Frontend Library'),
   ('add_backend', 'Add Backend Library'),
 ]
