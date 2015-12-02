@@ -117,6 +117,8 @@ REFERENCE_DEF = {
         ('production', ''),
         ('debug', ''),
         ('default_db_limit', ''),
+        ('signin_retry_limit', ''),
+        ('tag_separator', ''),
       ],
     'utils': [
         ('order_by_link', "(property, title, ignore=['cursor'])"),
