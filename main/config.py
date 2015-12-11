@@ -54,6 +54,7 @@ HOWTO = [
   ('add_styles', 'Add Custom Styles'),
   ('add_frontend', 'Add Frontend Library'),
   ('add_backend', 'Add Backend Library'),
+  ('letsencrypt', u'Let’s Encrypt Setup'),
 ]
 
 REFERENCE = [
