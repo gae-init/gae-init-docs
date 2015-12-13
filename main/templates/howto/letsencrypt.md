@@ -18,15 +18,21 @@ that convert private key to a compatible format (replace `www.example.com` with
 your actual domain):
 
 ```bash
-openssl rsa -inform pem \
+sudo openssl rsa -inform pem \
   -in live/www.example.com/privkey.pem \
   -outform pem > live/www.example.com/privkey_fixed.pem
 ```
 
-After uploading the `live/www.example.com/cert.pem` and
-`live/www.example.com/privkey_fixed.pem` to the App Engine settings for
-[SSL Certificats](https://console.developers.google.com/appengine/settings/certificates)
-and setting up the custom domain everything should work.
+Copy the contents of `cert.pem` & `fixed.pem` and paste them into the App
+Engine settings for [SSL Certificats](https://console.developers.google.com/appengine/settings/certificates):
+
+```bash
+sudo cat ~/ssl-keys/live/www.example.com/cert.pem
+sudo cat ~/ssl-keys/live/www.example.com/privkey_fixed.pem
+```
+
+Setup the custom domain and make sure that you have `secure: always` in your
+[`app.yaml`](https://github.com/gae-init/gae-init/blob/master/main/app.yaml#L49).
 
 > For more details and screenshots follow the [instructions by Igor
 Artamonov](http://igorartamonov.com/2015/12/lets-encrypt-ssl-google-appengine/).
