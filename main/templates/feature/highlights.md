@@ -1,11 +1,11 @@
 - JSON services with
-  [more URL]({{url_for('api.user.list')}}),
-  [limits]({{url_for('api.user.list', limit=8)}}),
-  [filters]({{url_for('api.user.list', admin='true')}}),
-  [orders]({{url_for('api.user.list', order='name')}}) and
-  [more..]({{url_for('api.user.list', limit=4, order='name', admin='true')}})
+  [more URL]({{url_for('api.admin.user.list')}}),
+  [limits]({{url_for('api.admin.user.list', limit=8)}}),
+  [filters]({{url_for('api.admin.user.list', admin='true')}}),
+  [orders]({{url_for('api.admin.user.list', order='name')}}) and
+  [more..]({{url_for('api.admin.user.list', limit=4, order='name', admin='true')}})
 - JSONP support by providing a
-  [`&callback`](http://gae-init.appspot.com{{url_for('api.user.list', limit=2, order='name', callback='hello')}})
+  [`&callback`](http://gae-init.appspot.com{{url_for('api.admin.user.list', limit=2, order='name', callback='hello')}})
   argument to JSON services
 - Custom pages for error handlings, like [404](/404)
 - Jinja2 template macros for
