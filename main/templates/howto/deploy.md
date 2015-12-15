@@ -9,4 +9,8 @@ To deploy your application execute the following command from the root directory
 $ gulp deploy
 ```
 
-Test your application by adding new contacts online!
+If you wish to deploy it to a different application or a version then execute:
+
+```bash
+$ gulp deploy --application=foo --version=bar
+```

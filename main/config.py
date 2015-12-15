@@ -55,6 +55,7 @@ HOWTO = [
   ('add_frontend', 'Add Frontend Library'),
   ('add_backend', 'Add Backend Library'),
   ('letsencrypt', u'Let’s Encrypt Setup'),
+  ('deploy', 'Deploy'),
 ]
 
 REFERENCE = [
