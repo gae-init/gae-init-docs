@@ -1,3 +1,8 @@
+[Let’s Encrypt](https://letsencrypt.org/) is a free, automated, and open
+certificate authority by the Internet Security Research Group (ISRG), that can
+provide SSL/TLS certificates. Here is how you can integrate it and use it with
+**gae-init**:
+
 Use the [Google Cloud Shell](https://cloud.google.com/cloud-shell/docs/) to
 execute the following docker commands:
 
