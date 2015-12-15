@@ -15,6 +15,11 @@ def welcome():
   return flask.render_template('welcome.html', html_class='welcome')
 
 
+@app.route('/github-btn.html')
+def github_btn():
+  return flask.render_template('github-btn.html')
+
+
 ###############################################################################
 # Sitemap stuff
 ###############################################################################

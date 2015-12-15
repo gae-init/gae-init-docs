@@ -35,14 +35,23 @@
 .social {
   opacity: 0;
   transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
 
-  iframe {
+  .share {
     border: none;
     overflow: hidden;
     background-color: transparent;
+    height: 20px;
+    display: inline-block;
+    .img {
+      height: 20px;
+    }
   }
 }
 
+.btn-social-icon {
+  margin-bottom: 4px;
+}
 
 section  {
   > .page-header {
