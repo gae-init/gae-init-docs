@@ -11,6 +11,6 @@ return a response with the JSONP representation.
 
 > #### Demo
 > Visit the following URL to check it in action:
-> [https://gae-init.appspot.com/_s/user/?callback=foo](https://gae-init.appspot.com/_s/user/?callback=foo)
+> [gae-init.appspot.com/api/v1/user/?callback=foo](https://gae-init.appspot.com/api/v1/user/?callback=foo)
 
 {% endraw %}
