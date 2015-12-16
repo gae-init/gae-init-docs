@@ -53,7 +53,7 @@ HOWTO = [
   ('start', 'Getting Started'),
   ('add_styles', 'Add Custom Styles'),
   ('add_frontend', 'Add Frontend Library'),
-  ('add_backend', 'Add Backend Library'),
+  ('add_python', 'Add Python Library'),
   ('letsencrypt', u'Let’s Encrypt Setup'),
   ('deploy', 'Deploy'),
 ]
