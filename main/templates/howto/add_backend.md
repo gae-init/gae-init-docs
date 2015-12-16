@@ -1,5 +1,5 @@
 First of all since **gae-init** is running on Google App Engine, you will have
-to check if the Python library that you are trying to use is compatible.
+to check if the Python library that you are using is compatible.
 
 The easiest way to add a new library is:
 
