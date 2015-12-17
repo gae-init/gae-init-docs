@@ -24,12 +24,13 @@ your actual domain):
 
 ```bash
 sudo openssl rsa -inform pem \
-  -in live/www.example.com/privkey.pem \
-  -outform pem > live/www.example.com/privkey_fixed.pem
+  -in ~/ssl-keys/live/www.example.com/privkey.pem \
+  -outform pem > ~/ssl-keys/live/www.example.com/privkey_fixed.pem
 ```
 
-Copy the contents of `cert.pem` & `fixed.pem` and paste them into the App
-Engine settings for [SSL Certificats](https://console.developers.google.com/appengine/settings/certificates):
+Copy the contents of `cert.pem` & `privkey_fixed.pem` and paste them into the
+App Engine settings for
+[SSL Certificats](https://console.developers.google.com/appengine/settings/certificates):
 
 ```bash
 sudo cat ~/ssl-keys/live/www.example.com/cert.pem
