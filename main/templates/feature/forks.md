@@ -1,4 +1,4 @@
-- Only the core functionality fork [gae-init](http://babel.gae-init.appspot.com)
-- Add i18n and L10n support with [gae-init-babel](http://babel.gae-init.appspot.com)
-- Start uploading files to Google Cloud Storage with [gae-init-upload](http://upload.gae-init.appspot.com)
-- Start monitoring your requests and more with [gae-init-debug](http://debug.gae-init.appspot.com)
+- Core functionality with [gae-init](https://gae-init.appspot.com)
+- i18n and L10n support with [gae-init-babel](http://babel.gae-init.appspot.com)
+- Upload files to Google Cloud Storage with [gae-init-upload](http://upload.gae-init.appspot.com)
+- Monitor requests and more with [gae-init-debug](http://debug.gae-init.appspot.com)

@@ -8,9 +8,10 @@
         <img src="/p/img/{{slugify(config.CONFIG_DB.brand_name)}}.svg" alt="{{config.CONFIG_DB.brand_name}}">
       </h1>
       <p>
-        <a href="http://gae-init.appspot.com"><strong>gae-init</strong></a>
+        <a href="https://github.com/gae-init/gae-init"><strong>gae-init</strong></a>
         is the easiest way to kick start new web applications on Google App Engine.
       </p>
+
       <p>
         Check it in action with live demos and get started:
       </p>
@@ -52,13 +53,13 @@
         <li>Secret keys and other settings are stored securely in Datastore</li>
         <li>Working <a href="{{url_for('feedback')}}">feedback form</a></li>
         <li>Custom pages for error handlings, like <a href="/404">404</a></li>
-        <li>Automatic redirect to where you were after sign-in</li>
         <li>SEO friendly with stuff like <a href="{{url_for('sitemap')}}">sitemaps.xml</a>, <a href="/robots.txt">robots.txt</a> and even <a href="/favicon.ico">favicon.ico</a></li>
         <li><a href="{{url_for('features')}}">Much more...</a></li>
       </ul>
     </div>
     <div class="col-sm-4">
-      # include 'doc/examples.html'
+      <h3>Examples</h3>
+      {{utils.include_md('doc/examples.md')}}
     </div>
   </div>
 # endblock

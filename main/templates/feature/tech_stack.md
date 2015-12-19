@@ -9,9 +9,8 @@
   [Font Awesome](http://fortawesome.github.com/Font-Awesome/),
   [Social Buttons](http://lipis.github.io/bootstrap-social/)
 - [jQuery](http://jquery.com/),
-  [NProgress](http://ricostacruz.com/nprogress/),
   [Moment.js](http://momentjs.com/)
-- [OpenID](http://en.wikipedia.org/wiki/OpenID) sign in (Google, Facebook, Twitter)
+- [OpenID](http://en.wikipedia.org/wiki/OpenID) sign in (Google, Facebook, Twitter and more)
 - [Python 2.7](https://developers.google.com/appengine/docs/python/python27/using27),
   [pip](http://www.pip-installer.org/),
   [virtualenv](http://www.virtualenv.org/)

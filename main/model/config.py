@@ -15,7 +15,7 @@ class Config(model.Base, model.ConfigAuth):
   announcement_html = ndb.TextProperty(default='', verbose_name='Announcement HTML')
   announcement_type = ndb.StringProperty(default='info', choices=['info', 'warning', 'success', 'danger'])
   anonymous_recaptcha = True
-  brand_name = 'gae-init-docs'
+  brand_name = 'gae-init'
   check_unique_email = ndb.BooleanProperty(default=True, verbose_name='Check for uniqueness of the verified emails')
   email_authentication = ndb.BooleanProperty(default=False, verbose_name='Email authentication for sign in/sign up')
   feedback_email = ndb.StringProperty(default='')
