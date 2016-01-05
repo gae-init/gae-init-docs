@@ -1,7 +1,6 @@
-- [Google App Engine](https://developers.google.com/appengine/),
-  [NDB](https://developers.google.com/appengine/docs/python/ndb/)
-- [Jinja2](http://jinja.pocoo.org/docs/),
-  [Flask](http://flask.pocoo.org/),
+- [Google App Engine](https://developers.google.com/appengine/)
+- [Flask](http://flask.pocoo.org/),
+  [Jinja2](http://jinja.pocoo.org/docs/),
   [Flask-WTF](https://flask-wtf.readthedocs.org)
 - [CoffeeScript](http://coffeescript.org/),
   [Less](http://lesscss.org/)
