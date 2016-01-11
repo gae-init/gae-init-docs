@@ -35,7 +35,7 @@ sudo cat ~/ssl-keys/live/www.example.com/cert.pem
 sudo cat ~/ssl-keys/live/www.example.com/privkey_fixed.pem
 ```
 
-Setup the custom domain and make sure that you have `secure: always` in your
+Set up the custom domain and make sure that you have `secure: always` in your
 [`app.yaml`](https://github.com/gae-init/gae-init/blob/master/main/app.yaml#L49).
 
 > For more details and screenshots follow the [instructions by Igor
