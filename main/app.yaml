@@ -1,7 +1,6 @@
 application: gae-init
 module: docs
 version: 1
-module: default
 instance_class: F1
 runtime: python27
 api_version: 1

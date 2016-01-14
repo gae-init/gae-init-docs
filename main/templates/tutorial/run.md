@@ -5,6 +5,7 @@ Execute in your terminal `gulp` from the root directory
 
 ```bash
 $ cd /path/to/phonebook
+$ npm install
 $ gulp
 ```
 
