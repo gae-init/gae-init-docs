@@ -6,4 +6,5 @@ flask-wtf==0.12
 flask==0.10.1
 jinja2-markdown
 markdown
-unidecode==0.4.18
+unidecode==0.4.19
+webargs==1.2.0

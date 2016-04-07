@@ -12,11 +12,11 @@ app.jinja_env.line_comment_prefix = '##'
 app.jinja_env.add_extension('jinja2_markdown.MarkdownExtension')
 app.jinja_env.markdowner.set_output_format('html5')
 app.jinja_env.globals.update(
-    check_form_fields=util.check_form_fields,
-    is_iterable=util.is_iterable,
-    slugify=util.slugify,
-    update_query_argument=util.update_query_argument,
-  )
+  check_form_fields=util.check_form_fields,
+  is_iterable=util.is_iterable,
+  slugify=util.slugify,
+  update_query_argument=util.update_query_argument,
+)
 
 import auth
 import control
@@ -25,17 +25,17 @@ import task
 
 
 from api import helpers
+
 api_v1 = helpers.Api(app, prefix='/api/v1')
 
 import api.v1
-
 
 if config.DEVELOPMENT:
   from werkzeug import debug
   try:
     app.wsgi_app = debug.DebuggedApplication(
-        app.wsgi_app, evalex=True, pin_security=False,
-      )
+      app.wsgi_app, evalex=True, pin_security=False,
+    )
   except TypeError:
     app.wsgi_app = debug.DebuggedApplication(app.wsgi_app, evalex=True)
   app.testing = False
