@@ -1,4 +1,4 @@
-- JSON services with
+- RESTful API with
   [more URL]({{url_for('api.admin.user.list')}}),
   [limits]({{url_for('api.admin.user.list', limit=8)}}),
   [filters]({{url_for('api.admin.user.list', admin='true')}}),
@@ -6,7 +6,7 @@
   [more..]({{url_for('api.admin.user.list', limit=4, order='name', admin='true')}})
 - JSONP support by providing a
   [`&callback`](http://gae-init.appspot.com{{url_for('api.admin.user.list', limit=2, order='name', callback='hello')}})
-  argument to JSON services
+  argument to RESTful API
 - Custom pages for error handlings, like [404](/404)
 - Jinja2 template macros for
   [form inputs]({{url_for('feedback')}}),
@@ -22,11 +22,12 @@
 - Add `.btn-loading` and your buttons will have the loading functionality
 - Working [feedback form]({{url_for('feedback')}})
 - Multiple OAuth options to [sign-in](https://gae-init.appspot.com/signin/)
-  (Google, Facebook, Twitter)
+  (Google, Facebook, Twitter, GitHub, etc)
 - Add easily any other OAuth provider
+- Email/Password sign in included on demand
 - User list that is visible only to the administrators
 - Delete or merge users
-- User permissions are rout decorators
+- User permissions are route decorators
 - Easy pagination with custom wrappers using NDB cursors
 - Prefetch links for next pages
 - Gravatar support for [user profile]({{url_for('profile')}})
