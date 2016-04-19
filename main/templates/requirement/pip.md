@@ -1,5 +1,5 @@
 To install or upgrade pip, securely download
-[get-pip.py](https://raw.github.com/pypa/pip/master/contrib/get-pip.py).
+[get-pip.py](https://bootstrap.pypa.io/get-pip.py).
 Then run the following (which may require administrator access):
 
 ```bash
