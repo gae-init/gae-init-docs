@@ -12,5 +12,5 @@ $ gulp deploy
 If you wish to deploy it to a different application or a version then execute:
 
 ```bash
-$ gulp deploy --application=foo --version=bar
+$ gulp deploy --project=foo --version=bar
 ```
