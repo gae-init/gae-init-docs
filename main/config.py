@@ -51,6 +51,16 @@ REQUIREMENT = [
     ('git', 'Git', 'Required'),
   ]
 
+QUICKSTART = [
+    ('before', 'Before you begin'),
+    ('download', 'Download the gae-init app'),
+    ('test', 'Test the app'),
+    ('make', 'Make a change'),
+    ('deploy', 'Deploy your app'),
+    ('congratulations', 'Congratulations!'),
+    ('clean', 'Clean up'),
+  ]
+
 HOWTO = [
   ('start', 'Getting Started'),
   ('add_styles', 'Add Custom Styles'),

@@ -27,6 +27,9 @@ $ -> $('html.admin-config').each ->
 $ -> $('html.reference').each ->
   init_doc()
 
+$ -> $('html.quickstart').each ->
+  init_doc()
+
 $ -> $('html.tutorial').each ->
   init_doc()
 

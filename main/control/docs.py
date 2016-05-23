@@ -52,6 +52,15 @@ def requirement():
     )
 
 
+@app.route('/quickstart/')
+def quickstart():
+  return flask.render_template(
+      'quickstart/quickstart.html',
+      html_class='quickstart',
+      title='Quickstart',
+    )
+
+
 @app.route('/guide/')
 def guide():
   return flask.render_template(

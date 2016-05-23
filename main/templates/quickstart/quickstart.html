@@ -1,0 +1,23 @@
+# extends 'base_doc.html'
+# import 'macro/utils.html' as utils
+
+# block content_doc
+  {{utils.github_edit_template_link('quickstart/intro.md')}}
+  {{utils.include_md('quickstart/intro.md')}}
+
+  # for section in config.QUICKSTART
+    <section id="{{section[0]}}">
+      <div class="page-header">
+        <h2 class="self-link">
+          {{section[1]}}
+          <small>
+            {{section[2]}}
+            <a class="permalink" href="#{{section[0]}}"></a>
+          </small>
+          {{utils.github_edit_template_link('quickstart/%s.md' % (section[0]))}}
+        </h2>
+      </div>
+      {{utils.include_md('quickstart/%s.md' % section[0])}}
+    </section>
+  # endfor
+# endblock
