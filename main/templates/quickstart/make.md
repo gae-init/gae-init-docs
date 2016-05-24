@@ -1,5 +1,9 @@
-You can leave the web server running while you develop your application. The web server watches for changes in your source files and reloads them if necessary.
+You can leave the web server running while you develop your application. The web server watches for changes in your source files and reloads them if necessary. Try for example:
 
-1. Try it now: Leave the web server running, then edit `main/templates/welcome.html` to change `Hello, World!` to something else.
+1. Leave the web server running (in a console window).
 
-2. Go to [http://localhost:8080/](http://localhost:8080/) where you should see the change without reloading.
+2. Go to and keep [http://localhost:8080/](http://localhost:8080/) loaded in your browser.
+
+3. Edit `main/templates/welcome.html` and change `Hello, world!` to something else, like `Hello, all!`.
+
+4. When you save, you should see the change in the browser without reloading.
