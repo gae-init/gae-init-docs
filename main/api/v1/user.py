@@ -16,7 +16,6 @@ from main import api_v1
 
 @api_v1.resource('/admin/user/', endpoint='api.admin.user.list')
 class AdminUserListAPI(restful.Resource):
-  @auth.admin_required
   def get(self):
     user_keys = util.param('user_keys', list)
     if user_keys:
@@ -42,7 +41,6 @@ class AdminUserListAPI(restful.Resource):
 
 @api_v1.resource('/admin/user/<string:user_key>/', endpoint='api.admin.user')
 class AdminUserAPI(restful.Resource):
-  @auth.admin_required
   def get(self, user_key):
     user_db = ndb.Key(urlsafe=user_key).get()
     if not user_db:

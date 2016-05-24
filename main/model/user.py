@@ -75,13 +75,9 @@ class User(model.Base):
   FIELDS = {
     'active': fields.Boolean,
     'admin': fields.Boolean,
-    'auth_ids': fields.List(fields.String),
     'avatar_url': fields.String,
-    'email': fields.String,
     'name': fields.String,
     'permissions': fields.List(fields.String),
-    'username': fields.String,
-    'verified': fields.Boolean,
   }
 
   FIELDS.update(model.Base.FIELDS)
