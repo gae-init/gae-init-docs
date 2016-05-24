@@ -41,25 +41,69 @@
 
 # block content
   <div class="row">
-    <div class="col-sm-4">
-      <h3>Tech Stack</h3>
-      {{utils.include_md('feature/tech_stack.md')}}
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <a class="section" href="{{url_for('convention')}}">
+        <div class="caption">
+          <h4><span class="fa fa-fw fa-cogs"></span> Requirements</h4>
+          <p>Before you begin</p>
+        </div>
+      </a>
     </div>
-    <div class="col-sm-4">
-      <h3>Features</h3>
-      <ul>
-        <li>Multiple OAuth options to <a href="https://gae-init.appspot.com/signin/">sign-in</a></li>
-        <li>Manage, delete or merge signed in users</li>
-        <li>Secret keys and other settings are stored securely in Datastore</li>
-        <li>Working <a href="{{url_for('feedback')}}">feedback form</a></li>
-        <li>Custom pages for error handlings, like <a href="/404">404</a></li>
-        <li>SEO friendly with stuff like <a href="{{url_for('sitemap')}}">sitemaps.xml</a>, <a href="/robots.txt">robots.txt</a> and even <a href="/favicon.ico">favicon.ico</a></li>
-        <li><a href="{{url_for('features')}}">Much more...</a></li>
-      </ul>
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <a class="section" href="{{url_for('quickstart')}}">
+        <div class="caption">
+          <h4><span class="fa fa-fw fa-clock-o"></span> Quickstart</h4>
+          <p>Less than 5 minutes</p>
+        </div>
+      </a>
     </div>
-    <div class="col-sm-4">
-      <h3>Examples</h3>
-      {{utils.include_md('doc/examples.md')}}
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <a class="section" href="{{url_for('tutorial')}}">
+        <div class="caption">
+          <h4><span class="fa fa-fw fa-graduation-cap"></span> Tutorial</h4>
+          <p>Build a simple app</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <a class="section" href="{{url_for('convention')}}">
+        <div class="caption">
+          <h4><span class="fa fa-fw fa-question"></span> How To</h4>
+          <p>Common tasks explained</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <a class="section" href="{{url_for('features')}}">
+        <div class="caption">
+          <h4><span class="fa fa-fw fa-gift"></span> Features</h4>
+          <p>Bunch of things out of the box</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <a class="section" href="{{url_for('features')}}">
+        <div class="caption">
+          <h4><span class="fa fa-fw fa-list"></span> Tech Stack</h4>
+          <p>App Engine, Python, Flask, ...</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <a class="section" href="{{url_for('reference')}}">
+        <div class="caption">
+          <h4><span class="fa fa-fw fa-book"></span> API Reference</h4>
+          <p>Common functions explained</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <a class="section" href="{{url_for('convention')}}">
+        <div class="caption">
+          <h4><span class="fa fa-fw fa-code"></span> Code Conventions</h4>
+          <p>Because code style matters</p>
+        </div>
+      </a>
     </div>
   </div>
 # endblock

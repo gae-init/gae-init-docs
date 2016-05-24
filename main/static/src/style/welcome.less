@@ -1,0 +1,23 @@
+.section {
+  display: block;
+  margin-top: @line-height-computed;
+  padding: 0 8px;
+  border: 1px solid @hr-border;
+  border-radius: @border-radius-base;
+  color: @text-color;
+  &:hover {
+    text-decoration: none;
+  }
+  h3 {
+    margin-top: 12px;
+    .ellipsis;
+  }
+  p {
+    .small;
+    .ellipsis;
+  }
+  .fa {
+    .pull-right;
+    color: @gray-light;
+  }
+}
