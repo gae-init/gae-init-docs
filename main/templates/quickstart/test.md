@@ -2,9 +2,9 @@ Test the application using Gulp which is one of the requiremtns and a wrapper fo
 
 1. Start the web server with the following command from the root directory of `hello`:
 
-   ```
-   gulp
-   ```
+    ```
+    gulp
+    ```
 
    The web server is now running, listening for requests on port 8080.
 
