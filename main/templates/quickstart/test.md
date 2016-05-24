@@ -1,7 +1,7 @@
 Test the application on your local machine.
 
 1. Start a console and change into the `hello` sample app directory:
- 
+
     ```
     cd hello
     ```
@@ -12,7 +12,7 @@ Test the application on your local machine.
     gulp
     ```
 
-  The web server is now running, listening for requests on port 8080.
+    The web server is now running, listening for requests on port 8080.
 
 3. Visit [http://localhost:8080/](http://localhost:8080/) in your web browser to see the app in action.
 
