@@ -6,4 +6,4 @@ You can leave the web server running while you develop your application. The web
 
 3. Edit `main/templates/welcome.html` and change `Hello, world!` to something else, like `Hello, all!`.
 
-4. When you save, you should see the change in the browser without reloading.
+4. When you save, you should see the change automatically reloading in the browser.
