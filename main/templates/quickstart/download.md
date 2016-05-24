@@ -1,17 +1,17 @@
 
-1. Clone the gae-init app repository to your local machine:
+1. Clone the gae-init sample app to your local machine (from the GitHub repository):
 
     ```
     git clone https://github.com/gae-init/gae-init.git hello
     ```
 
-2. Then go to the directory that contains the sample code:
+2. Go into the directory that now contains the sample app code:
 
     ```
     cd hello
     ```
 
-3. Finally install the third party dependencies:
+3. Install the third party dependencies:
 
     ```
     npm install
