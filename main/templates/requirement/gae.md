@@ -1,6 +1,4 @@
-Download and install the
-[Google Cloud SDK](https://developers.google.com/cloud/sdk/). Afterwards, since
-App Engine SDK is not included in the default package, install it via:
+Install App Engine using gcloud:
 
 ```bash
 $ gcloud components install app-engine-python
