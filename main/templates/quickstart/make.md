@@ -4,6 +4,6 @@ You can leave the web server running while you develop your application. The web
 
 2. Go to and keep [http://localhost:8080/](http://localhost:8080/) loaded in your browser.
 
-3. Edit `main/templates/welcome.html` and change `Hello, world!` to something else, like `Hello, all!`.
+3. Edit `main/templates/welcome.html` and change `Hello, world!` to something else.
 
 4. When you save, you should see the change automatically reloading in the browser.
