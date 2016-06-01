@@ -65,6 +65,7 @@ QUICKSTART = [
 HOWTO = [
   ('start', 'Getting Started'),
   ('add_styles', 'Add Custom Styles'),
+  ('add_scripts', 'Add Custom Scripts'),
   ('add_frontend', 'Add Frontend Library'),
   ('add_python', 'Add Python Library'),
   ('letsencrypt', u'Let’s Encrypt Setup'),
