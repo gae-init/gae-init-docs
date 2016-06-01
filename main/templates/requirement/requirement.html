@@ -2,6 +2,9 @@
 # import 'macro/utils.html' as utils
 
 # block content_doc
+  {{utils.github_edit_template_link('requirement/intro.md')}}
+  {{utils.include_md('requirement/intro.md')}}
+
   # for section in config.REQUIREMENT
     <section id="{{section[0]}}">
       <div class="page-header">
