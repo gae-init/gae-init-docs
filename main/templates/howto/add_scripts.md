@@ -1,4 +1,4 @@
-Executing the `gulp` command to start the local server and all the watchers. If
+Execute the `gulp` command to start the local server and all the watchers. If
 everything went OK, visit [http://localhost:8080](http://localhost:8080).
 
 All the custom scripts are located under
