@@ -16,7 +16,7 @@ Because it rocks!
 
 #### Can I just use JavaScript instead of CoffeeScript?
 
-Yes, but you will not rock.
+Yes.
 
 #### Why Less?
 
@@ -24,11 +24,11 @@ Because it rocks as well!
 
 #### Can I use CSS instead of Less?
 
-Yes, but you will not rock.
+Yes.
 
 #### Can I use SASS instead of Less or CSS?
 
-Yes, it will require some work, but is very much doable.
+Yes, it will require some work, but is very doable.
 
 #### It rocks, but I still don't get it. Can you help me?
 
