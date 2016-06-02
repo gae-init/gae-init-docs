@@ -1,7 +1,7 @@
 The easiest way to add a frontend library is:
 
 1. Add it as a dependecy in the
-   [`bower.json`](https://github.com/gae-init/gae-init/blob/master/bower.json).
+   [`bower.json`](https://github.com/gae-init/gae-init/blob/master/bower.json), or try from console `bower install --save dependency-name`
 2. Update some possible overrides
 3. Execute the `gulp` command if it's
    not already running.
