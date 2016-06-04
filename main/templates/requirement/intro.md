@@ -3,7 +3,8 @@
 > Using the [Cloud Shell](https://cloud.google.com/shell/) all the requirements
 are met, so you can just ignore this section.
 
-If terminal is your middle name, you can install all of them in one go:
+If terminal is your middle name, you can install the requirements in one go
+([source](https://github.com/gae-init/gae-init/tree/master/bin)):
 
 #### OS X &mdash; [Homebrew](http://brew.sh/)
 
