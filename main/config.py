@@ -68,6 +68,7 @@ HOWTO = [
   ('add_scripts', 'Add Custom Scripts'),
   ('add_frontend', 'Add Frontend Library'),
   ('add_python', 'Add Python Library'),
+  ('add_config', 'Add New Config'),
   ('letsencrypt', u'Let’s Encrypt Setup'),
   ('deploy', 'Deploy'),
 ]
