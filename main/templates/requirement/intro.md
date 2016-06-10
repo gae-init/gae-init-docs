@@ -1,7 +1,8 @@
 {% raw %}
 
-> Using the [Cloud Shell](https://cloud.google.com/shell/) all the requirements
-are met, so you can just ignore this section.
+> If you are using [Cloud Shell](https://cloud.google.com/shell/) all the
+requirements are met and you can ignore this section. No need to install
+anything extra.
 
 If terminal is your middle name, you can install the requirements in one go
 ([source](https://github.com/gae-init/gae-init/tree/master/bin)):

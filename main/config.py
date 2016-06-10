@@ -43,6 +43,7 @@ TAG_SEPARATOR = ' '
 # SITE
 ################################################################################
 REQUIREMENT = [
+    ('python', 'Python 2.7', 'Required'),
     ('gcloud', 'Google Cloud SDK', 'Required'),
     ('gae', 'Google App Engine', 'Required'),
     ('nodejs', 'Node.js', 'Required'),
