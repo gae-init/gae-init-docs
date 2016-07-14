@@ -121,7 +121,8 @@ REFERENCE_DEF = {
     'decorator': [
         ('login_required', ''),
         ('admin_required', ''),
-        ('permission_required', '(permission=None, methods=None)')
+        ('permission_required', '(permission=None, methods=None)'),
+        ('cron_required', ''),
       ],
     'config': [
         ('config_db', ''),
