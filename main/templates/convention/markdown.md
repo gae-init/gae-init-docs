@@ -19,15 +19,4 @@ Always have one empty line before and after code blocks
 
 -------------------------------------------------------------------------------
 
-For header 1 and header 2 use underline instead of `#` and `##` respectively
-
-```
-Header 1
-========
-
-Header 2
---------
-```
--------------------------------------------------------------------------------
-
 {% endraw %}

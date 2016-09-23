@@ -25,3 +25,11 @@ file and it is recommended that you will install a
 [EditorConfig plugin](http://editorconfig.org/) for your favorite editor.
 
 ------------------------------------------------------------------------------
+
+Separate top-level functions and class definitions with two blank lines.
+
+------------------------------------------------------------------------------
+
+Function definitions inside a class are separated by a single blank line.
+
+------------------------------------------------------------------------------
