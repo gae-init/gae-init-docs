@@ -24,3 +24,17 @@ Every import should be on separate lines.
 Use trailing commas in multi-line array lists.
 
 -------------------------------------------------------------------------------
+
+Use single quotes `'`, but avoid escaping.
+
+-------------------------------------------------------------------------------
+
+Imports should be grouped in the following order:
+
+1. standard library imports
+2. related third party imports
+3. local application/library specific imports
+
+You should put a blank line between each group of imports.
+
+-------------------------------------------------------------------------------
