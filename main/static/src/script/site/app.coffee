@@ -39,9 +39,6 @@ $ -> $('html.requirement').each ->
 $ -> $('html.howto').each ->
   init_doc()
 
-$ -> $('html.guide').each ->
-  init_doc()
-
 $ -> $('html.tree').each ->
   init_tree()
 

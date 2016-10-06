@@ -61,15 +61,6 @@ def quickstart():
     )
 
 
-@app.route('/guide/')
-def guide():
-  return flask.render_template(
-      'guide/guide.html',
-      html_class='guide',
-      title='Guide',
-    )
-
-
 @app.route('/howto/')
 def howto():
   return flask.render_template(
