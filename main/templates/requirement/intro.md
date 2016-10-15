@@ -7,13 +7,13 @@ anything extra.
 If terminal is your middle name, you can install the requirements in one go
 ([source](https://github.com/gae-init/gae-init/tree/master/bin)):
 
-#### OS X &mdash; [Homebrew](http://brew.sh/)
+#### macOS &mdash; [Homebrew](http://brew.sh/)
 
 ```bash
 curl https://raw.githubusercontent.com/gae-init/gae-init/master/bin/requirements_osx_brew.sh | bash
 ```
 
-#### OS X &mdash; [MacPorts](https://www.macports.org/)
+#### macOS &mdash; [MacPorts](https://www.macports.org/)
 
 ```bash
 curl https://raw.githubusercontent.com/gae-init/gae-init/master/bin/requirements_osx_port.sh | bash
