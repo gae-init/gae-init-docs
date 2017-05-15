@@ -1,5 +1,4 @@
-gae-init-docs
-=============
+# gae-init-docs
 
 [![Slack Status](https://gae-init-slack.herokuapp.com/badge.svg)](https://gae-init-slack.herokuapp.com)
 
