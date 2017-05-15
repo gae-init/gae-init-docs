@@ -12,10 +12,10 @@ and add the following code that will be responsible for validating the user's
 input.
 
 ```python
-from flask.ext import wtf
+import flask_wtf
 import wtforms
 
-class ContactUpdateForm(wtf.Form):
+class ContactUpdateForm(flask_wtf.FlaskForm):
   name = wtforms.StringField('Name', [wtforms.validators.required()])
   email = wtforms.StringField('Email', [wtforms.validators.optional(), wtforms.validators.email()])
   phone = wtforms.StringField('Phone', [wtforms.validators.optional()])

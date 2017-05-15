@@ -15,7 +15,7 @@ into your repository and everything will be minified before deployment.
 If you are not able to include it as a bower dependency, simply create a new
 folder under the
 [`main/static/`](https://github.com/gae-init/gae-init/tree/master/main/static)
-directory and include them as descibed in the steps 3—5 above.
+directory and include them as described in the steps 3—5 above.
 
 > Check out the examples on how to include
 [Bootswatch](https://github.com/gae-init/gae-init/pull/360/files),
