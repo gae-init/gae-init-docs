@@ -7,7 +7,7 @@ a **Handler** and a **Template**.
 
 ### Contact Create Form
 
-Create a new file `contact.py` in the `main` directory
+Create a new file `contact.py` in the `main/control` directory
 and add the following code that will be responsible for validating the user's
 input.
 
@@ -29,7 +29,7 @@ For more information regarding the form validation refer to
 ### Contact Create Handler
 
 After creating the form we have to create a handler for it. Add the
-following code into the `main/contact.py` file.
+following code into the `main/control/contact.py` file.
 
 ```python
 import flask
@@ -89,6 +89,12 @@ This decorator's purpose is to make sure that who ever is entering
 this URL will be already signed in so we could use the `user_key`
 of the authenticated user. If the user is not logged in, she will be
 redirected to the sign-in page and then back to this URL.
+
+Import Contact in the `main/control/__init__.py` file like this:
+
+```python
+from .contact import *
+```
 
 ### Contact Create Template
 
