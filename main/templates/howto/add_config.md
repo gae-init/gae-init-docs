@@ -1,6 +1,6 @@
 {% raw %}
-Bunch of configuration variables are already being stored in our datastore
-and they are available globally accross the app. If you want to get the
+A bunch of configuration variables are already being stored in our datastore
+and they are available globally across the app. If you want to get the
 `brand_name` in Python you can access it with `config.CONFIG_DB.brand_name`
 and from HTML files via Jinja2 `{{config.CONFIG_DB.brand_name}}`.
 
