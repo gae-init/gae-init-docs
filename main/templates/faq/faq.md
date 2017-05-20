@@ -8,7 +8,7 @@ Don't worry, they are all installed inside the project's directory.
 #### Why Gulp?
 
 Because if you are web developer you either have it already or you might have
-Grunt. Well we tried both and it looks like Gulp is faster and more effecient.
+Grunt. Well we tried both and it looks like Gulp is faster and more efficient.
 
 #### Why CoffeeScript?
 
