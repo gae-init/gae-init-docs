@@ -143,7 +143,7 @@ are a couple of things we have to complete.
 
 We need to refer to the `contact.py` file in the `main.py` file, because
 otherwise the Flask application won't be able to figure out the routing rules.
-Include the following line bellow the rest of the imports in the `main.py` file.
+Include the following line below the rest of the imports in the `main.py` file.
 
 ```python
 import contact
