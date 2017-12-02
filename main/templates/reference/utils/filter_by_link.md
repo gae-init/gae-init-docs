@@ -1,9 +1,6 @@
 {% raw %}
 
-Generates a link that will add (or replace) <code>&property=value</code>
-to the current request or will remove it if it's already there. Optionally
-instead of showing the actual value it is possible to show an icon. The icon
-is more appropriate when filtering by boolean properties.
+Generates a link that will add (or replace) <code>&property=value</code> to the current request or will remove it if it's already there. Optionally instead of showing the actual value it is possible to show an icon. The icon is more appropriate when filtering by boolean properties.
 
 ##### Arguments
 
@@ -28,9 +25,7 @@ is more appropriate when filtering by boolean properties.
 </dl>
 
 > #### Examples & Demo
-> Check how it is used in
-> [user_list.html](https://github.com/gae-init/gae-init/blob/master/main/templates/user/user_list.html)
-> and play with filters in
-> [User List](https://gae-init.appspot.com/user/?order=-modified).
+>
+> Check how it is used in [user_list.html](https://github.com/gae-init/gae-init/blob/master/main/templates/user/user_list.html) and play with filters in [User List](https://gae-init.appspot.com/user/?order=-modified).
 
 {% endraw %}

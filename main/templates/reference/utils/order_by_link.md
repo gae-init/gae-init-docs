@@ -1,9 +1,6 @@
 {% raw %}
 
-Generates a link that will update only the `&order=` argument of the query to
-the correct value depending on the possible sort order that is already applied.
-If that particular order is already applied then it will be clearly indicated
-with the correct icon.
+Generates a link that will update only the `&order=` argument of the query to the correct value depending on the possible sort order that is already applied. If that particular order is already applied then it will be clearly indicated with the correct icon.
 
 ##### Arguments
 
@@ -24,9 +21,7 @@ with the correct icon.
 </dl>
 
 > #### Examples & Demo
-> Check how it is used in
-> [user_list.html](https://github.com/gae-init/gae-init/blob/master/main/templates/user/user_list.html)
-> and play with orders in
-> [User List](https://gae-init.appspot.com/user/?order=-modified).
+>
+> Check how it is used in [user_list.html](https://github.com/gae-init/gae-init/blob/master/main/templates/user/user_list.html) and play with orders in [User List](https://gae-init.appspot.com/user/?order=-modified).
 
 {% endraw %}

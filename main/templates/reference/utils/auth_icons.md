@@ -1,8 +1,6 @@
 {% raw %}
 
-Renders multiple authentication icons based on the given list. It uses the
-[`auth_icon`](#utils.auth_icon) to render the individual icons.
-
+Renders multiple authentication icons based on the given list. It uses the [`auth_icon`](#utils.auth_icon) to render the individual icons.
 
 ##### Arguments
 

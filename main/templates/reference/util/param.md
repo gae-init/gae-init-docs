@@ -1,8 +1,6 @@
 {% raw %}
 
-Returns the value of the requested argument either via a URL argument
-or through the input element of a form. If the requested parameter is
-not provided this function will return `None`.
+Returns the value of the requested argument either via a URL argument or through the input element of a form. If the requested parameter is not provided this function will return `None`.
 
 ##### Arguments
 

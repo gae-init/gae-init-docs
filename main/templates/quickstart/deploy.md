@@ -6,8 +6,8 @@ Deploy your app to App Engine, so that anyone can access your app in the cloud. 
 
 3. Deploy your application to App Engine, using the above Project ID as an argument:
 
-    ```
-    gulp deploy --project=<YOUR_PROJECT_ID>
-    ```
+   ```
+   gulp deploy --project=<YOUR_PROJECT_ID>
+   ```
 
 4. When finished, your app will be ready to serve traffic at `https://<YOUR_PROJECT_ID>.appspot.com/`

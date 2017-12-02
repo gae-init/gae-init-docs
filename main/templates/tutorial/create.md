@@ -1,15 +1,10 @@
 {% raw %}
 
-There are a few things that we need to do in order to start adding new
-contacts into the datastore. In short we're going to create a **Form**,
-a **Handler** and a **Template**.
-
+There are a few things that we need to do in order to start adding new contacts into the datastore. In short we're going to create a **Form**, a **Handler** and a **Template**.
 
 ### Contact Create Form
 
-Create a new file `contact.py` in the `main/control` directory
-and add the following code that will be responsible for validating the user's
-input.
+Create a new file `contact.py` in the `main/control` directory and add the following code that will be responsible for validating the user's input.
 
 ```python
 import flask_wtf
@@ -22,14 +17,11 @@ class ContactUpdateForm(flask_wtf.FlaskForm):
   address = wtforms.TextAreaField('Address', [wtforms.validators.optional()])
 ```
 
-For more information regarding the form validation refer to
-[Flask-WTForms](http://flask.pocoo.org/docs/patterns/wtforms/).
-
+For more information regarding the form validation refer to [Flask-WTForms](http://flask.pocoo.org/docs/patterns/wtforms/).
 
 ### Contact Create Handler
 
-After creating the form we have to create a handler for it. Add the
-following code into the `main/control/contact.py` file.
+After creating the form we have to create a handler for it. Add the following code into the `main/control/contact.py` file.
 
 ```python
 import flask
@@ -68,27 +60,21 @@ import model
 from main import app
 ```
 
-This includes the needed imports for the handler, just put them in the
-beginning of the `main/contact.py` file with the rest of the imports.
+This includes the needed imports for the handler, just put them in the beginning of the `main/contact.py` file with the rest of the imports.
 
 ```python
 @app.route('/contact/create/', methods=['GET', 'POST'])
 ```
 
-The route and the methods that we are going to use. `GET` is to serve the html
-form and `POST` is to submit the data back.
+The route and the methods that we are going to use. `GET` is to serve the html form and `POST` is to submit the data back.
 
-For more information refer to Flask documentation on
-[routing](http://flask.pocoo.org/docs/quickstart/#routing).
+For more information refer to Flask documentation on [routing](http://flask.pocoo.org/docs/quickstart/#routing).
 
 ```python
 @auth.login_required
 ```
 
-This decorator's purpose is to make sure that who ever is entering
-this URL will be already signed in so we could use the `user_key`
-of the authenticated user. If the user is not logged in, she will be
-redirected to the sign-in page and then back to this URL.
+This decorator's purpose is to make sure that who ever is entering this URL will be already signed in so we could use the `user_key` of the authenticated user. If the user is not logged in, she will be redirected to the sign-in page and then back to this URL.
 
 Import Contact in the `main/control/__init__.py` file like this:
 
@@ -98,11 +84,7 @@ from .contact import *
 
 ### Contact Create Template
 
-After creating the form and a handler, we are going to need a template obtain
-the user data to fill the form. Basically, this can be thought of as a user
-interface to the form we created earlier. Create a new file
-`contact_create.html` in the `templates` directory and paste the following code
-there:
+After creating the form and a handler, we are going to need a template obtain the user data to fill the form. Basically, this can be thought of as a user interface to the form we created earlier. Create a new file `contact_create.html` in the `templates` directory and paste the following code there:
 
 ```html
 # extends 'base.html'
@@ -135,12 +117,9 @@ there:
 
 #### Adding a link on the top bar
 
-In order for the user to find his/her way around the phonebook and enable them
-to add contacts to it, we have to create a link to the top navigation bar.
+In order for the user to find his/her way around the phonebook and enable them to add contacts to it, we have to create a link to the top navigation bar.
 
-Add the lines `2 - 4` inside the `<ul class="nav">...</ul>` element that you
-will find in the `header.html` file that is located in the `templates/bit`
-directory.
+Add the lines `2 - 4` inside the `<ul class="nav">...</ul>` element that you will find in the `header.html` file that is located in the `templates/bit` directory.
 
 ```html
 <ul class="nav navbar-nav">
@@ -151,20 +130,12 @@ directory.
 </ul>
 ```
 
-
 ### Testing Contact Creation
 
-If your development server is still running, then by visting the
-[http://localhost:8080/](http://localhost:8080/)
-you should notice the Create Contact link in the top navigation bar and you
-should be able to actually start creating new contacts!
+If your development server is still running, then by visting the [http://localhost:8080/](http://localhost:8080/) you should notice the Create Contact link in the top navigation bar and you should be able to actually start creating new contacts!
 
-Create a couple of new contacts and also try to add a contact without a name,
-or try to enter an invalid email and then press the **Create Contact** button.
+Create a couple of new contacts and also try to add a contact without a name, or try to enter an invalid email and then press the **Create Contact** button.
 
-Since the contact list is not visible in the application yet, you can visit the
-Google App Engine's admin console to make sure that the contacts are being
-added, by visiting the admin console:
-[http://localhost:8081/datastore](http://localhost:8081/datastore?kind=Contact).
+Since the contact list is not visible in the application yet, you can visit the Google App Engine's admin console to make sure that the contacts are being added, by visiting the admin console: [http://localhost:8081/datastore](http://localhost:8081/datastore?kind=Contact).
 
 {% endraw %}

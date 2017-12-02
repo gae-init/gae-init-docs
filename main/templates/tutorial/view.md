@@ -1,7 +1,4 @@
-{% raw %}
-In order to view the contact we will have to do three things: create the
-handler that will retrieve the contact from the datastore, the template to
-view her in the browser and the link on the contact list for easy access.
+{% raw %} In order to view the contact we will have to do three things: create the handler that will retrieve the contact from the datastore, the template to view her in the browser and the link on the contact list for easy access.
 
 ### Contact View Handler
 
@@ -24,10 +21,7 @@ def contact_view(contact_id):
 
 ### Contact View Template
 
-After creating the handler, we are going to need a template to be able to
-present a contact's personal page. Create a new file
-`contact_view.html` in the `templates` directory
-and paste the following code there:
+After creating the handler, we are going to need a template to be able to present a contact's personal page. Create a new file `contact_view.html` in the `templates` directory and paste the following code there:
 
 ```html
 # extends 'base.html'
@@ -46,17 +40,13 @@ and paste the following code there:
 # endblock
 ```
 
-It's hard to test this form right now because we have to create manually
-the URL, but in the next section we'll add a link to make it easier to access.
+It's hard to test this form right now because we have to create manually the URL, but in the next section we'll add a link to make it easier to access.
 
 ### Finalise Contact View
 
-As a final touch in order to view the contacts we'll modify the contact list
-so when you click on their names you should be able to view them.
+As a final touch in order to view the contacts we'll modify the contact list so when you click on their names you should be able to view them.
 
-
-Find the line that renders the name of the contact and replace it with the
-following:
+Find the line that renders the name of the contact and replace it with the following:
 
 ```html
 ...
@@ -68,9 +58,6 @@ following:
 ...
 ```
 
-Now visit the contact list
-([http://localhost:8080/contact/](http://localhost:8080/contact/)),
-and you should be able to click on the name of each contact and view their
-properties.
+Now visit the contact list ([http://localhost:8080/contact/](http://localhost:8080/contact/)), and you should be able to click on the name of each contact and view their properties.
 
 {% endraw %}

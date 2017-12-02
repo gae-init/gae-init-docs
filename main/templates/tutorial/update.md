@@ -1,12 +1,8 @@
 {% raw %}
 
-In order to update the contact we will have to do three things: create the
-handler that will retrieve the contact from the datastore, the template to
-update her in the browser and the link on the contact list for easy access.
+In order to update the contact we will have to do three things: create the handler that will retrieve the contact from the datastore, the template to update her in the browser and the link on the contact list for easy access.
 
-In this step there are very similar actions on what we have to do
-that we've seen in creation and viewing of the contact. So in the final step
-we'll combine the create and update templates to maintain only one.
+In this step there are very similar actions on what we have to do that we've seen in creation and viewing of the contact. So in the final step we'll combine the create and update templates to maintain only one.
 
 ### Contact Update Handler
 
@@ -35,9 +31,7 @@ def contact_update(contact_id):
 
 ### Contact Update Template
 
-After the handler, we are going to need a template to be able to update the
-user's details. Create a new file `contact_update.html` in the
-`templates` directory and paste the following code there:
+After the handler, we are going to need a template to be able to update the user's details. Create a new file `contact_update.html` in the `templates` directory and paste the following code there:
 
 ```html
 # extends 'base.html'
@@ -68,15 +62,11 @@ user's details. Create a new file `contact_update.html` in the
 
 ### Finalise Contact Update
 
-As a final touch we're going to do two things:
-add some links to the contact list to access the update contacts page easier
-and also we'll get rid of the `contact_create.html` because it is
-very similar to the `contact_update.html`.
+As a final touch we're going to do two things: add some links to the contact list to access the update contacts page easier and also we'll get rid of the `contact_create.html` because it is very similar to the `contact_update.html`.
 
 #### Add a link on the contact list
 
-Find the line that renders the ID of the contact and replace it with the
-following:
+Find the line that renders the ID of the contact and replace it with the following:
 
 ```html
 ...
@@ -88,17 +78,11 @@ following:
 ...
 ```
 
-Now visit the contact list
-([http://localhost:8080/contact/](http://localhost:8080/contact/)),
-and you should be able to click on the ID of each contact and update their
-properties.
+Now visit the contact list ([http://localhost:8080/contact/](http://localhost:8080/contact/)), and you should be able to click on the ID of each contact and update their properties.
 
 #### Get rid of contact_create.html
 
-At the moment the only difference between the `contact_create.html`
-and the `contact_update.html` files is the caption of the submit
-form. Just delete the `contact_create.html` form and change the
-button in `contact_update.html` to the following:
+At the moment the only difference between the `contact_create.html` and the `contact_update.html` files is the caption of the submit form. Just delete the `contact_create.html` form and change the button in `contact_update.html` to the following:
 
 ```html
 ...
@@ -112,8 +96,6 @@ button in `contact_update.html` to the following:
 ...
 ```
 
-Finally since we deleted the `contact_create.html` we'll have to
-simply update the create handler to render the correct template and by now you
-should be able to find that yourself.
+Finally since we deleted the `contact_create.html` we'll have to simply update the create handler to render the correct template and by now you should be able to find that yourself.
 
 {% endraw %}

@@ -1,10 +1,6 @@
 {% raw %}
 
-Takes the current URL request and updates only the argument `name` with the
-given `value`. If the value is omitted then that argument will be removed from
-the request. This function is intended to be used in the Jinja2 templates and
-currently it's being used in [`utils.order_by_link()`](#utils.order_by_link)
-and [`utils.filter_by_link()`](#utils.filter_by_link).
+Takes the current URL request and updates only the argument `name` with the given `value`. If the value is omitted then that argument will be removed from the request. This function is intended to be used in the Jinja2 templates and currently it's being used in [`utils.order_by_link()`](#utils.order_by_link) and [`utils.filter_by_link()`](#utils.filter_by_link).
 
 ##### Arguments
 
