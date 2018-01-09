@@ -7,5 +7,5 @@ flask==0.12.2
 jinja2-markdown
 markdown
 pyjwt==1.5.3
-unidecode==0.4.21
+unidecode==1.0.22
 webargs==1.8.1
