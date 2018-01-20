@@ -2681,9 +2681,9 @@ gulp-start@1.0.1:
     gulp-start-process "^1.0.0"
     through2 "^0.6.3"
 
-gulp-uglify-es@0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/gulp-uglify-es/-/gulp-uglify-es-0.2.0.tgz#fb346d9aedb375e53af984a5dcfb27c019495f1b"
+gulp-uglify-es@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-uglify-es/-/gulp-uglify-es-1.0.0.tgz#80b2f8e2fa7211c1706c597f08bbf620c870e545"
   dependencies:
     o-stream "^0.2.2"
     plugin-error "^0.1.2"
