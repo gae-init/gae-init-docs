@@ -132,7 +132,7 @@ Add the lines `2 - 4` inside the `<ul class="nav">...</ul>` element that you wil
 
 ### Testing Contact Creation
 
-If your development server is still running, then by visting the [http://localhost:8080/](http://localhost:8080/) you should notice the Create Contact link in the top navigation bar and you should be able to actually start creating new contacts!
+If your development server is still running, then by visting the [http://localhost:3000/](http://localhost:3000/) you should notice the Create Contact link in the top navigation bar and you should be able to actually start creating new contacts!
 
 Create a couple of new contacts and also try to add a contact without a name, or try to enter an invalid email and then press the **Create Contact** button.
 
