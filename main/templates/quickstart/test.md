@@ -14,6 +14,6 @@ Test the application on your local machine.
 
    The web server is now running, listening for requests on port 8080.
 
-3. Visit [http://localhost:8080/](http://localhost:8080/) in your web browser to see the app in action.
+3. Visit [http://localhost:3000/](http://localhost:3000/) in your web browser to see the app in action.
 
 For more information about the supported commands run `gulp help`.
