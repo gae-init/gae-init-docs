@@ -1,4 +1,4 @@
-Execute the `gulp` command to start the local server and all the watchers. If everything went OK, visit [http://localhost:8080](http://localhost:8080).
+Execute the `gulp` command to start the local server and all the watchers. If everything went OK, visit [http://localhost:3000](http://localhost:3000).
 
 All the custom styles are located under [`main/static/src/style/`](https://github.com/gae-init/gae-init/tree/master/main/static/src/style) directory and you can update them if needed. Most of the time though it is much better to create more files for better structure of the project. Here is how:
 
