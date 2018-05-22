@@ -61,7 +61,7 @@ After creating the handler, we are going to need a template to be able to presen
 # endblock
 ```
 
-You can test the handler and the above template by visiting the url [http://localhost:8080/contact/](http://localhost:8080/contact/), but in the next section we'll add a link to make it easier to access.
+You can test the handler and the above template by visiting the url [http://localhost:3000/contact/](http://localhost:3000/contact/), but in the next section we'll add a link to make it easier to access.
 
 ### Finalise Contact Listing
 
@@ -81,7 +81,7 @@ Add the lines `3 - 5` inside the `<ul class="nav navbar-nav">...</ul>` element t
 </ul>
 ```
 
-After refreshing the page ([http://localhost:8080/](http://localhost:8080/)), you should be able to see the link on the top and if you're in watching the contact list it should also be `active`.
+After refreshing the page ([http://localhost:3000/](http://localhost:3000/)), you should be able to see the link on the top and if you're in watching the contact list it should also be `active`.
 
 #### Changing the redirect
 
@@ -102,6 +102,6 @@ return flask.redirect(flask.url_for('contact_list', order='-created'))
 
 The first line is to flash the message that the creation was successful. The argument `category` is optional and can be one of the following: `warning` (default), `danger`, `success` or `info`.
 
-In the second line notice that we are using the `order='-created'` in the `url_for` function, which will be translated to: [http://localhost:8080/contact/?order=-created](http://localhost:8080/contact/?order=-created). You can choose whatever order you like and you can also play with the url by providing different orders for the fields that you have in the `Contact` model. Use the `-` if you want the inverse order and `,` to combine more than one field for order.
+In the second line notice that we are using the `order='-created'` in the `url_for` function, which will be translated to: [http://localhost:3000/contact/?order=-created](http://localhost:3000/contact/?order=-created). You can choose whatever order you like and you can also play with the url by providing different orders for the fields that you have in the `Contact` model. Use the `-` if you want the inverse order and `,` to combine more than one field for order.
 
 {% endraw %}
