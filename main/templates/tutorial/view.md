@@ -58,6 +58,6 @@ Find the line that renders the name of the contact and replace it with the follo
 ...
 ```
 
-Now visit the contact list ([http://localhost:8080/contact/](http://localhost:8080/contact/)), and you should be able to click on the name of each contact and view their properties.
+Now visit the contact list ([http://localhost:3000/contact/](http://localhost:3000/contact/)), and you should be able to click on the name of each contact and view their properties.
 
 {% endraw %}
