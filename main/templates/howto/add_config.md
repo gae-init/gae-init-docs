@@ -18,4 +18,4 @@ foo = wtforms.IntegerField(model.Config.foo._verbose_name)
 {{forms.number_field(form.foo)}}
 ```
 
-By visiting the [localhost:8080/admin/config/](http://localhost:8080/admin/config/) you will be able to edit the new property. {% endraw %}
+By visiting the [localhost:3000/admin/config/](http://localhost:3000/admin/config/) you will be able to edit the new property. {% endraw %}
