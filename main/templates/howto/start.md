@@ -9,4 +9,4 @@ $ npm install
 $ gulp
 ```
 
-Visit [http://localhost:8080](http://localhost:8080) to see the result. If you can see a normal functional page where you can [sign in](http://localhost:8080/signin/), that means everything went well and you are ready to start.
+Visit [http://localhost:3000](http://localhost:3000) to see the result. If you can see a normal functional page where you can [sign in](http://localhost:3000/signin/), that means everything went well and you are ready to start.
