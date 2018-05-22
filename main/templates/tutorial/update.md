@@ -78,7 +78,7 @@ Find the line that renders the ID of the contact and replace it with the followi
 ...
 ```
 
-Now visit the contact list ([http://localhost:8080/contact/](http://localhost:8080/contact/)), and you should be able to click on the ID of each contact and update their properties.
+Now visit the contact list ([http://localhost:3000/contact/](http://localhost:3000/contact/)), and you should be able to click on the ID of each contact and update their properties.
 
 #### Get rid of contact_create.html
 
