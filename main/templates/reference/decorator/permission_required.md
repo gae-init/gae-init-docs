@@ -23,7 +23,7 @@ def endpoint():
 
 Typical usecases:
 
-* allow everyone to read, restrict write to a few users: just leave out the second line
-* allow all logged in users to read, restrict write to a few users: replace the second line with `@auth.login_required`
+- allow everyone to read, restrict write to a few users: just leave out the second line
+- allow all logged in users to read, restrict write to a few users: replace the second line with `@auth.login_required`
 
 The order of the statements is not important as the permissions are wrapped around each other. All of the permission guards have to be passed in order to reach `endpoint`. Passing one of them does **not** skip the others.

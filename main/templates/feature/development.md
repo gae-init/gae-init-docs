@@ -1,9 +1,9 @@
-* [Gulp](http://gulpjs.com/) support to install, compile, minify, watch and deploy the app
-* Out of the box support for CoffeeScript and Less
-* Hassle free frontend JS lib management with [Bower](http://bower.io/)
-* Custom template macros and utilities for Jinja2
-* Form creations and HTML5 inputs are done easy through template macros
-* Minify and concatenate scripts and styles (reducing GAE quota use and bandwidth)
-* 3rd party server side libraries are zipped for faster uploads
-* Write your scripts in vanilla JavaScript or CoffeeScript
-* Write your styles in vanilla CSS or Less
+- [Gulp](http://gulpjs.com/) support to install, compile, minify, watch and deploy the app
+- Out of the box support for CoffeeScript and Less
+- Hassle free frontend JS lib management with [Bower](http://bower.io/)
+- Custom template macros and utilities for Jinja2
+- Form creations and HTML5 inputs are done easy through template macros
+- Minify and concatenate scripts and styles (reducing GAE quota use and bandwidth)
+- 3rd party server side libraries are zipped for faster uploads
+- Write your scripts in vanilla JavaScript or CoffeeScript
+- Write your styles in vanilla CSS or Less
