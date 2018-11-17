@@ -9,4 +9,4 @@ jinja2==2.10
 markdown
 pyjwt==1.6.4
 unidecode==1.0.22
-webargs==3.0.1
+webargs==4.1.2
